@@ -3,13 +3,15 @@ import snappi
 import time
 
 vlan_id = "10"
-macs = ['00:11:11:11:11:11', '00:22:22:22:22:22']
+macs = ["00:1A:C5:00:00:01", "00:1B:6E:00:00:01"]
+
+
 @pytest.fixture(scope="module", autouse=True)
 def discovery(npu):
     npu.objects_discovery()
 
-@pytest.mark.order1
-def test_l2_traffic(npu):
+
+def test_l2_traffic(npu, dataplane):
     """
     Creates vlan 10 and adds two ports to the vlan 10 member
     and validates the config using l2 traffic
@@ -106,9 +108,7 @@ def test_l2_traffic(npu):
         result = npu.command_processor.process_command(command)
         print(result)
 
-@pytest.mark.order2
-def test_sanppi_config(npu, dataplane):
-    macs = ['00:11:11:11:11:11', '00:22:22:22:22:22']
+    macs = ["00:11:11:11:11:11", "00:22:22:22:22:22"]
     config = dataplane.configuration
     config.options.port_options.location_preemption = True
     layer1 = config.layer1.layer1()[-1]
