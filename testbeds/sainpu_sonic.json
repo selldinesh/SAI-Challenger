@@ -1,0 +1,36 @@
+{
+
+    "npu": [
+      {
+        "alias": "vs",
+        "asic": "generic",
+        "target": null,
+        "sku": null,
+        "client": {
+          "type": "redis",
+          "config": {
+            "mode": "sonic",
+            "username": "admin",
+            "password": "YourPaSsWoRd",
+            "ip": "10.36.78.149",
+            "port": "6379",
+            "loglevel": "NOTICE"
+          }
+        }
+      }
+    ],
+    
+    "dataplane": [
+      {
+        "alias": "tg",
+        "type": "snappi",
+        "mode": "ixnet",
+        "controller": "https://10.36.78.145:443",
+        "port_groups": [
+          {"alias": 0, "name": "port1", "speed": "100G", "location": "10.36.78.53;6;7"},
+          {"alias": 1, "name": "port2", "speed": "100G", "location": "10.36.78.53;6;8"}
+        ]
+      }
+    ]
+    
+    }
