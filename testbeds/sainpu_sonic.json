@@ -12,7 +12,7 @@
             "mode": "sonic",
             "username": "admin",
             "password": "YourPaSsWoRd",
-            "ip": "10.36.78.149",
+            "ip": "20.1.1.1",
             "port": "6379",
             "loglevel": "NOTICE"
           }
@@ -25,10 +25,10 @@
         "alias": "tg",
         "type": "snappi",
         "mode": "ixnet",
-        "controller": "https://10.36.78.145:443",
+        "controller": "https://10.1.1.1:443",
         "port_groups": [
-          {"alias": 0, "name": "port1", "speed": "100G", "location": "10.36.78.53;6;7"},
-          {"alias": 1, "name": "port2", "speed": "100G", "location": "10.36.78.53;6;8"}
+          {"alias": 0, "name": "port1", "speed": "100G", "location": "1.1.1.1;6;7"},
+          {"alias": 1, "name": "port2", "speed": "100G", "location": "1.1.1.1;6;8"}
         ]
       }
     ]
