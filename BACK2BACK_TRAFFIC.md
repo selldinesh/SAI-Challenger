@@ -87,4 +87,4 @@ sudo tcpdump -i Ethernet108 -en -A | grep raw
 
 ## Question ?
 
-- What else should be done inorder for Ethernet108 interface to start receive packets
+- Can you please let us know what else should be done in order for Ethernet108 interface to start receive packets.
