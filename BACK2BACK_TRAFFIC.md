@@ -82,7 +82,8 @@ sudo tcpdump -i Ethernet108 -en -A | grep raw
     - No packets received on Ethernet108 interface
 
 ## Note
-    Did a #show interface counters on the dut, we were able to see that the Ethernet108 is actually receiving the packet but for some reason its dropping the packet, but its dropping the received packets for some reason
+
+Did a #show interface counters on the dut, we were able to see that the Ethernet108 is actually receiving the packet but for some reason its dropping the packet, but its dropping the received packets for some reason
 ![Show interface counters ](counters.png)
 
 ## Question ?
