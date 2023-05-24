@@ -80,3 +80,11 @@ sudo tcpdump -i Ethernet108 -en -A | grep raw
 - Result:
     - Packets are trasmitted via the Ethernet104 interface which can be verified from the tcpdump output 
     - No packets received on Ethernet108 interface
+
+## Note
+    Did a #show interface counters on the dut, we were able to see that the Ethernet108 is actually receiving the packet but for some reason its dropping the packet
+![Show interface counters ](counters.png)
+
+## Question ?
+
+- What else should be done inorder for Ethernet108 interface to start receive packets
