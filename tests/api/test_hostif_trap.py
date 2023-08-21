@@ -2,7 +2,7 @@ from pprint import pprint
 
 
 class TestSaiHostifTrap:
-    # object with no parent objects
+    # object with no parents
 
     def test_hostif_trap_create(self, npu):
         commands = [
@@ -22,15 +22,14 @@ class TestSaiHostifTrap:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values create =======')
         pprint(results)
+        assert all(results), 'Create error'
 
     def test_hostif_trap_remove(self, npu):
-        commands = [
-            {
-                'name': 'hostif_trap_1',
-                'op': 'remove',
-            }
-        ]
+        commands = [{'name': 'hostif_trap_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')
         pprint(results)
+        assert all(
+            [result == 'SAI_STATUS_SUCCESS' for result in results]
+        ), 'Remove error'

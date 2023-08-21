@@ -23,19 +23,17 @@ class TestSaiAclEntry:
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values create =======')
         pprint(results)
+        assert all(results), 'Create error'
 
     def test_acl_entry_remove(self, npu):
         commands = [
-            {
-                'name': 'acl_entry_1',
-                'op': 'remove',
-            },
-            {
-                'name': 'acl_table_1',
-                'op': 'remove',
-            },
+            {'name': 'acl_entry_1', 'op': 'remove'},
+            {'name': 'acl_table_1', 'op': 'remove'},
         ]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')
         pprint(results)
+        assert all(
+            [result == 'SAI_STATUS_SUCCESS' for result in results]
+        ), 'Remove error'
