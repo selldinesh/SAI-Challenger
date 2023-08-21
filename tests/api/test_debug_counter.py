@@ -1,20 +1,18 @@
 from pprint import pprint
 
 
-class TestSaiBufferPool:
+class TestSaiDebugCounter:
     # object with no parents
 
-    def test_buffer_pool_create(self, npu):
+    def test_debug_counter_create(self, npu):
         commands = [
             {
-                'name': 'buffer_pool_1',
+                'name': 'debug_counter_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_BUFFER_POOL',
+                'type': 'SAI_OBJECT_TYPE_DEBUG_COUNTER',
                 'attributes': [
-                    'SAI_BUFFER_POOL_ATTR_TYPE',
-                    'SAI_BUFFER_POOL_TYPE_INGRESS',
-                    'SAI_BUFFER_POOL_ATTR_SIZE',
-                    '10',
+                    'SAI_DEBUG_COUNTER_ATTR_TYPE',
+                    'SAI_DEBUG_COUNTER_TYPE_PORT_IN_DROP_REASONS',
                 ],
             }
         ]
@@ -24,8 +22,8 @@ class TestSaiBufferPool:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_buffer_pool_remove(self, npu):
-        commands = [{'name': 'buffer_pool_1', 'op': 'remove'}]
+    def test_debug_counter_remove(self, npu):
+        commands = [{'name': 'debug_counter_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

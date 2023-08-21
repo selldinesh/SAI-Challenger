@@ -1,16 +1,16 @@
 from pprint import pprint
 
 
-class TestSaiBridge:
-    # object with no parents
+class TestSaiCounter:
+    # object with no attributes
 
-    def test_bridge_create(self, npu):
+    def test_counter_create(self, npu):
         commands = [
             {
-                'name': 'bridge_1',
+                'name': 'counter_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_BRIDGE',
-                'attributes': ['SAI_BRIDGE_ATTR_TYPE', 'SAI_BRIDGE_TYPE_1Q'],
+                'type': 'SAI_OBJECT_TYPE_COUNTER',
+                'attributes': [],
             }
         ]
 
@@ -19,8 +19,8 @@ class TestSaiBridge:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_bridge_remove(self, npu):
-        commands = [{'name': 'bridge_1', 'op': 'remove'}]
+    def test_counter_remove(self, npu):
+        commands = [{'name': 'counter_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')
