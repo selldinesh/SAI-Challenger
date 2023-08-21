@@ -1,17 +1,11 @@
 from pprint import pprint
 
 
-class TestSaiVlanMember:
-    # object with parent SAI_OBJECT_TYPE_VLAN SAI_OBJECT_TYPE_BRIDGE_PORT
+class TestSaiBridgePort:
+    # object with parent SAI_OBJECT_TYPE_PORT SAI_OBJECT_TYPE_LAG SAI_OBJECT_TYPE_SYSTEM_PORT SAI_OBJECT_TYPE_ROUTER_INTERFACE SAI_OBJECT_TYPE_TUNNEL SAI_OBJECT_TYPE_BRIDGE
 
-    def test_vlan_member_create(self, npu):
+    def test_bridge_port_create(self, npu):
         commands = [
-            {
-                'name': 'vlan_1',
-                'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_VLAN',
-                'attributes': ['SAI_VLAN_ATTR_VLAN_ID', '10'],
-            },
             {
                 'name': 'port_1',
                 'op': 'create',
@@ -28,6 +22,12 @@ class TestSaiVlanMember:
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_VIRTUAL_ROUTER',
                 'attributes': [],
+            },
+            {
+                'name': 'vlan_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_VLAN',
+                'attributes': ['SAI_VLAN_ATTR_VLAN_ID', '10'],
             },
             {
                 'name': 'bridge_1',
@@ -88,17 +88,6 @@ class TestSaiVlanMember:
                     '$bridge_1',
                 ],
             },
-            {
-                'name': 'vlan_member_1',
-                'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_VLAN_MEMBER',
-                'attributes': [
-                    'SAI_VLAN_MEMBER_ATTR_VLAN_ID',
-                    '$vlan_1',
-                    'SAI_VLAN_MEMBER_ATTR_BRIDGE_PORT_ID',
-                    '$bridge_port_1',
-                ],
-            },
         ]
 
         results = [*npu.process_commands(commands)]
@@ -106,16 +95,15 @@ class TestSaiVlanMember:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_vlan_member_remove(self, npu):
+    def test_bridge_port_remove(self, npu):
         commands = [
-            {'name': 'vlan_member_1', 'op': 'remove'},
             {'name': 'bridge_port_1', 'op': 'remove'},
             {'name': 'tunnel_1', 'op': 'remove'},
             {'name': 'router_interface_1', 'op': 'remove'},
             {'name': 'bridge_1', 'op': 'remove'},
+            {'name': 'vlan_1', 'op': 'remove'},
             {'name': 'virtual_router_1', 'op': 'remove'},
             {'name': 'port_1', 'op': 'remove'},
-            {'name': 'vlan_1', 'op': 'remove'},
         ]
 
         results = [*npu.process_commands(commands)]

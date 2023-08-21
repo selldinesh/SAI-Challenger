@@ -1,16 +1,21 @@
 from pprint import pprint
 
 
-class TestSaiGenericProgrammable:
+class TestSaiBufferPool:
     # object with no parents
 
-    def test_generic_programmable_create(self, npu):
+    def test_buffer_pool_create(self, npu):
         commands = [
             {
-                'name': 'generic_programmable_1',
+                'name': 'buffer_pool_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_GENERIC_PROGRAMMABLE',
-                'attributes': ['SAI_GENERIC_PROGRAMMABLE_ATTR_OBJECT_NAME', '2:10,11'],
+                'type': 'SAI_OBJECT_TYPE_BUFFER_POOL',
+                'attributes': [
+                    'SAI_BUFFER_POOL_ATTR_TYPE',
+                    'SAI_BUFFER_POOL_TYPE_INGRESS',
+                    'SAI_BUFFER_POOL_ATTR_SIZE',
+                    '10',
+                ],
             }
         ]
 
@@ -19,8 +24,8 @@ class TestSaiGenericProgrammable:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_generic_programmable_remove(self, npu):
-        commands = [{'name': 'generic_programmable_1', 'op': 'remove'}]
+    def test_buffer_pool_remove(self, npu):
+        commands = [{'name': 'buffer_pool_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

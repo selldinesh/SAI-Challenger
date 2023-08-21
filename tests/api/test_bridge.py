@@ -1,19 +1,16 @@
 from pprint import pprint
 
 
-class TestSaiIsolationGroup:
+class TestSaiBridge:
     # object with no parents
 
-    def test_isolation_group_create(self, npu):
+    def test_bridge_create(self, npu):
         commands = [
             {
-                'name': 'isolation_group_1',
+                'name': 'bridge_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_ISOLATION_GROUP',
-                'attributes': [
-                    'SAI_ISOLATION_GROUP_ATTR_TYPE',
-                    'SAI_ISOLATION_GROUP_TYPE_PORT',
-                ],
+                'type': 'SAI_OBJECT_TYPE_BRIDGE',
+                'attributes': ['SAI_BRIDGE_ATTR_TYPE', 'SAI_BRIDGE_TYPE_1Q'],
             }
         ]
 
@@ -22,8 +19,8 @@ class TestSaiIsolationGroup:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_isolation_group_remove(self, npu):
-        commands = [{'name': 'isolation_group_1', 'op': 'remove'}]
+    def test_bridge_remove(self, npu):
+        commands = [{'name': 'bridge_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')
