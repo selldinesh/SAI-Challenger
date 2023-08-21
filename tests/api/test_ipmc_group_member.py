@@ -1,11 +1,23 @@
 from pprint import pprint
 
 
-class TestSaiBridgePort:
-    # object with parent SAI_OBJECT_TYPE_PORT SAI_OBJECT_TYPE_LAG SAI_OBJECT_TYPE_SYSTEM_PORT SAI_OBJECT_TYPE_ROUTER_INTERFACE SAI_OBJECT_TYPE_TUNNEL SAI_OBJECT_TYPE_BRIDGE
+class TestSaiIpmcGroupMember:
+    # object with parent SAI_OBJECT_TYPE_IPMC_GROUP SAI_OBJECT_TYPE_ROUTER_INTERFACE SAI_OBJECT_TYPE_TUNNEL
 
-    def test_bridge_port_create(self, npu):
+    def test_ipmc_group_member_create(self, npu):
         commands = [
+            {
+                'name': 'ipmc_group_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_IPMC_GROUP',
+                'attributes': [],
+            },
+            {
+                'name': 'virtual_router_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_VIRTUAL_ROUTER',
+                'attributes': [],
+            },
             {
                 'name': 'port_1',
                 'op': 'create',
@@ -16,12 +28,6 @@ class TestSaiBridgePort:
                     'SAI_PORT_ATTR_SPEED',
                     '10',
                 ],
-            },
-            {
-                'name': 'virtual_router_1',
-                'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_VIRTUAL_ROUTER',
-                'attributes': [],
             },
             {
                 'name': 'vlan_1',
@@ -57,35 +63,14 @@ class TestSaiBridgePort:
                 ],
             },
             {
-                'name': 'tunnel_1',
+                'name': 'ipmc_group_member_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_TUNNEL',
+                'type': 'SAI_OBJECT_TYPE_IPMC_GROUP_MEMBER',
                 'attributes': [
-                    'SAI_TUNNEL_ATTR_TYPE',
-                    'SAI_TUNNEL_TYPE_IPINIP',
-                    'SAI_TUNNEL_ATTR_UNDERLAY_INTERFACE',
+                    'SAI_IPMC_GROUP_MEMBER_ATTR_IPMC_GROUP_ID',
+                    '$ipmc_group_1',
+                    'SAI_IPMC_GROUP_MEMBER_ATTR_IPMC_OUTPUT_ID',
                     '$router_interface_1',
-                    'SAI_TUNNEL_ATTR_OVERLAY_INTERFACE',
-                    '$router_interface_1',
-                ],
-            },
-            {
-                'name': 'bridge_port_1',
-                'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_BRIDGE_PORT',
-                'attributes': [
-                    'SAI_BRIDGE_PORT_ATTR_TYPE',
-                    'SAI_BRIDGE_PORT_TYPE_PORT',
-                    'SAI_BRIDGE_PORT_ATTR_PORT_ID',
-                    '$port_1',
-                    'SAI_BRIDGE_PORT_ATTR_VLAN_ID',
-                    '10',
-                    'SAI_BRIDGE_PORT_ATTR_RIF_ID',
-                    '$router_interface_1',
-                    'SAI_BRIDGE_PORT_ATTR_TUNNEL_ID',
-                    '$tunnel_1',
-                    'SAI_BRIDGE_PORT_ATTR_BRIDGE_ID',
-                    '$bridge_1',
                 ],
             },
         ]
@@ -95,15 +80,15 @@ class TestSaiBridgePort:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_bridge_port_remove(self, npu):
+    def test_ipmc_group_member_remove(self, npu):
         commands = [
-            {'name': 'bridge_port_1', 'op': 'remove'},
-            {'name': 'tunnel_1', 'op': 'remove'},
+            {'name': 'ipmc_group_member_1', 'op': 'remove'},
             {'name': 'router_interface_1', 'op': 'remove'},
             {'name': 'bridge_1', 'op': 'remove'},
             {'name': 'vlan_1', 'op': 'remove'},
-            {'name': 'virtual_router_1', 'op': 'remove'},
             {'name': 'port_1', 'op': 'remove'},
+            {'name': 'virtual_router_1', 'op': 'remove'},
+            {'name': 'ipmc_group_1', 'op': 'remove'},
         ]
 
         results = [*npu.process_commands(commands)]

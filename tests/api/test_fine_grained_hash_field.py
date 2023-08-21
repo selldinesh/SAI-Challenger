@@ -1,18 +1,20 @@
 from pprint import pprint
 
 
-class TestSaiDtelEvent:
+class TestSaiFineGrainedHashField:
     # object with no parents
 
-    def test_dtel_event_create(self, npu):
+    def test_fine_grained_hash_field_create(self, npu):
         commands = [
             {
-                'name': 'dtel_event_1',
+                'name': 'fine_grained_hash_field_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_DTEL_EVENT',
+                'type': 'SAI_OBJECT_TYPE_FINE_GRAINED_HASH_FIELD',
                 'attributes': [
-                    'SAI_DTEL_EVENT_ATTR_TYPE',
-                    'SAI_DTEL_EVENT_TYPE_FLOW_STATE',
+                    'SAI_FINE_GRAINED_HASH_FIELD_ATTR_IPV4_MASK',
+                    '255.0.0.0',
+                    'SAI_FINE_GRAINED_HASH_FIELD_ATTR_IPV6_MASK',
+                    'FF::0',
                 ],
             }
         ]
@@ -22,8 +24,8 @@ class TestSaiDtelEvent:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_dtel_event_remove(self, npu):
-        commands = [{'name': 'dtel_event_1', 'op': 'remove'}]
+    def test_fine_grained_hash_field_remove(self, npu):
+        commands = [{'name': 'fine_grained_hash_field_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

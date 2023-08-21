@@ -1,17 +1,16 @@
 from pprint import pprint
 
 
-class TestSaiDirectionLookupEntry:
+class TestSaiHostInterface:
     # object with no attributes
 
-    def test_direction_lookup_entry_create(self, npu):
+    def test_host_interface_create(self, npu):
         commands = [
             {
-                'name': 'direction_lookup_entry_1',
+                'name': 'host_interface_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_DIRECTION_LOOKUP_ENTRY',
+                'type': 'SAI_OBJECT_TYPE_HOST_INTERFACE',
                 'attributes': [],
-                'key': {'switch_id': '$SWITCH_ID', 'vni': 'TODO'},
             }
         ]
 
@@ -20,14 +19,8 @@ class TestSaiDirectionLookupEntry:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_direction_lookup_entry_remove(self, npu):
-        commands = [
-            {
-                'name': 'direction_lookup_entry_1',
-                'key': {'switch_id': '$SWITCH_ID', 'vni': 'TODO'},
-                'op': 'remove',
-            }
-        ]
+    def test_host_interface_remove(self, npu):
+        commands = [{'name': 'host_interface_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

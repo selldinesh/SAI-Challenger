@@ -1,21 +1,16 @@
 from pprint import pprint
 
 
-class TestSaiBufferPool:
-    # object with no parents
+class TestSaiIpmcGroup:
+    # object with no attributes
 
-    def test_buffer_pool_create(self, npu):
+    def test_ipmc_group_create(self, npu):
         commands = [
             {
-                'name': 'buffer_pool_1',
+                'name': 'ipmc_group_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_BUFFER_POOL',
-                'attributes': [
-                    'SAI_BUFFER_POOL_ATTR_TYPE',
-                    'SAI_BUFFER_POOL_TYPE_INGRESS',
-                    'SAI_BUFFER_POOL_ATTR_SIZE',
-                    '10',
-                ],
+                'type': 'SAI_OBJECT_TYPE_IPMC_GROUP',
+                'attributes': [],
             }
         ]
 
@@ -24,8 +19,8 @@ class TestSaiBufferPool:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_buffer_pool_remove(self, npu):
-        commands = [{'name': 'buffer_pool_1', 'op': 'remove'}]
+    def test_ipmc_group_remove(self, npu):
+        commands = [{'name': 'ipmc_group_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

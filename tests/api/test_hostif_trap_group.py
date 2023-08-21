@@ -1,15 +1,15 @@
 from pprint import pprint
 
 
-class TestSaiDtelReportSession:
+class TestSaiHostifTrapGroup:
     # object with no attributes
 
-    def test_dtel_report_session_create(self, npu):
+    def test_hostif_trap_group_create(self, npu):
         commands = [
             {
-                'name': 'dtel_report_session_1',
+                'name': 'hostif_trap_group_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_DTEL_REPORT_SESSION',
+                'type': 'SAI_OBJECT_TYPE_HOSTIF_TRAP_GROUP',
                 'attributes': [],
             }
         ]
@@ -19,8 +19,8 @@ class TestSaiDtelReportSession:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_dtel_report_session_remove(self, npu):
-        commands = [{'name': 'dtel_report_session_1', 'op': 'remove'}]
+    def test_hostif_trap_group_remove(self, npu):
+        commands = [{'name': 'hostif_trap_group_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

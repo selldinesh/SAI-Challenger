@@ -1,16 +1,19 @@
 from pprint import pprint
 
 
-class TestSaiDtelIntSession:
-    # object with no attributes
+class TestSaiIsolationGroup:
+    # object with no parents
 
-    def test_dtel_int_session_create(self, npu):
+    def test_isolation_group_create(self, npu):
         commands = [
             {
-                'name': 'dtel_int_session_1',
+                'name': 'isolation_group_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_DTEL_INT_SESSION',
-                'attributes': [],
+                'type': 'SAI_OBJECT_TYPE_ISOLATION_GROUP',
+                'attributes': [
+                    'SAI_ISOLATION_GROUP_ATTR_TYPE',
+                    'SAI_ISOLATION_GROUP_TYPE_PORT',
+                ],
             }
         ]
 
@@ -19,8 +22,8 @@ class TestSaiDtelIntSession:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_dtel_int_session_remove(self, npu):
-        commands = [{'name': 'dtel_int_session_1', 'op': 'remove'}]
+    def test_isolation_group_remove(self, npu):
+        commands = [{'name': 'isolation_group_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')
