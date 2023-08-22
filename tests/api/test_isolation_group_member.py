@@ -47,7 +47,6 @@ class TestSaiIsolationGroupMember:
     def test_isolation_group_member_remove(self, npu):
         commands = [
             {'name': 'isolation_group_member_1', 'op': 'remove'},
-            {'name': 'port_1', 'op': 'remove'},
             {'name': 'isolation_group_1', 'op': 'remove'},
         ]
 
