@@ -1,21 +1,20 @@
 from pprint import pprint
 
 
-class TestSaiNatEntry:
+class TestSaiOutboundRoutingEntry:
     # object with no attributes
 
-    def test_nat_entry_create(self, npu):
+    def test_outbound_routing_entry_create(self, npu):
         commands = [
             {
-                'name': 'nat_entry_1',
+                'name': 'outbound_routing_entry_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_NAT_ENTRY',
+                'type': 'SAI_OBJECT_TYPE_OUTBOUND_ROUTING_ENTRY',
                 'attributes': [],
                 'key': {
                     'switch_id': '$SWITCH_ID',
-                    'vr_id': 'TODO',
-                    'nat_type': 'TODO',
-                    'data': 'TODO',
+                    'eni_id': 'TODO',
+                    'destination': 'TODO',
                 },
             }
         ]
@@ -25,15 +24,14 @@ class TestSaiNatEntry:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_nat_entry_remove(self, npu):
+    def test_outbound_routing_entry_remove(self, npu):
         commands = [
             {
-                'name': 'nat_entry_1',
+                'name': 'outbound_routing_entry_1',
                 'key': {
                     'switch_id': '$SWITCH_ID',
-                    'vr_id': 'TODO',
-                    'nat_type': 'TODO',
-                    'data': 'TODO',
+                    'eni_id': 'TODO',
+                    'destination': 'TODO',
                 },
                 'op': 'remove',
             }
