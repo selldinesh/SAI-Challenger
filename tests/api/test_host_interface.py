@@ -1,15 +1,15 @@
 from pprint import pprint
 
 
-class TestSaiHash:
+class TestSaiHostInterface:
     # object with no attributes
 
-    def test_hash_create(self, npu):
+    def test_host_interface_create(self, npu):
         commands = [
             {
-                'name': 'hash_1',
+                'name': 'host_interface_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_HASH',
+                'type': 'SAI_OBJECT_TYPE_HOST_INTERFACE',
                 'attributes': [],
             }
         ]
@@ -19,8 +19,8 @@ class TestSaiHash:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_hash_remove(self, npu):
-        commands = [{'name': 'hash_1', 'op': 'remove'}]
+    def test_host_interface_remove(self, npu):
+        commands = [{'name': 'host_interface_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')
