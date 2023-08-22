@@ -1,19 +1,16 @@
 from pprint import pprint
 
 
-class TestSaiDtelEvent:
-    # object with no parents
+class TestSaiEni:
+    # object with no attributes
 
-    def test_dtel_event_create(self, npu):
+    def test_eni_create(self, npu):
         commands = [
             {
-                'name': 'dtel_event_1',
+                'name': 'eni_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_DTEL_EVENT',
-                'attributes': [
-                    'SAI_DTEL_EVENT_ATTR_TYPE',
-                    'SAI_DTEL_EVENT_TYPE_FLOW_STATE',
-                ],
+                'type': 'SAI_OBJECT_TYPE_ENI',
+                'attributes': [],
             }
         ]
 
@@ -22,8 +19,8 @@ class TestSaiDtelEvent:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_dtel_event_remove(self, npu):
-        commands = [{'name': 'dtel_event_1', 'op': 'remove'}]
+    def test_eni_remove(self, npu):
+        commands = [{'name': 'eni_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')
