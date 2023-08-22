@@ -1,15 +1,15 @@
 from pprint import pprint
 
 
-class TestSaiL2McGroup:
+class TestSaiLag:
     # object with no attributes
 
-    def test_l2mc_group_create(self, npu):
+    def test_lag_create(self, npu):
         commands = [
             {
-                'name': 'l2mc_group_1',
+                'name': 'lag_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_L2MC_GROUP',
+                'type': 'SAI_OBJECT_TYPE_LAG',
                 'attributes': [],
             }
         ]
@@ -19,8 +19,8 @@ class TestSaiL2McGroup:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_l2mc_group_remove(self, npu):
-        commands = [{'name': 'l2mc_group_1', 'op': 'remove'}]
+    def test_lag_remove(self, npu):
+        commands = [{'name': 'lag_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')
