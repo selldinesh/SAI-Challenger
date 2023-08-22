@@ -1,17 +1,16 @@
 from pprint import pprint
 
 
-class TestSaiInsegEntry:
+class TestSaiIpmcGroup:
     # object with no attributes
 
-    def test_inseg_entry_create(self, npu):
+    def test_ipmc_group_create(self, npu):
         commands = [
             {
-                'name': 'inseg_entry_1',
+                'name': 'ipmc_group_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_INSEG_ENTRY',
+                'type': 'SAI_OBJECT_TYPE_IPMC_GROUP',
                 'attributes': [],
-                'key': {'switch_id': '$SWITCH_ID', 'label': 'TODO'},
             }
         ]
 
@@ -20,14 +19,8 @@ class TestSaiInsegEntry:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_inseg_entry_remove(self, npu):
-        commands = [
-            {
-                'name': 'inseg_entry_1',
-                'key': {'switch_id': '$SWITCH_ID', 'label': 'TODO'},
-                'op': 'remove',
-            }
-        ]
+    def test_ipmc_group_remove(self, npu):
+        commands = [{'name': 'ipmc_group_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')
