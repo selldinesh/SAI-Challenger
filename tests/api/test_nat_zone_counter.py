@@ -1,15 +1,15 @@
 from pprint import pprint
 
 
-class TestSaiMyMac:
+class TestSaiNatZoneCounter:
     # object with no attributes
 
-    def test_my_mac_create(self, npu):
+    def test_nat_zone_counter_create(self, npu):
         commands = [
             {
-                'name': 'my_mac_1',
+                'name': 'nat_zone_counter_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_MY_MAC',
+                'type': 'SAI_OBJECT_TYPE_NAT_ZONE_COUNTER',
                 'attributes': [],
             }
         ]
@@ -19,8 +19,8 @@ class TestSaiMyMac:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_my_mac_remove(self, npu):
-        commands = [{'name': 'my_mac_1', 'op': 'remove'}]
+    def test_nat_zone_counter_remove(self, npu):
+        commands = [{'name': 'nat_zone_counter_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

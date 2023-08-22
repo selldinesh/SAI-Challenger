@@ -1,27 +1,21 @@
 from pprint import pprint
 
 
-class TestSaiMySidEntry:
-    # object with no parents
+class TestSaiNatEntry:
+    # object with no attributes
 
-    def test_my_sid_entry_create(self, npu):
+    def test_nat_entry_create(self, npu):
         commands = [
             {
-                'name': 'my_sid_entry_1',
+                'name': 'nat_entry_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_MY_SID_ENTRY',
-                'attributes': [
-                    'SAI_MY_SID_ENTRY_ATTR_ENDPOINT_BEHAVIOR',
-                    'SAI_MY_SID_ENTRY_ENDPOINT_BEHAVIOR_E',
-                ],
+                'type': 'SAI_OBJECT_TYPE_NAT_ENTRY',
+                'attributes': [],
                 'key': {
                     'switch_id': '$SWITCH_ID',
                     'vr_id': 'TODO',
-                    'locator_block_len': 'TODO',
-                    'locator_node_len': 'TODO',
-                    'function_len': 'TODO',
-                    'args_len': 'TODO',
-                    'sid': 'TODO',
+                    'nat_type': 'TODO',
+                    'data': 'TODO',
                 },
             }
         ]
@@ -31,18 +25,15 @@ class TestSaiMySidEntry:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_my_sid_entry_remove(self, npu):
+    def test_nat_entry_remove(self, npu):
         commands = [
             {
-                'name': 'my_sid_entry_1',
+                'name': 'nat_entry_1',
                 'key': {
                     'switch_id': '$SWITCH_ID',
                     'vr_id': 'TODO',
-                    'locator_block_len': 'TODO',
-                    'locator_node_len': 'TODO',
-                    'function_len': 'TODO',
-                    'args_len': 'TODO',
-                    'sid': 'TODO',
+                    'nat_type': 'TODO',
+                    'data': 'TODO',
                 },
                 'op': 'remove',
             }

@@ -1,15 +1,15 @@
 from pprint import pprint
 
 
-class TestSaiMax:
+class TestSaiNull:
     # object with no attributes
 
-    def test_max_create(self, npu):
+    def test_null_create(self, npu):
         commands = [
             {
-                'name': 'max_1',
+                'name': 'null_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_MAX',
+                'type': 'SAI_OBJECT_TYPE_NULL',
                 'attributes': [],
             }
         ]
@@ -19,8 +19,8 @@ class TestSaiMax:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_max_remove(self, npu):
-        commands = [{'name': 'max_1', 'op': 'remove'}]
+    def test_null_remove(self, npu):
+        commands = [{'name': 'null_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')
