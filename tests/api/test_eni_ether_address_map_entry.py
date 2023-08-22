@@ -1,16 +1,17 @@
 from pprint import pprint
 
 
-class TestSaiDtelReportSession:
+class TestSaiEniEtherAddressMapEntry:
     # object with no attributes
 
-    def test_dtel_report_session_create(self, npu):
+    def test_eni_ether_address_map_entry_create(self, npu):
         commands = [
             {
-                'name': 'dtel_report_session_1',
+                'name': 'eni_ether_address_map_entry_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_DTEL_REPORT_SESSION',
+                'type': 'SAI_OBJECT_TYPE_ENI_ETHER_ADDRESS_MAP_ENTRY',
                 'attributes': [],
+                'key': {'switch_id': '$SWITCH_ID', 'address': 'TODO'},
             }
         ]
 
@@ -19,8 +20,14 @@ class TestSaiDtelReportSession:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_dtel_report_session_remove(self, npu):
-        commands = [{'name': 'dtel_report_session_1', 'op': 'remove'}]
+    def test_eni_ether_address_map_entry_remove(self, npu):
+        commands = [
+            {
+                'name': 'eni_ether_address_map_entry_1',
+                'key': {'switch_id': '$SWITCH_ID', 'address': 'TODO'},
+                'op': 'remove',
+            }
+        ]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')
