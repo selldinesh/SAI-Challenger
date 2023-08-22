@@ -1,10 +1,10 @@
 from pprint import pprint
 
 
-class TestSaiHostif:
-    # object with parent SAI_OBJECT_TYPE_PORT SAI_OBJECT_TYPE_LAG SAI_OBJECT_TYPE_VLAN SAI_OBJECT_TYPE_SYSTEM_PORT
+class TestSaiHostifPacket:
+    # object with parent SAI_OBJECT_TYPE_PORT
 
-    def test_hostif_create(self, npu):
+    def test_hostif_packet_create(self, npu):
         commands = [
             {
                 'name': 'port_1',
@@ -18,18 +18,14 @@ class TestSaiHostif:
                 ],
             },
             {
-                'name': 'hostif_1',
+                'name': 'hostif_packet_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_HOSTIF',
+                'type': 'SAI_OBJECT_TYPE_HOSTIF_PACKET',
                 'attributes': [
-                    'SAI_HOSTIF_ATTR_TYPE',
-                    'SAI_HOSTIF_TYPE_NETDEV',
-                    'SAI_HOSTIF_ATTR_OBJ_ID',
+                    'SAI_HOSTIF_PACKET_ATTR_HOSTIF_TX_TYPE',
+                    'SAI_HOSTIF_TX_TYPE_PIPELINE_BYPASS',
+                    'SAI_HOSTIF_PACKET_ATTR_EGRESS_PORT_OR_LAG',
                     '$port_1',
-                    'SAI_HOSTIF_ATTR_NAME',
-                    'char',
-                    'SAI_HOSTIF_ATTR_GENETLINK_MCGRP_NAME',
-                    'char',
                 ],
             },
         ]
@@ -39,9 +35,9 @@ class TestSaiHostif:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_hostif_remove(self, npu):
+    def test_hostif_packet_remove(self, npu):
         commands = [
-            {'name': 'hostif_1', 'op': 'remove'},
+            {'name': 'hostif_packet_1', 'op': 'remove'},
             {'name': 'port_1', 'op': 'remove'},
         ]
 
