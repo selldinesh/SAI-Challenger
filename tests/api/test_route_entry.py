@@ -1,17 +1,21 @@
 from pprint import pprint
 
 
-class TestSaiPaValidationEntry:
+class TestSaiRouteEntry:
     # object with no attributes
 
-    def test_pa_validation_entry_create(self, npu):
+    def test_route_entry_create(self, npu):
         commands = [
             {
-                'name': 'pa_validation_entry_1',
+                'name': 'route_entry_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_PA_VALIDATION_ENTRY',
+                'type': 'SAI_OBJECT_TYPE_ROUTE_ENTRY',
                 'attributes': [],
-                'key': {'switch_id': '$SWITCH_ID', 'vnet_id': 'TODO', 'sip': 'TODO'},
+                'key': {
+                    'switch_id': '$SWITCH_ID',
+                    'vr_id': 'TODO',
+                    'destination': 'TODO',
+                },
             }
         ]
 
@@ -20,11 +24,15 @@ class TestSaiPaValidationEntry:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_pa_validation_entry_remove(self, npu):
+    def test_route_entry_remove(self, npu):
         commands = [
             {
-                'name': 'pa_validation_entry_1',
-                'key': {'switch_id': '$SWITCH_ID', 'vnet_id': 'TODO', 'sip': 'TODO'},
+                'name': 'route_entry_1',
+                'key': {
+                    'switch_id': '$SWITCH_ID',
+                    'vr_id': 'TODO',
+                    'destination': 'TODO',
+                },
                 'op': 'remove',
             }
         ]

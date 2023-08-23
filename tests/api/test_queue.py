@@ -1,10 +1,10 @@
 from pprint import pprint
 
 
-class TestSaiPortPool:
-    # object with parent SAI_OBJECT_TYPE_PORT SAI_OBJECT_TYPE_BUFFER_POOL
+class TestSaiQueue:
+    # object with parent SAI_OBJECT_TYPE_PORT SAI_OBJECT_TYPE_SCHEDULER_GROUP SAI_OBJECT_TYPE_PORT
 
-    def test_port_pool_create(self, npu):
+    def test_queue_create(self, npu):
         commands = [
             {
                 'name': 'port_1',
@@ -18,25 +18,33 @@ class TestSaiPortPool:
                 ],
             },
             {
-                'name': 'buffer_pool_1',
+                'name': 'scheduler_group_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_BUFFER_POOL',
+                'type': 'SAI_OBJECT_TYPE_SCHEDULER_GROUP',
                 'attributes': [
-                    'SAI_BUFFER_POOL_ATTR_TYPE',
-                    'SAI_BUFFER_POOL_TYPE_INGRESS',
-                    'SAI_BUFFER_POOL_ATTR_SIZE',
-                    '10',
+                    'SAI_SCHEDULER_GROUP_ATTR_PORT_ID',
+                    '$port_1',
+                    'SAI_SCHEDULER_GROUP_ATTR_LEVEL',
+                    '1',
+                    'SAI_SCHEDULER_GROUP_ATTR_MAX_CHILDS',
+                    '1',
+                    'SAI_SCHEDULER_GROUP_ATTR_PARENT_NODE',
+                    'TODO_circular parent reference',
                 ],
             },
             {
-                'name': 'port_pool_1',
+                'name': 'queue_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_PORT_POOL',
+                'type': 'SAI_OBJECT_TYPE_QUEUE',
                 'attributes': [
-                    'SAI_PORT_POOL_ATTR_PORT_ID',
+                    'SAI_QUEUE_ATTR_TYPE',
+                    'SAI_QUEUE_TYPE_ALL',
+                    'SAI_QUEUE_ATTR_PORT',
                     '$port_1',
-                    'SAI_PORT_POOL_ATTR_BUFFER_POOL_ID',
-                    '$buffer_pool_1',
+                    'SAI_QUEUE_ATTR_INDEX',
+                    '1',
+                    'SAI_QUEUE_ATTR_PARENT_SCHEDULER_NODE',
+                    '$scheduler_group_1',
                 ],
             },
         ]
@@ -46,10 +54,10 @@ class TestSaiPortPool:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_port_pool_remove(self, npu):
+    def test_queue_remove(self, npu):
         commands = [
-            {'name': 'port_pool_1', 'op': 'remove'},
-            {'name': 'buffer_pool_1', 'op': 'remove'},
+            {'name': 'queue_1', 'op': 'remove'},
+            {'name': 'scheduler_group_1', 'op': 'remove'},
             {'name': 'port_1', 'op': 'remove'},
         ]
 
