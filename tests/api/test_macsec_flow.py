@@ -1,17 +1,17 @@
 from pprint import pprint
 
 
-class TestSaiMacsec:
+class TestSaiMacsecFlow:
     # object with no parents
 
-    def test_macsec_create(self, npu):
+    def test_macsec_flow_create(self, npu):
         commands = [
             {
-                'name': 'macsec_1',
+                'name': 'macsec_flow_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_MACSEC',
+                'type': 'SAI_OBJECT_TYPE_MACSEC_FLOW',
                 'attributes': [
-                    'SAI_MACSEC_ATTR_DIRECTION',
+                    'SAI_MACSEC_FLOW_ATTR_MACSEC_DIRECTION',
                     'SAI_MACSEC_DIRECTION_EGRESS',
                 ],
             }
@@ -22,8 +22,8 @@ class TestSaiMacsec:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_macsec_remove(self, npu):
-        commands = [{'name': 'macsec_1', 'op': 'remove'}]
+    def test_macsec_flow_remove(self, npu):
+        commands = [{'name': 'macsec_flow_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')
