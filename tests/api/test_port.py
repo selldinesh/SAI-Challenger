@@ -1,20 +1,20 @@
 from pprint import pprint
 
 
-class TestSaiPolicer:
+class TestSaiPort:
     # object with no parents
 
-    def test_policer_create(self, npu):
+    def test_port_create(self, npu):
         commands = [
             {
-                'name': 'policer_1',
+                'name': 'port_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_POLICER',
+                'type': 'SAI_OBJECT_TYPE_PORT',
                 'attributes': [
-                    'SAI_POLICER_ATTR_METER_TYPE',
-                    'SAI_METER_TYPE_PACKETS',
-                    'SAI_POLICER_ATTR_MODE',
-                    'SAI_POLICER_MODE_SR_TCM',
+                    'SAI_PORT_ATTR_HW_LANE_LIST',
+                    '2:10,11',
+                    'SAI_PORT_ATTR_SPEED',
+                    '10',
                 ],
             }
         ]
@@ -24,8 +24,8 @@ class TestSaiPolicer:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_policer_remove(self, npu):
-        commands = [{'name': 'policer_1', 'op': 'remove'}]
+    def test_port_remove(self, npu):
+        commands = [{'name': 'port_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')
