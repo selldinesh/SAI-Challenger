@@ -1,21 +1,17 @@
 from pprint import pprint
 
 
-class TestSaiTamEvent:
-    # object with parent SAI_OBJECT_TYPE_TAM_EVENT_ACTION SAI_OBJECT_TYPE_TAM_COLLECTOR
+class TestSaiTamTelemetry:
+    # object with parent SAI_OBJECT_TYPE_TAM_COLLECTOR
 
-    def test_tam_event_create(self, npu):
+    def test_tam_telemetry_create(self, npu):
         commands = [
             {
-                'name': 'tam_event_1',
+                'name': 'tam_telemetry_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_TAM_EVENT',
+                'type': 'SAI_OBJECT_TYPE_TAM_TELEMETRY',
                 'attributes': [
-                    'SAI_TAM_EVENT_ATTR_TYPE',
-                    'SAI_TAM_EVENT_TYPE_FLOW_STATE',
-                    'SAI_TAM_EVENT_ATTR_ACTION_LIST',
-                    'sai_object_list_t',
-                    'SAI_TAM_EVENT_ATTR_COLLECTOR_LIST',
+                    'SAI_TAM_TELEMETRY_ATTR_COLLECTOR_LIST',
                     'sai_object_list_t',
                 ],
             }
@@ -26,8 +22,8 @@ class TestSaiTamEvent:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_tam_event_remove(self, npu):
-        commands = [{'name': 'tam_event_1', 'op': 'remove'}]
+    def test_tam_telemetry_remove(self, npu):
+        commands = [{'name': 'tam_telemetry_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

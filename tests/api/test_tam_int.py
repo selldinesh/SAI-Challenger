@@ -1,10 +1,10 @@
 from pprint import pprint
 
 
-class TestSaiTamEventAction:
+class TestSaiTamInt:
     # object with parent SAI_OBJECT_TYPE_TAM_REPORT
 
-    def test_tam_event_action_create(self, npu):
+    def test_tam_int_create(self, npu):
         commands = [
             {
                 'name': 'tam_report_1',
@@ -13,11 +13,27 @@ class TestSaiTamEventAction:
                 'attributes': ['SAI_TAM_REPORT_ATTR_TYPE', 'SAI_TAM_REPORT_TYPE_SFLOW'],
             },
             {
-                'name': 'tam_event_action_1',
+                'name': 'tam_int_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_TAM_EVENT_ACTION',
+                'type': 'SAI_OBJECT_TYPE_TAM_INT',
                 'attributes': [
-                    'SAI_TAM_EVENT_ACTION_ATTR_REPORT_TYPE',
+                    'SAI_TAM_INT_ATTR_TYPE',
+                    'SAI_TAM_INT_TYPE_IOAM',
+                    'SAI_TAM_INT_ATTR_DEVICE_ID',
+                    '10',
+                    'SAI_TAM_INT_ATTR_INT_PRESENCE_TYPE',
+                    'SAI_TAM_INT_PRESENCE_TYPE_PB',
+                    'SAI_TAM_INT_ATTR_INT_PRESENCE_PB1',
+                    '10',
+                    'SAI_TAM_INT_ATTR_INT_PRESENCE_PB2',
+                    '10',
+                    'SAI_TAM_INT_ATTR_INT_PRESENCE_DSCP_VALUE',
+                    '1',
+                    'SAI_TAM_INT_ATTR_INLINE',
+                    'True',
+                    'SAI_TAM_INT_ATTR_INT_PRESENCE_L3_PROTOCOL',
+                    '1',
+                    'SAI_TAM_INT_ATTR_REPORT_ID',
                     '$tam_report_1',
                 ],
             },
@@ -28,9 +44,9 @@ class TestSaiTamEventAction:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_tam_event_action_remove(self, npu):
+    def test_tam_int_remove(self, npu):
         commands = [
-            {'name': 'tam_event_action_1', 'op': 'remove'},
+            {'name': 'tam_int_1', 'op': 'remove'},
             {'name': 'tam_report_1', 'op': 'remove'},
         ]
 
