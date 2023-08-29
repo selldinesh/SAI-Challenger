@@ -1,21 +1,15 @@
 from pprint import pprint
 
 
-class TestSaiRpfGroupMember:
-    # object with parent SAI_OBJECT_TYPE_RPF_GROUP SAI_OBJECT_TYPE_ROUTER_INTERFACE
+class TestSaiStpPort:
+    # object with parent SAI_OBJECT_TYPE_STP SAI_OBJECT_TYPE_BRIDGE_PORT
 
-    def test_rpf_group_member_create(self, npu):
+    def test_stp_port_create(self, npu):
         commands = [
             {
-                'name': 'rpf_group_1',
+                'name': 'stp_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_RPF_GROUP',
-                'attributes': [],
-            },
-            {
-                'name': 'virtual_router_1',
-                'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_VIRTUAL_ROUTER',
+                'type': 'SAI_OBJECT_TYPE_STP',
                 'attributes': [],
             },
             {
@@ -28,6 +22,12 @@ class TestSaiRpfGroupMember:
                     'SAI_PORT_ATTR_SPEED',
                     '10',
                 ],
+            },
+            {
+                'name': 'virtual_router_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_VIRTUAL_ROUTER',
+                'attributes': [],
             },
             {
                 'name': 'vlan_1',
@@ -63,14 +63,48 @@ class TestSaiRpfGroupMember:
                 ],
             },
             {
-                'name': 'rpf_group_member_1',
+                'name': 'tunnel_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_RPF_GROUP_MEMBER',
+                'type': 'SAI_OBJECT_TYPE_TUNNEL',
                 'attributes': [
-                    'SAI_RPF_GROUP_MEMBER_ATTR_RPF_GROUP_ID',
-                    '$rpf_group_1',
-                    'SAI_RPF_GROUP_MEMBER_ATTR_RPF_INTERFACE_ID',
+                    'SAI_TUNNEL_ATTR_TYPE',
+                    'SAI_TUNNEL_TYPE_IPINIP',
+                    'SAI_TUNNEL_ATTR_UNDERLAY_INTERFACE',
                     '$router_interface_1',
+                    'SAI_TUNNEL_ATTR_OVERLAY_INTERFACE',
+                    '$router_interface_1',
+                ],
+            },
+            {
+                'name': 'bridge_port_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_BRIDGE_PORT',
+                'attributes': [
+                    'SAI_BRIDGE_PORT_ATTR_TYPE',
+                    'SAI_BRIDGE_PORT_TYPE_PORT',
+                    'SAI_BRIDGE_PORT_ATTR_PORT_ID',
+                    '$port_1',
+                    'SAI_BRIDGE_PORT_ATTR_VLAN_ID',
+                    '10',
+                    'SAI_BRIDGE_PORT_ATTR_RIF_ID',
+                    '$router_interface_1',
+                    'SAI_BRIDGE_PORT_ATTR_TUNNEL_ID',
+                    '$tunnel_1',
+                    'SAI_BRIDGE_PORT_ATTR_BRIDGE_ID',
+                    '$bridge_1',
+                ],
+            },
+            {
+                'name': 'stp_port_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_STP_PORT',
+                'attributes': [
+                    'SAI_STP_PORT_ATTR_STP',
+                    '$stp_1',
+                    'SAI_STP_PORT_ATTR_BRIDGE_PORT',
+                    '$bridge_port_1',
+                    'SAI_STP_PORT_ATTR_STATE',
+                    'SAI_STP_PORT_STATE_LEARNING',
                 ],
             },
         ]
@@ -80,15 +114,17 @@ class TestSaiRpfGroupMember:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_rpf_group_member_remove(self, npu):
+    def test_stp_port_remove(self, npu):
         commands = [
-            {'name': 'rpf_group_member_1', 'op': 'remove'},
+            {'name': 'stp_port_1', 'op': 'remove'},
+            {'name': 'bridge_port_1', 'op': 'remove'},
+            {'name': 'tunnel_1', 'op': 'remove'},
             {'name': 'router_interface_1', 'op': 'remove'},
             {'name': 'bridge_1', 'op': 'remove'},
             {'name': 'vlan_1', 'op': 'remove'},
-            {'name': 'port_1', 'op': 'remove'},
             {'name': 'virtual_router_1', 'op': 'remove'},
-            {'name': 'rpf_group_1', 'op': 'remove'},
+            {'name': 'port_1', 'op': 'remove'},
+            {'name': 'stp_1', 'op': 'remove'},
         ]
 
         results = [*npu.process_commands(commands)]
