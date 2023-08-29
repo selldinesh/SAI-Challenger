@@ -1,15 +1,15 @@
 from pprint import pprint
 
 
-class TestSaiTam:
+class TestSaiTamEventThreshold:
     # object with no attributes
 
-    def test_tam_create(self, npu):
+    def test_tam_event_threshold_create(self, npu):
         commands = [
             {
-                'name': 'tam_1',
+                'name': 'tam_event_threshold_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_TAM',
+                'type': 'SAI_OBJECT_TYPE_TAM_EVENT_THRESHOLD',
                 'attributes': [],
             }
         ]
@@ -19,8 +19,8 @@ class TestSaiTam:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_tam_remove(self, npu):
-        commands = [{'name': 'tam_1', 'op': 'remove'}]
+    def test_tam_event_threshold_remove(self, npu):
+        commands = [{'name': 'tam_event_threshold_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')
