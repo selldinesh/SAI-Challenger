@@ -1,11 +1,17 @@
 from pprint import pprint
 
 
-class TestSaiRouterInterface:
-    # object with parent SAI_OBJECT_TYPE_VIRTUAL_ROUTER SAI_OBJECT_TYPE_PORT SAI_OBJECT_TYPE_LAG SAI_OBJECT_TYPE_SYSTEM_PORT SAI_OBJECT_TYPE_VLAN SAI_OBJECT_TYPE_BRIDGE
+class TestSaiRpfGroupMember:
+    # object with parent SAI_OBJECT_TYPE_RPF_GROUP SAI_OBJECT_TYPE_ROUTER_INTERFACE
 
-    def test_router_interface_create(self, npu):
+    def test_rpf_group_member_create(self, npu):
         commands = [
+            {
+                'name': 'rpf_group_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_RPF_GROUP',
+                'attributes': [],
+            },
             {
                 'name': 'virtual_router_1',
                 'op': 'create',
@@ -56,6 +62,17 @@ class TestSaiRouterInterface:
                     '$bridge_1',
                 ],
             },
+            {
+                'name': 'rpf_group_member_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_RPF_GROUP_MEMBER',
+                'attributes': [
+                    'SAI_RPF_GROUP_MEMBER_ATTR_RPF_GROUP_ID',
+                    '$rpf_group_1',
+                    'SAI_RPF_GROUP_MEMBER_ATTR_RPF_INTERFACE_ID',
+                    '$router_interface_1',
+                ],
+            },
         ]
 
         results = [*npu.process_commands(commands)]
@@ -63,13 +80,15 @@ class TestSaiRouterInterface:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_router_interface_remove(self, npu):
+    def test_rpf_group_member_remove(self, npu):
         commands = [
+            {'name': 'rpf_group_member_1', 'op': 'remove'},
             {'name': 'router_interface_1', 'op': 'remove'},
             {'name': 'bridge_1', 'op': 'remove'},
             {'name': 'vlan_1', 'op': 'remove'},
             {'name': 'port_1', 'op': 'remove'},
             {'name': 'virtual_router_1', 'op': 'remove'},
+            {'name': 'rpf_group_1', 'op': 'remove'},
         ]
 
         results = [*npu.process_commands(commands)]
