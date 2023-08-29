@@ -1,10 +1,10 @@
 from pprint import pprint
 
 
-class TestSaiTunnel:
-    # object with parent SAI_OBJECT_TYPE_ROUTER_INTERFACE SAI_OBJECT_TYPE_ROUTER_INTERFACE
+class TestSaiTunnelTermTableEntry:
+    # object with parent SAI_OBJECT_TYPE_VIRTUAL_ROUTER SAI_OBJECT_TYPE_TUNNEL
 
-    def test_tunnel_create(self, npu):
+    def test_tunnel_term_table_entry_create(self, npu):
         commands = [
             {
                 'name': 'virtual_router_1',
@@ -69,6 +69,25 @@ class TestSaiTunnel:
                     '$router_interface_1',
                 ],
             },
+            {
+                'name': 'tunnel_term_table_entry_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_TUNNEL_TERM_TABLE_ENTRY',
+                'attributes': [
+                    'SAI_TUNNEL_TERM_TABLE_ENTRY_ATTR_VR_ID',
+                    '$virtual_router_1',
+                    'SAI_TUNNEL_TERM_TABLE_ENTRY_ATTR_TYPE',
+                    'SAI_TUNNEL_TERM_TABLE_ENTRY_TYPE_P2P',
+                    'SAI_TUNNEL_TERM_TABLE_ENTRY_ATTR_DST_IP',
+                    '180.0.0.1',
+                    'SAI_TUNNEL_TERM_TABLE_ENTRY_ATTR_SRC_IP',
+                    '180.0.0.1',
+                    'SAI_TUNNEL_TERM_TABLE_ENTRY_ATTR_TUNNEL_TYPE',
+                    'SAI_TUNNEL_TYPE_IPINIP',
+                    'SAI_TUNNEL_TERM_TABLE_ENTRY_ATTR_ACTION_TUNNEL_ID',
+                    '$tunnel_1',
+                ],
+            },
         ]
 
         results = [*npu.process_commands(commands)]
@@ -76,8 +95,9 @@ class TestSaiTunnel:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_tunnel_remove(self, npu):
+    def test_tunnel_term_table_entry_remove(self, npu):
         commands = [
+            {'name': 'tunnel_term_table_entry_1', 'op': 'remove'},
             {'name': 'tunnel_1', 'op': 'remove'},
             {'name': 'router_interface_1', 'op': 'remove'},
             {'name': 'bridge_1', 'op': 'remove'},
