@@ -1,10 +1,10 @@
 from pprint import pprint
 
 
-class TestSaiPortConnector:
-    # object with parent SAI_OBJECT_TYPE_PORT SAI_OBJECT_TYPE_PORT
+class TestSaiPortPool:
+    # object with parent SAI_OBJECT_TYPE_PORT SAI_OBJECT_TYPE_BUFFER_POOL
 
-    def test_port_connector_create(self, npu):
+    def test_port_pool_create(self, npu):
         commands = [
             {
                 'name': 'port_1',
@@ -18,14 +18,25 @@ class TestSaiPortConnector:
                 ],
             },
             {
-                'name': 'port_connector_1',
+                'name': 'buffer_pool_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_PORT_CONNECTOR',
+                'type': 'SAI_OBJECT_TYPE_BUFFER_POOL',
                 'attributes': [
-                    'SAI_PORT_CONNECTOR_ATTR_SYSTEM_SIDE_PORT_ID',
+                    'SAI_BUFFER_POOL_ATTR_TYPE',
+                    'SAI_BUFFER_POOL_TYPE_INGRESS',
+                    'SAI_BUFFER_POOL_ATTR_SIZE',
+                    '10',
+                ],
+            },
+            {
+                'name': 'port_pool_1',
+                'op': 'create',
+                'type': 'SAI_OBJECT_TYPE_PORT_POOL',
+                'attributes': [
+                    'SAI_PORT_POOL_ATTR_PORT_ID',
                     '$port_1',
-                    'SAI_PORT_CONNECTOR_ATTR_LINE_SIDE_PORT_ID',
-                    '$port_1',
+                    'SAI_PORT_POOL_ATTR_BUFFER_POOL_ID',
+                    '$buffer_pool_1',
                 ],
             },
         ]
@@ -35,9 +46,10 @@ class TestSaiPortConnector:
         pprint(results)
         assert all(results), 'Create error'
 
-    def test_port_connector_remove(self, npu):
+    def test_port_pool_remove(self, npu):
         commands = [
-            {'name': 'port_connector_1', 'op': 'remove'},
+            {'name': 'port_pool_1', 'op': 'remove'},
+            {'name': 'buffer_pool_1', 'op': 'remove'},
             {'name': 'port_1', 'op': 'remove'},
         ]
 
