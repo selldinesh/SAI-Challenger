@@ -94,7 +94,7 @@ class TestSaiAclCounter:
             {
                 "name": "acl_counter_1",
                 "op": "set",
-                "attributes": ["SAI_ACL_COUNTER_ATTR_LABEL", '""']
+                "attributes": ["SAI_ACL_COUNTER_ATTR_LABEL", "inbound"]
             }
         ]
         results = [*npu.process_commands(commands)]
@@ -119,7 +119,7 @@ class TestSaiAclCounter:
         pprint(results)
         r_value = results[0][0].value()
         print(r_value)
-        assert r_value == '""', 'Get error, expected "" but got %s' %  r_value
+        assert r_value == "inbound", 'Get error, expected "" but got %s' %  r_value
 		
     def test_acl_counter_remove(self, npu):
 
