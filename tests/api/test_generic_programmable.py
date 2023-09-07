@@ -4,12 +4,12 @@ from pprint import pprint
 import pytest
 
 
-class TestSaiDebugCounter:
+class TestSaiGenericProgrammable:
     # object with no parents
 
-    def test_debug_counter_create(self, npu):
+    def test_generic_programmable_create(self, npu):
 
-        commands = [{'name': 'debug_counter_1', 'op': 'create', 'type': 'SAI_OBJECT_TYPE_DEBUG_COUNTER', 'attributes': ['SAI_DEBUG_COUNTER_ATTR_TYPE', 'SAI_DEBUG_COUNTER_TYPE_PORT_IN_DROP_REASONS']}]
+        commands = [{'name': 'generic_programmable_1', 'op': 'create', 'type': 'SAI_OBJECT_TYPE_GENERIC_PROGRAMMABLE', 'attributes': ['SAI_GENERIC_PROGRAMMABLE_ATTR_OBJECT_NAME', '2:10,11']}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values create =======')
@@ -22,7 +22,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_COUNTER_ATTR_PACKETS", '0']
             }
@@ -39,7 +39,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_COUNTER_ATTR_PACKETS"]
             }
@@ -57,7 +57,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_COUNTER_ATTR_BYTES", '0']
             }
@@ -74,7 +74,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_COUNTER_ATTR_BYTES"]
             }
@@ -92,7 +92,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_COUNTER_ATTR_LABEL", '""']
             }
@@ -109,7 +109,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_COUNTER_ATTR_LABEL"]
             }
@@ -127,7 +127,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_PRIORITY", '0']
             }
@@ -144,7 +144,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_PRIORITY"]
             }
@@ -162,7 +162,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ADMIN_STATE", 'true']
             }
@@ -179,7 +179,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ADMIN_STATE"]
             }
@@ -197,7 +197,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_SRC_IPV6", 'disabled']
             }
@@ -214,7 +214,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_SRC_IPV6"]
             }
@@ -232,7 +232,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_SRC_IPV6_WORD3", 'disabled']
             }
@@ -249,7 +249,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_SRC_IPV6_WORD3"]
             }
@@ -267,7 +267,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_SRC_IPV6_WORD2", 'disabled']
             }
@@ -284,7 +284,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_SRC_IPV6_WORD2"]
             }
@@ -302,7 +302,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_SRC_IPV6_WORD1", 'disabled']
             }
@@ -319,7 +319,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_SRC_IPV6_WORD1"]
             }
@@ -337,7 +337,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_SRC_IPV6_WORD0", 'disabled']
             }
@@ -354,7 +354,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_SRC_IPV6_WORD0"]
             }
@@ -372,7 +372,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_DST_IPV6", 'disabled']
             }
@@ -389,7 +389,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_DST_IPV6"]
             }
@@ -407,7 +407,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_DST_IPV6_WORD3", 'disabled']
             }
@@ -424,7 +424,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_DST_IPV6_WORD3"]
             }
@@ -442,7 +442,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_DST_IPV6_WORD2", 'disabled']
             }
@@ -459,7 +459,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_DST_IPV6_WORD2"]
             }
@@ -477,7 +477,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_DST_IPV6_WORD1", 'disabled']
             }
@@ -494,7 +494,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_DST_IPV6_WORD1"]
             }
@@ -512,7 +512,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_DST_IPV6_WORD0", 'disabled']
             }
@@ -529,7 +529,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_DST_IPV6_WORD0"]
             }
@@ -547,7 +547,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_INNER_SRC_IPV6", 'disabled']
             }
@@ -564,7 +564,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_INNER_SRC_IPV6"]
             }
@@ -582,7 +582,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_INNER_DST_IPV6", 'disabled']
             }
@@ -599,7 +599,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_INNER_DST_IPV6"]
             }
@@ -617,7 +617,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_SRC_MAC", 'disabled']
             }
@@ -634,7 +634,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_SRC_MAC"]
             }
@@ -652,7 +652,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_DST_MAC", 'disabled']
             }
@@ -669,7 +669,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_DST_MAC"]
             }
@@ -687,7 +687,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_SRC_IP", 'disabled']
             }
@@ -704,7 +704,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_SRC_IP"]
             }
@@ -722,7 +722,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_DST_IP", 'disabled']
             }
@@ -739,7 +739,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_DST_IP"]
             }
@@ -757,7 +757,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_INNER_SRC_IP", 'disabled']
             }
@@ -774,7 +774,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_INNER_SRC_IP"]
             }
@@ -792,7 +792,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_INNER_DST_IP", 'disabled']
             }
@@ -809,7 +809,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_INNER_DST_IP"]
             }
@@ -827,7 +827,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_IN_PORTS", 'disabled']
             }
@@ -844,7 +844,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_IN_PORTS"]
             }
@@ -862,7 +862,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_OUT_PORTS", 'disabled']
             }
@@ -879,7 +879,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_OUT_PORTS"]
             }
@@ -897,7 +897,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_IN_PORT", 'disabled']
             }
@@ -914,7 +914,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_IN_PORT"]
             }
@@ -932,7 +932,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_OUT_PORT", 'disabled']
             }
@@ -949,7 +949,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_OUT_PORT"]
             }
@@ -967,7 +967,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_SRC_PORT", 'disabled']
             }
@@ -984,7 +984,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_SRC_PORT"]
             }
@@ -1002,7 +1002,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_OUTER_VLAN_ID", 'disabled']
             }
@@ -1019,7 +1019,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_OUTER_VLAN_ID"]
             }
@@ -1037,7 +1037,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_OUTER_VLAN_PRI", 'disabled']
             }
@@ -1054,7 +1054,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_OUTER_VLAN_PRI"]
             }
@@ -1072,7 +1072,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_OUTER_VLAN_CFI", 'disabled']
             }
@@ -1089,7 +1089,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_OUTER_VLAN_CFI"]
             }
@@ -1107,7 +1107,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_INNER_VLAN_ID", 'disabled']
             }
@@ -1124,7 +1124,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_INNER_VLAN_ID"]
             }
@@ -1142,7 +1142,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_INNER_VLAN_PRI", 'disabled']
             }
@@ -1159,7 +1159,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_INNER_VLAN_PRI"]
             }
@@ -1177,7 +1177,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_INNER_VLAN_CFI", 'disabled']
             }
@@ -1194,7 +1194,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_INNER_VLAN_CFI"]
             }
@@ -1212,7 +1212,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_L4_SRC_PORT", 'disabled']
             }
@@ -1229,7 +1229,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_L4_SRC_PORT"]
             }
@@ -1247,7 +1247,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_L4_DST_PORT", 'disabled']
             }
@@ -1264,7 +1264,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_L4_DST_PORT"]
             }
@@ -1282,7 +1282,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_INNER_L4_SRC_PORT", 'disabled']
             }
@@ -1299,7 +1299,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_INNER_L4_SRC_PORT"]
             }
@@ -1317,7 +1317,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_INNER_L4_DST_PORT", 'disabled']
             }
@@ -1334,7 +1334,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_INNER_L4_DST_PORT"]
             }
@@ -1352,7 +1352,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_ETHER_TYPE", 'disabled']
             }
@@ -1369,7 +1369,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_ETHER_TYPE"]
             }
@@ -1387,7 +1387,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_INNER_ETHER_TYPE", 'disabled']
             }
@@ -1404,7 +1404,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_INNER_ETHER_TYPE"]
             }
@@ -1422,7 +1422,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_IP_PROTOCOL", 'disabled']
             }
@@ -1439,7 +1439,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_IP_PROTOCOL"]
             }
@@ -1457,7 +1457,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_INNER_IP_PROTOCOL", 'disabled']
             }
@@ -1474,7 +1474,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_INNER_IP_PROTOCOL"]
             }
@@ -1492,7 +1492,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_IP_IDENTIFICATION", 'disabled']
             }
@@ -1509,7 +1509,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_IP_IDENTIFICATION"]
             }
@@ -1527,7 +1527,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_DSCP", 'disabled']
             }
@@ -1544,7 +1544,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_DSCP"]
             }
@@ -1562,7 +1562,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_ECN", 'disabled']
             }
@@ -1579,7 +1579,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_ECN"]
             }
@@ -1597,7 +1597,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_TTL", 'disabled']
             }
@@ -1614,7 +1614,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_TTL"]
             }
@@ -1632,7 +1632,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_TOS", 'disabled']
             }
@@ -1649,7 +1649,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_TOS"]
             }
@@ -1667,7 +1667,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_IP_FLAGS", 'disabled']
             }
@@ -1684,7 +1684,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_IP_FLAGS"]
             }
@@ -1702,7 +1702,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_TCP_FLAGS", 'disabled']
             }
@@ -1719,7 +1719,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_TCP_FLAGS"]
             }
@@ -1737,7 +1737,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_ACL_IP_TYPE", 'disabled']
             }
@@ -1754,7 +1754,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_ACL_IP_TYPE"]
             }
@@ -1772,7 +1772,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_ACL_IP_FRAG", 'disabled']
             }
@@ -1789,7 +1789,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_ACL_IP_FRAG"]
             }
@@ -1807,7 +1807,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_IPV6_FLOW_LABEL", 'disabled']
             }
@@ -1824,7 +1824,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_IPV6_FLOW_LABEL"]
             }
@@ -1842,7 +1842,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_TC", 'disabled']
             }
@@ -1859,7 +1859,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_TC"]
             }
@@ -1877,7 +1877,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_ICMP_TYPE", 'disabled']
             }
@@ -1894,7 +1894,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_ICMP_TYPE"]
             }
@@ -1912,7 +1912,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_ICMP_CODE", 'disabled']
             }
@@ -1929,7 +1929,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_ICMP_CODE"]
             }
@@ -1947,7 +1947,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_ICMPV6_TYPE", 'disabled']
             }
@@ -1964,7 +1964,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_ICMPV6_TYPE"]
             }
@@ -1982,7 +1982,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_ICMPV6_CODE", 'disabled']
             }
@@ -1999,7 +1999,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_ICMPV6_CODE"]
             }
@@ -2017,7 +2017,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_PACKET_VLAN", 'disabled']
             }
@@ -2034,7 +2034,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_PACKET_VLAN"]
             }
@@ -2052,7 +2052,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_TUNNEL_VNI", 'disabled']
             }
@@ -2069,7 +2069,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_TUNNEL_VNI"]
             }
@@ -2087,7 +2087,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_HAS_VLAN_TAG", 'disabled']
             }
@@ -2104,7 +2104,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_HAS_VLAN_TAG"]
             }
@@ -2122,7 +2122,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MACSEC_SCI", 'disabled']
             }
@@ -2139,7 +2139,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MACSEC_SCI"]
             }
@@ -2157,7 +2157,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL0_LABEL", 'disabled']
             }
@@ -2174,7 +2174,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL0_LABEL"]
             }
@@ -2192,7 +2192,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL0_TTL", 'disabled']
             }
@@ -2209,7 +2209,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL0_TTL"]
             }
@@ -2227,7 +2227,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL0_EXP", 'disabled']
             }
@@ -2244,7 +2244,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL0_EXP"]
             }
@@ -2262,7 +2262,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL0_BOS", 'disabled']
             }
@@ -2279,7 +2279,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL0_BOS"]
             }
@@ -2297,7 +2297,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL1_LABEL", 'disabled']
             }
@@ -2314,7 +2314,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL1_LABEL"]
             }
@@ -2332,7 +2332,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL1_TTL", 'disabled']
             }
@@ -2349,7 +2349,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL1_TTL"]
             }
@@ -2367,7 +2367,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL1_EXP", 'disabled']
             }
@@ -2384,7 +2384,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL1_EXP"]
             }
@@ -2402,7 +2402,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL1_BOS", 'disabled']
             }
@@ -2419,7 +2419,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL1_BOS"]
             }
@@ -2437,7 +2437,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL2_LABEL", 'disabled']
             }
@@ -2454,7 +2454,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL2_LABEL"]
             }
@@ -2472,7 +2472,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL2_TTL", 'disabled']
             }
@@ -2489,7 +2489,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL2_TTL"]
             }
@@ -2507,7 +2507,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL2_EXP", 'disabled']
             }
@@ -2524,7 +2524,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL2_EXP"]
             }
@@ -2542,7 +2542,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL2_BOS", 'disabled']
             }
@@ -2559,7 +2559,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL2_BOS"]
             }
@@ -2577,7 +2577,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL3_LABEL", 'disabled']
             }
@@ -2594,7 +2594,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL3_LABEL"]
             }
@@ -2612,7 +2612,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL3_TTL", 'disabled']
             }
@@ -2629,7 +2629,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL3_TTL"]
             }
@@ -2647,7 +2647,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL3_EXP", 'disabled']
             }
@@ -2664,7 +2664,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL3_EXP"]
             }
@@ -2682,7 +2682,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL3_BOS", 'disabled']
             }
@@ -2699,7 +2699,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL3_BOS"]
             }
@@ -2717,7 +2717,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL4_LABEL", 'disabled']
             }
@@ -2734,7 +2734,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL4_LABEL"]
             }
@@ -2752,7 +2752,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL4_TTL", 'disabled']
             }
@@ -2769,7 +2769,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL4_TTL"]
             }
@@ -2787,7 +2787,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL4_EXP", 'disabled']
             }
@@ -2804,7 +2804,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL4_EXP"]
             }
@@ -2822,7 +2822,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL4_BOS", 'disabled']
             }
@@ -2839,7 +2839,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_MPLS_LABEL4_BOS"]
             }
@@ -2857,7 +2857,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_FDB_DST_USER_META", 'disabled']
             }
@@ -2874,7 +2874,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_FDB_DST_USER_META"]
             }
@@ -2892,7 +2892,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_ROUTE_DST_USER_META", 'disabled']
             }
@@ -2909,7 +2909,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_ROUTE_DST_USER_META"]
             }
@@ -2927,7 +2927,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_NEIGHBOR_DST_USER_META", 'disabled']
             }
@@ -2944,7 +2944,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_NEIGHBOR_DST_USER_META"]
             }
@@ -2962,7 +2962,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_PORT_USER_META", 'disabled']
             }
@@ -2979,7 +2979,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_PORT_USER_META"]
             }
@@ -2997,7 +2997,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_VLAN_USER_META", 'disabled']
             }
@@ -3014,7 +3014,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_VLAN_USER_META"]
             }
@@ -3032,7 +3032,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_ACL_USER_META", 'disabled']
             }
@@ -3049,7 +3049,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_ACL_USER_META"]
             }
@@ -3067,7 +3067,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_FDB_NPU_META_DST_HIT", 'disabled']
             }
@@ -3084,7 +3084,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_FDB_NPU_META_DST_HIT"]
             }
@@ -3102,7 +3102,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_NEIGHBOR_NPU_META_DST_HIT", 'disabled']
             }
@@ -3119,7 +3119,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_NEIGHBOR_NPU_META_DST_HIT"]
             }
@@ -3137,7 +3137,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_ROUTE_NPU_META_DST_HIT", 'disabled']
             }
@@ -3154,7 +3154,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_ROUTE_NPU_META_DST_HIT"]
             }
@@ -3172,7 +3172,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_BTH_OPCODE", 'disabled']
             }
@@ -3189,7 +3189,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_BTH_OPCODE"]
             }
@@ -3207,7 +3207,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_AETH_SYNDROME", 'disabled']
             }
@@ -3224,7 +3224,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_AETH_SYNDROME"]
             }
@@ -3242,7 +3242,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_USER_DEFINED_FIELD_GROUP_MIN", 'disabled']
             }
@@ -3259,7 +3259,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_USER_DEFINED_FIELD_GROUP_MIN"]
             }
@@ -3277,7 +3277,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_USER_DEFINED_FIELD_GROUP_MAX", 'disabled']
             }
@@ -3294,7 +3294,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_USER_DEFINED_FIELD_GROUP_MAX"]
             }
@@ -3312,7 +3312,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_ACL_RANGE_TYPE", 'disabled']
             }
@@ -3329,7 +3329,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_ACL_RANGE_TYPE"]
             }
@@ -3347,7 +3347,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_IPV6_NEXT_HEADER", 'disabled']
             }
@@ -3364,7 +3364,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_IPV6_NEXT_HEADER"]
             }
@@ -3382,7 +3382,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_GRE_KEY", 'disabled']
             }
@@ -3399,7 +3399,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_GRE_KEY"]
             }
@@ -3417,7 +3417,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_TAM_INT_TYPE", 'disabled']
             }
@@ -3434,7 +3434,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_FIELD_TAM_INT_TYPE"]
             }
@@ -3452,7 +3452,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_REDIRECT", 'disabled']
             }
@@ -3469,7 +3469,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_REDIRECT"]
             }
@@ -3487,7 +3487,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_ENDPOINT_IP", 'disabled']
             }
@@ -3504,7 +3504,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_ENDPOINT_IP"]
             }
@@ -3522,7 +3522,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_REDIRECT_LIST", 'disabled']
             }
@@ -3539,7 +3539,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_REDIRECT_LIST"]
             }
@@ -3557,7 +3557,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_PACKET_ACTION", 'disabled']
             }
@@ -3574,7 +3574,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_PACKET_ACTION"]
             }
@@ -3592,7 +3592,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_FLOOD", 'disabled']
             }
@@ -3609,7 +3609,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_FLOOD"]
             }
@@ -3627,7 +3627,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_COUNTER", 'disabled']
             }
@@ -3644,7 +3644,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_COUNTER"]
             }
@@ -3662,7 +3662,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_MIRROR_INGRESS", 'disabled']
             }
@@ -3679,7 +3679,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_MIRROR_INGRESS"]
             }
@@ -3697,7 +3697,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_MIRROR_EGRESS", 'disabled']
             }
@@ -3714,7 +3714,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_MIRROR_EGRESS"]
             }
@@ -3732,7 +3732,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_POLICER", 'disabled']
             }
@@ -3749,7 +3749,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_POLICER"]
             }
@@ -3767,7 +3767,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_DECREMENT_TTL", 'disabled']
             }
@@ -3784,7 +3784,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_DECREMENT_TTL"]
             }
@@ -3802,7 +3802,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_TC", 'disabled']
             }
@@ -3819,7 +3819,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_TC"]
             }
@@ -3837,7 +3837,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_PACKET_COLOR", 'disabled']
             }
@@ -3854,7 +3854,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_PACKET_COLOR"]
             }
@@ -3872,7 +3872,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_INNER_VLAN_ID", 'disabled']
             }
@@ -3889,7 +3889,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_INNER_VLAN_ID"]
             }
@@ -3907,7 +3907,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_INNER_VLAN_PRI", 'disabled']
             }
@@ -3924,7 +3924,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_INNER_VLAN_PRI"]
             }
@@ -3942,7 +3942,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_OUTER_VLAN_ID", 'disabled']
             }
@@ -3959,7 +3959,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_OUTER_VLAN_ID"]
             }
@@ -3977,7 +3977,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_OUTER_VLAN_PRI", 'disabled']
             }
@@ -3994,7 +3994,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_OUTER_VLAN_PRI"]
             }
@@ -4012,7 +4012,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_ADD_VLAN_ID", 'disabled']
             }
@@ -4029,7 +4029,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_ADD_VLAN_ID"]
             }
@@ -4047,7 +4047,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_ADD_VLAN_PRI", 'disabled']
             }
@@ -4064,7 +4064,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_ADD_VLAN_PRI"]
             }
@@ -4082,7 +4082,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_SRC_MAC", 'disabled']
             }
@@ -4099,7 +4099,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_SRC_MAC"]
             }
@@ -4117,7 +4117,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_DST_MAC", 'disabled']
             }
@@ -4134,7 +4134,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_DST_MAC"]
             }
@@ -4152,7 +4152,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_SRC_IP", 'disabled']
             }
@@ -4169,7 +4169,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_SRC_IP"]
             }
@@ -4187,7 +4187,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_DST_IP", 'disabled']
             }
@@ -4204,7 +4204,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_DST_IP"]
             }
@@ -4222,7 +4222,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_SRC_IPV6", 'disabled']
             }
@@ -4239,7 +4239,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_SRC_IPV6"]
             }
@@ -4257,7 +4257,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_DST_IPV6", 'disabled']
             }
@@ -4274,7 +4274,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_DST_IPV6"]
             }
@@ -4292,7 +4292,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_DSCP", 'disabled']
             }
@@ -4309,7 +4309,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_DSCP"]
             }
@@ -4327,7 +4327,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_ECN", 'disabled']
             }
@@ -4344,7 +4344,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_ECN"]
             }
@@ -4362,7 +4362,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_L4_SRC_PORT", 'disabled']
             }
@@ -4379,7 +4379,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_L4_SRC_PORT"]
             }
@@ -4397,7 +4397,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_L4_DST_PORT", 'disabled']
             }
@@ -4414,7 +4414,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_L4_DST_PORT"]
             }
@@ -4432,7 +4432,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_INGRESS_SAMPLEPACKET_ENABLE", 'disabled']
             }
@@ -4449,7 +4449,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_INGRESS_SAMPLEPACKET_ENABLE"]
             }
@@ -4467,7 +4467,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_EGRESS_SAMPLEPACKET_ENABLE", 'disabled']
             }
@@ -4484,7 +4484,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_EGRESS_SAMPLEPACKET_ENABLE"]
             }
@@ -4502,7 +4502,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_ACL_META_DATA", 'disabled']
             }
@@ -4519,7 +4519,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_ACL_META_DATA"]
             }
@@ -4537,7 +4537,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_EGRESS_BLOCK_PORT_LIST", 'disabled']
             }
@@ -4554,7 +4554,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_EGRESS_BLOCK_PORT_LIST"]
             }
@@ -4572,7 +4572,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_USER_TRAP_ID", 'disabled']
             }
@@ -4589,7 +4589,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_USER_TRAP_ID"]
             }
@@ -4607,7 +4607,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_DO_NOT_LEARN", 'disabled']
             }
@@ -4624,7 +4624,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_DO_NOT_LEARN"]
             }
@@ -4642,7 +4642,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_ACL_DTEL_FLOW_OP", 'disabled']
             }
@@ -4659,7 +4659,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_ACL_DTEL_FLOW_OP"]
             }
@@ -4677,7 +4677,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_DTEL_INT_SESSION", 'disabled']
             }
@@ -4694,7 +4694,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_DTEL_INT_SESSION"]
             }
@@ -4712,7 +4712,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_DTEL_DROP_REPORT_ENABLE", 'disabled']
             }
@@ -4729,7 +4729,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_DTEL_DROP_REPORT_ENABLE"]
             }
@@ -4747,7 +4747,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_DTEL_TAIL_DROP_REPORT_ENABLE", 'disabled']
             }
@@ -4764,7 +4764,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_DTEL_TAIL_DROP_REPORT_ENABLE"]
             }
@@ -4782,7 +4782,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_DTEL_FLOW_SAMPLE_PERCENT", 'disabled']
             }
@@ -4799,7 +4799,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_DTEL_FLOW_SAMPLE_PERCENT"]
             }
@@ -4817,7 +4817,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_DTEL_REPORT_ALL_PACKETS", 'disabled']
             }
@@ -4834,7 +4834,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_DTEL_REPORT_ALL_PACKETS"]
             }
@@ -4852,7 +4852,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_NO_NAT", 'disabled']
             }
@@ -4869,7 +4869,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_NO_NAT"]
             }
@@ -4887,7 +4887,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_INT_INSERT", 'disabled']
             }
@@ -4904,7 +4904,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_INT_INSERT"]
             }
@@ -4922,7 +4922,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_INT_DELETE", 'disabled']
             }
@@ -4939,7 +4939,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_INT_DELETE"]
             }
@@ -4957,7 +4957,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_INT_REPORT_FLOW", 'disabled']
             }
@@ -4974,7 +4974,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_INT_REPORT_FLOW"]
             }
@@ -4992,7 +4992,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_INT_REPORT_DROPS", 'disabled']
             }
@@ -5009,7 +5009,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_INT_REPORT_DROPS"]
             }
@@ -5027,7 +5027,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_INT_REPORT_TAIL_DROPS", 'disabled']
             }
@@ -5044,7 +5044,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_INT_REPORT_TAIL_DROPS"]
             }
@@ -5062,7 +5062,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_TAM_INT_OBJECT", 'disabled']
             }
@@ -5079,7 +5079,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_TAM_INT_OBJECT"]
             }
@@ -5097,7 +5097,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_ISOLATION_GROUP", 'disabled']
             }
@@ -5114,7 +5114,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_ISOLATION_GROUP"]
             }
@@ -5132,7 +5132,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_MACSEC_FLOW", 'disabled']
             }
@@ -5149,7 +5149,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_MACSEC_FLOW"]
             }
@@ -5167,7 +5167,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_LAG_HASH_ID", 'disabled']
             }
@@ -5184,7 +5184,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_LAG_HASH_ID"]
             }
@@ -5202,7 +5202,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_ECMP_HASH_ID", 'disabled']
             }
@@ -5219,7 +5219,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_ECMP_HASH_ID"]
             }
@@ -5237,7 +5237,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_VRF", 'disabled']
             }
@@ -5254,7 +5254,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_VRF"]
             }
@@ -5272,7 +5272,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_FORWARDING_CLASS", 'disabled']
             }
@@ -5289,7 +5289,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_FORWARDING_CLASS"]
             }
@@ -5307,7 +5307,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_ARS_MONITORING", 'disabled']
             }
@@ -5324,7 +5324,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_ARS_MONITORING"]
             }
@@ -5342,7 +5342,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_ARS_OBJECT", 'disabled']
             }
@@ -5359,7 +5359,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_SET_ARS_OBJECT"]
             }
@@ -5377,7 +5377,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_DISABLE_ARS_FORWARDING", 'disabled']
             }
@@ -5394,7 +5394,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_DISABLE_ARS_FORWARDING"]
             }
@@ -5412,7 +5412,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_CHAIN_REDIRECT", 'disabled']
             }
@@ -5429,7 +5429,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_ENTRY_ATTR_ACTION_CHAIN_REDIRECT"]
             }
@@ -5447,7 +5447,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_TABLE_ATTR_ENTRY_LIST"]
             }
@@ -5465,7 +5465,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_TABLE_ATTR_AVAILABLE_ACL_ENTRY"]
             }
@@ -5483,7 +5483,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_TABLE_ATTR_AVAILABLE_ACL_COUNTER"]
             }
@@ -5501,7 +5501,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_TABLE_GROUP_ATTR_MEMBER_LIST"]
             }
@@ -5519,7 +5519,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_TABLE_GROUP_ATTR_CHAIN_GROUP_LIST"]
             }
@@ -5537,7 +5537,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ACL_TABLE_GROUP_MEMBER_ATTR_ACL_TABLE_CHAIN_GROUP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -5554,7 +5554,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ACL_TABLE_GROUP_MEMBER_ATTR_ACL_TABLE_CHAIN_GROUP_ID"]
             }
@@ -5572,7 +5572,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_ATTR_MODE", 'SAI_ARS_MODE_FLOWLET_QUALITY']
             }
@@ -5589,7 +5589,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_ATTR_MODE"]
             }
@@ -5607,7 +5607,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_ATTR_IDLE_TIME", '256']
             }
@@ -5624,7 +5624,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_ATTR_IDLE_TIME"]
             }
@@ -5642,7 +5642,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_ATTR_MAX_FLOWS", '512']
             }
@@ -5659,7 +5659,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_ATTR_MAX_FLOWS"]
             }
@@ -5677,7 +5677,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_ATTR_MON_ENABLE", 'false']
             }
@@ -5694,7 +5694,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_ATTR_MON_ENABLE"]
             }
@@ -5712,7 +5712,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_ATTR_SAMPLEPACKET_ENABLE", 'SAI_NULL_OBJECT_ID']
             }
@@ -5729,7 +5729,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_ATTR_SAMPLEPACKET_ENABLE"]
             }
@@ -5747,7 +5747,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_ATTR_MAX_ALT_MEMEBERS_PER_GROUP", '16']
             }
@@ -5764,7 +5764,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_ATTR_MAX_ALT_MEMEBERS_PER_GROUP"]
             }
@@ -5782,7 +5782,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_ATTR_MAX_PRIMARY_MEMEBERS_PER_GROUP", '16']
             }
@@ -5799,7 +5799,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_ATTR_MAX_PRIMARY_MEMEBERS_PER_GROUP"]
             }
@@ -5817,7 +5817,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_ATTR_PRIMARY_PATH_QUALITY_THRESHOLD", '16']
             }
@@ -5834,7 +5834,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_ATTR_PRIMARY_PATH_QUALITY_THRESHOLD"]
             }
@@ -5852,7 +5852,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_ATTR_ALTERNATE_PATH_COST", '0']
             }
@@ -5869,7 +5869,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_ATTR_ALTERNATE_PATH_COST"]
             }
@@ -5887,7 +5887,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_ATTR_ALTERNATE_PATH_BIAS", '0']
             }
@@ -5904,7 +5904,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_ATTR_ALTERNATE_PATH_BIAS"]
             }
@@ -5922,7 +5922,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_ALGO", 'SAI_ARS_PROFILE_ALGO_EWMA']
             }
@@ -5939,7 +5939,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_ALGO"]
             }
@@ -5957,7 +5957,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_SAMPLING_INTERVAL", '16']
             }
@@ -5974,7 +5974,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_SAMPLING_INTERVAL"]
             }
@@ -5992,7 +5992,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_ARS_RANDOM_SEED", '0']
             }
@@ -6009,7 +6009,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_ARS_RANDOM_SEED"]
             }
@@ -6027,7 +6027,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_ECMP_ARS_MAX_GROUPS"]
             }
@@ -6045,7 +6045,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_ECMP_ARS_MAX_MEMBERS_PER_GROUP"]
             }
@@ -6063,7 +6063,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_LAG_ARS_MAX_GROUPS"]
             }
@@ -6081,7 +6081,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_LAG_ARS_MAX_MEMBERS_PER_GROUP"]
             }
@@ -6099,7 +6099,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_PORT_LOAD_PAST", 'true']
             }
@@ -6116,7 +6116,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_PORT_LOAD_PAST"]
             }
@@ -6134,7 +6134,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_PORT_LOAD_PAST_WEIGHT", '16']
             }
@@ -6151,7 +6151,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_PORT_LOAD_PAST_WEIGHT"]
             }
@@ -6169,7 +6169,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_PORT_LOAD_FUTURE", 'true']
             }
@@ -6186,7 +6186,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_PORT_LOAD_FUTURE"]
             }
@@ -6204,7 +6204,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_PORT_LOAD_FUTURE_WEIGHT", '16']
             }
@@ -6221,7 +6221,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_PORT_LOAD_FUTURE_WEIGHT"]
             }
@@ -6239,7 +6239,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_PORT_LOAD_CURRENT", 'false']
             }
@@ -6256,7 +6256,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_PORT_LOAD_CURRENT"]
             }
@@ -6274,7 +6274,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_PORT_LOAD_EXPONENT", '2']
             }
@@ -6291,7 +6291,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_PORT_LOAD_EXPONENT"]
             }
@@ -6309,7 +6309,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BANDS"]
             }
@@ -6327,7 +6327,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_0_MIN_THRESHOLD", '0']
             }
@@ -6344,7 +6344,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_0_MIN_THRESHOLD"]
             }
@@ -6362,7 +6362,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_0_MAX_THRESHOLD", '0']
             }
@@ -6379,7 +6379,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_0_MAX_THRESHOLD"]
             }
@@ -6397,7 +6397,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_1_MIN_THRESHOLD", '0']
             }
@@ -6414,7 +6414,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_1_MIN_THRESHOLD"]
             }
@@ -6432,7 +6432,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_1_MAX_THRESHOLD", '0']
             }
@@ -6449,7 +6449,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_1_MAX_THRESHOLD"]
             }
@@ -6467,7 +6467,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_2_MIN_THRESHOLD", '0']
             }
@@ -6484,7 +6484,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_2_MIN_THRESHOLD"]
             }
@@ -6502,7 +6502,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_2_MAX_THRESHOLD", '0']
             }
@@ -6519,7 +6519,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_2_MAX_THRESHOLD"]
             }
@@ -6537,7 +6537,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_3_MIN_THRESHOLD", '0']
             }
@@ -6554,7 +6554,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_3_MIN_THRESHOLD"]
             }
@@ -6572,7 +6572,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_3_MAX_THRESHOLD", '0']
             }
@@ -6589,7 +6589,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_3_MAX_THRESHOLD"]
             }
@@ -6607,7 +6607,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_4_MIN_THRESHOLD", '0']
             }
@@ -6624,7 +6624,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_4_MIN_THRESHOLD"]
             }
@@ -6642,7 +6642,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_4_MAX_THRESHOLD", '0']
             }
@@ -6659,7 +6659,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_4_MAX_THRESHOLD"]
             }
@@ -6677,7 +6677,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_5_MIN_THRESHOLD", '0']
             }
@@ -6694,7 +6694,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_5_MIN_THRESHOLD"]
             }
@@ -6712,7 +6712,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_5_MAX_THRESHOLD", '0']
             }
@@ -6729,7 +6729,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_5_MAX_THRESHOLD"]
             }
@@ -6747,7 +6747,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_6_MIN_THRESHOLD", '0']
             }
@@ -6764,7 +6764,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_6_MIN_THRESHOLD"]
             }
@@ -6782,7 +6782,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_6_MAX_THRESHOLD", '0']
             }
@@ -6799,7 +6799,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_6_MAX_THRESHOLD"]
             }
@@ -6817,7 +6817,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_7_MIN_THRESHOLD", '0']
             }
@@ -6834,7 +6834,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_7_MIN_THRESHOLD"]
             }
@@ -6852,7 +6852,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_7_MAX_THRESHOLD", '0']
             }
@@ -6869,7 +6869,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ARS_PROFILE_ATTR_QUANT_BAND_7_MAX_THRESHOLD"]
             }
@@ -6887,7 +6887,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BFD_SESSION_ATTR_VIRTUAL_ROUTER", 'TODO']
             }
@@ -6904,7 +6904,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BFD_SESSION_ATTR_VIRTUAL_ROUTER"]
             }
@@ -6922,7 +6922,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BFD_SESSION_ATTR_PORT", 'TODO']
             }
@@ -6939,7 +6939,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BFD_SESSION_ATTR_PORT"]
             }
@@ -6957,7 +6957,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BFD_SESSION_ATTR_TC", '0']
             }
@@ -6974,7 +6974,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BFD_SESSION_ATTR_TC"]
             }
@@ -6992,7 +6992,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BFD_SESSION_ATTR_VLAN_TPID", '0x8100']
             }
@@ -7009,7 +7009,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BFD_SESSION_ATTR_VLAN_TPID"]
             }
@@ -7027,7 +7027,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BFD_SESSION_ATTR_VLAN_PRI", '0']
             }
@@ -7044,7 +7044,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BFD_SESSION_ATTR_VLAN_PRI"]
             }
@@ -7062,7 +7062,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BFD_SESSION_ATTR_VLAN_CFI", '0']
             }
@@ -7079,7 +7079,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BFD_SESSION_ATTR_VLAN_CFI"]
             }
@@ -7097,7 +7097,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BFD_SESSION_ATTR_IPHDR_VERSION", 'TODO']
             }
@@ -7114,7 +7114,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BFD_SESSION_ATTR_IPHDR_VERSION"]
             }
@@ -7132,7 +7132,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BFD_SESSION_ATTR_TOS", '0']
             }
@@ -7149,7 +7149,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BFD_SESSION_ATTR_TOS"]
             }
@@ -7167,7 +7167,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BFD_SESSION_ATTR_TTL", '255']
             }
@@ -7184,7 +7184,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BFD_SESSION_ATTR_TTL"]
             }
@@ -7202,7 +7202,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BFD_SESSION_ATTR_TUNNEL_TOS", '0']
             }
@@ -7219,7 +7219,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BFD_SESSION_ATTR_TUNNEL_TOS"]
             }
@@ -7237,7 +7237,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BFD_SESSION_ATTR_TUNNEL_TTL", '255']
             }
@@ -7254,7 +7254,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BFD_SESSION_ATTR_TUNNEL_TTL"]
             }
@@ -7272,7 +7272,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BFD_SESSION_ATTR_SRC_MAC_ADDRESS", 'TODO']
             }
@@ -7289,7 +7289,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BFD_SESSION_ATTR_SRC_MAC_ADDRESS"]
             }
@@ -7307,7 +7307,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BFD_SESSION_ATTR_DST_MAC_ADDRESS", 'TODO']
             }
@@ -7324,7 +7324,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BFD_SESSION_ATTR_DST_MAC_ADDRESS"]
             }
@@ -7342,7 +7342,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BFD_SESSION_ATTR_ECHO_ENABLE", 'false']
             }
@@ -7359,7 +7359,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BFD_SESSION_ATTR_ECHO_ENABLE"]
             }
@@ -7377,7 +7377,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BFD_SESSION_ATTR_MIN_TX", 'TODO']
             }
@@ -7394,7 +7394,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BFD_SESSION_ATTR_MIN_TX"]
             }
@@ -7412,7 +7412,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BFD_SESSION_ATTR_MIN_RX", 'TODO']
             }
@@ -7429,7 +7429,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BFD_SESSION_ATTR_MIN_RX"]
             }
@@ -7447,7 +7447,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BFD_SESSION_ATTR_MULTIPLIER", 'TODO']
             }
@@ -7464,7 +7464,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BFD_SESSION_ATTR_MULTIPLIER"]
             }
@@ -7482,7 +7482,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BFD_SESSION_ATTR_REMOTE_MIN_TX"]
             }
@@ -7500,7 +7500,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BFD_SESSION_ATTR_REMOTE_MIN_RX"]
             }
@@ -7518,7 +7518,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BFD_SESSION_ATTR_STATE"]
             }
@@ -7536,7 +7536,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BFD_SESSION_ATTR_NEGOTIATED_TX"]
             }
@@ -7554,7 +7554,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BFD_SESSION_ATTR_NEGOTIATED_RX"]
             }
@@ -7572,7 +7572,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BFD_SESSION_ATTR_LOCAL_DIAG"]
             }
@@ -7590,7 +7590,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BFD_SESSION_ATTR_REMOTE_DIAG"]
             }
@@ -7608,7 +7608,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BFD_SESSION_ATTR_REMOTE_MULTIPLIER"]
             }
@@ -7626,7 +7626,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BRIDGE_ATTR_PORT_LIST"]
             }
@@ -7644,7 +7644,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BRIDGE_ATTR_MAX_LEARNED_ADDRESSES", '0']
             }
@@ -7661,7 +7661,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BRIDGE_ATTR_MAX_LEARNED_ADDRESSES"]
             }
@@ -7679,7 +7679,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BRIDGE_ATTR_LEARN_DISABLE", 'false']
             }
@@ -7696,7 +7696,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BRIDGE_ATTR_LEARN_DISABLE"]
             }
@@ -7714,7 +7714,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BRIDGE_ATTR_UNKNOWN_UNICAST_FLOOD_CONTROL_TYPE", 'SAI_BRIDGE_FLOOD_CONTROL_TYPE_SUB_PORTS']
             }
@@ -7731,7 +7731,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BRIDGE_ATTR_UNKNOWN_UNICAST_FLOOD_CONTROL_TYPE"]
             }
@@ -7749,7 +7749,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BRIDGE_ATTR_UNKNOWN_UNICAST_FLOOD_GROUP", 'SAI_NULL_OBJECT_ID']
             }
@@ -7766,7 +7766,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BRIDGE_ATTR_UNKNOWN_UNICAST_FLOOD_GROUP"]
             }
@@ -7784,7 +7784,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BRIDGE_ATTR_UNKNOWN_MULTICAST_FLOOD_CONTROL_TYPE", 'SAI_BRIDGE_FLOOD_CONTROL_TYPE_SUB_PORTS']
             }
@@ -7801,7 +7801,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BRIDGE_ATTR_UNKNOWN_MULTICAST_FLOOD_CONTROL_TYPE"]
             }
@@ -7819,7 +7819,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BRIDGE_ATTR_UNKNOWN_MULTICAST_FLOOD_GROUP", 'SAI_NULL_OBJECT_ID']
             }
@@ -7836,7 +7836,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BRIDGE_ATTR_UNKNOWN_MULTICAST_FLOOD_GROUP"]
             }
@@ -7854,7 +7854,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BRIDGE_ATTR_BROADCAST_FLOOD_CONTROL_TYPE", 'SAI_BRIDGE_FLOOD_CONTROL_TYPE_SUB_PORTS']
             }
@@ -7871,7 +7871,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BRIDGE_ATTR_BROADCAST_FLOOD_CONTROL_TYPE"]
             }
@@ -7889,7 +7889,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BRIDGE_ATTR_BROADCAST_FLOOD_GROUP", 'SAI_NULL_OBJECT_ID']
             }
@@ -7906,7 +7906,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BRIDGE_ATTR_BROADCAST_FLOOD_GROUP"]
             }
@@ -7924,7 +7924,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BRIDGE_PORT_ATTR_TAGGING_MODE", 'SAI_BRIDGE_PORT_TAGGING_MODE_TAGGED']
             }
@@ -7941,7 +7941,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BRIDGE_PORT_ATTR_TAGGING_MODE"]
             }
@@ -7959,7 +7959,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BRIDGE_PORT_ATTR_BRIDGE_ID", 'TODO']
             }
@@ -7976,7 +7976,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BRIDGE_PORT_ATTR_BRIDGE_ID"]
             }
@@ -7994,7 +7994,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BRIDGE_PORT_ATTR_FDB_LEARNING_MODE", 'SAI_BRIDGE_PORT_FDB_LEARNING_MODE_HW']
             }
@@ -8011,7 +8011,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BRIDGE_PORT_ATTR_FDB_LEARNING_MODE"]
             }
@@ -8029,7 +8029,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BRIDGE_PORT_ATTR_MAX_LEARNED_ADDRESSES", '0']
             }
@@ -8046,7 +8046,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BRIDGE_PORT_ATTR_MAX_LEARNED_ADDRESSES"]
             }
@@ -8064,7 +8064,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BRIDGE_PORT_ATTR_FDB_LEARNING_LIMIT_VIOLATION_PACKET_ACTION", 'SAI_PACKET_ACTION_DROP']
             }
@@ -8081,7 +8081,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BRIDGE_PORT_ATTR_FDB_LEARNING_LIMIT_VIOLATION_PACKET_ACTION"]
             }
@@ -8099,7 +8099,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BRIDGE_PORT_ATTR_ADMIN_STATE", 'false']
             }
@@ -8116,7 +8116,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BRIDGE_PORT_ATTR_ADMIN_STATE"]
             }
@@ -8134,7 +8134,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BRIDGE_PORT_ATTR_INGRESS_FILTERING", 'false']
             }
@@ -8151,7 +8151,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BRIDGE_PORT_ATTR_INGRESS_FILTERING"]
             }
@@ -8169,7 +8169,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BRIDGE_PORT_ATTR_EGRESS_FILTERING", 'false']
             }
@@ -8186,7 +8186,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BRIDGE_PORT_ATTR_EGRESS_FILTERING"]
             }
@@ -8204,7 +8204,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BRIDGE_PORT_ATTR_ISOLATION_GROUP", 'SAI_NULL_OBJECT_ID']
             }
@@ -8221,7 +8221,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BRIDGE_PORT_ATTR_ISOLATION_GROUP"]
             }
@@ -8239,7 +8239,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BUFFER_POOL_ATTR_SHARED_SIZE"]
             }
@@ -8257,7 +8257,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BUFFER_POOL_ATTR_SIZE", 'TODO']
             }
@@ -8274,7 +8274,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BUFFER_POOL_ATTR_SIZE"]
             }
@@ -8292,7 +8292,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BUFFER_POOL_ATTR_TAM", 'empty']
             }
@@ -8309,7 +8309,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BUFFER_POOL_ATTR_TAM"]
             }
@@ -8327,7 +8327,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BUFFER_POOL_ATTR_XOFF_SIZE", '0']
             }
@@ -8344,7 +8344,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BUFFER_POOL_ATTR_XOFF_SIZE"]
             }
@@ -8362,7 +8362,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BUFFER_POOL_ATTR_WRED_PROFILE_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -8379,7 +8379,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BUFFER_POOL_ATTR_WRED_PROFILE_ID"]
             }
@@ -8397,7 +8397,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BUFFER_PROFILE_ATTR_RESERVED_BUFFER_SIZE", 'TODO']
             }
@@ -8414,7 +8414,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BUFFER_PROFILE_ATTR_RESERVED_BUFFER_SIZE"]
             }
@@ -8432,7 +8432,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BUFFER_PROFILE_ATTR_SHARED_DYNAMIC_TH", 'TODO']
             }
@@ -8449,7 +8449,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BUFFER_PROFILE_ATTR_SHARED_DYNAMIC_TH"]
             }
@@ -8467,7 +8467,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BUFFER_PROFILE_ATTR_SHARED_STATIC_TH", 'TODO']
             }
@@ -8484,7 +8484,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BUFFER_PROFILE_ATTR_SHARED_STATIC_TH"]
             }
@@ -8502,7 +8502,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BUFFER_PROFILE_ATTR_XOFF_TH", '0']
             }
@@ -8519,7 +8519,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BUFFER_PROFILE_ATTR_XOFF_TH"]
             }
@@ -8537,7 +8537,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BUFFER_PROFILE_ATTR_XON_TH", '0']
             }
@@ -8554,7 +8554,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BUFFER_PROFILE_ATTR_XON_TH"]
             }
@@ -8572,7 +8572,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_BUFFER_PROFILE_ATTR_XON_OFFSET_TH", '0']
             }
@@ -8589,7 +8589,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_BUFFER_PROFILE_ATTR_XON_OFFSET_TH"]
             }
@@ -8607,7 +8607,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_COUNTER_ATTR_LABEL", '""']
             }
@@ -8624,7 +8624,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_COUNTER_ATTR_LABEL"]
             }
@@ -8642,7 +8642,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DASH_ACL_GROUP_ATTR_IP_ADDR_FAMILY", 'SAI_IP_ADDR_FAMILY_IPV4']
             }
@@ -8659,7 +8659,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DASH_ACL_GROUP_ATTR_IP_ADDR_FAMILY"]
             }
@@ -8677,7 +8677,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DASH_ACL_RULE_ATTR_ACTION", 'SAI_DASH_ACL_RULE_ACTION_PERMIT']
             }
@@ -8694,7 +8694,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DASH_ACL_RULE_ATTR_ACTION"]
             }
@@ -8712,7 +8712,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DASH_ACL_RULE_ATTR_COUNTER_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -8729,7 +8729,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DASH_ACL_RULE_ATTR_COUNTER_ID"]
             }
@@ -8747,7 +8747,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DASH_ACL_RULE_ATTR_IP_ADDR_FAMILY"]
             }
@@ -8765,7 +8765,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DEBUG_COUNTER_ATTR_INDEX"]
             }
@@ -8783,7 +8783,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DEBUG_COUNTER_ATTR_IN_DROP_REASON_LIST", 'empty']
             }
@@ -8800,7 +8800,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DEBUG_COUNTER_ATTR_IN_DROP_REASON_LIST"]
             }
@@ -8818,7 +8818,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DEBUG_COUNTER_ATTR_OUT_DROP_REASON_LIST", 'empty']
             }
@@ -8835,7 +8835,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DEBUG_COUNTER_ATTR_OUT_DROP_REASON_LIST"]
             }
@@ -8853,7 +8853,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DIRECTION_LOOKUP_ENTRY_ATTR_ACTION", 'SAI_DIRECTION_LOOKUP_ENTRY_ACTION_SET_OUTBOUND_DIRECTION']
             }
@@ -8870,7 +8870,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DIRECTION_LOOKUP_ENTRY_ATTR_ACTION"]
             }
@@ -8888,7 +8888,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DTEL_ATTR_INT_ENDPOINT_ENABLE", 'false']
             }
@@ -8905,7 +8905,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DTEL_ATTR_INT_ENDPOINT_ENABLE"]
             }
@@ -8923,7 +8923,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DTEL_ATTR_INT_TRANSIT_ENABLE", 'false']
             }
@@ -8940,7 +8940,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DTEL_ATTR_INT_TRANSIT_ENABLE"]
             }
@@ -8958,7 +8958,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DTEL_ATTR_POSTCARD_ENABLE", 'false']
             }
@@ -8975,7 +8975,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DTEL_ATTR_POSTCARD_ENABLE"]
             }
@@ -8993,7 +8993,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DTEL_ATTR_DROP_REPORT_ENABLE", 'false']
             }
@@ -9010,7 +9010,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DTEL_ATTR_DROP_REPORT_ENABLE"]
             }
@@ -9028,7 +9028,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DTEL_ATTR_QUEUE_REPORT_ENABLE", 'false']
             }
@@ -9045,7 +9045,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DTEL_ATTR_QUEUE_REPORT_ENABLE"]
             }
@@ -9063,7 +9063,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DTEL_ATTR_SWITCH_ID", '0']
             }
@@ -9080,7 +9080,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DTEL_ATTR_SWITCH_ID"]
             }
@@ -9098,7 +9098,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DTEL_ATTR_FLOW_STATE_CLEAR_CYCLE", '0']
             }
@@ -9115,7 +9115,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DTEL_ATTR_FLOW_STATE_CLEAR_CYCLE"]
             }
@@ -9133,7 +9133,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DTEL_ATTR_LATENCY_SENSITIVITY", '0']
             }
@@ -9150,7 +9150,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DTEL_ATTR_LATENCY_SENSITIVITY"]
             }
@@ -9168,7 +9168,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DTEL_ATTR_SINK_PORT_LIST", 'empty']
             }
@@ -9185,7 +9185,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DTEL_ATTR_SINK_PORT_LIST"]
             }
@@ -9203,7 +9203,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DTEL_ATTR_INT_L4_DSCP", 'disabled']
             }
@@ -9220,7 +9220,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DTEL_ATTR_INT_L4_DSCP"]
             }
@@ -9238,7 +9238,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DTEL_EVENT_ATTR_REPORT_SESSION", 'SAI_NULL_OBJECT_ID']
             }
@@ -9255,7 +9255,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DTEL_EVENT_ATTR_REPORT_SESSION"]
             }
@@ -9273,7 +9273,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DTEL_EVENT_ATTR_DSCP_VALUE", '0']
             }
@@ -9290,7 +9290,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DTEL_EVENT_ATTR_DSCP_VALUE"]
             }
@@ -9308,7 +9308,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DTEL_INT_SESSION_ATTR_MAX_HOP_COUNT", '8']
             }
@@ -9325,7 +9325,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DTEL_INT_SESSION_ATTR_MAX_HOP_COUNT"]
             }
@@ -9343,7 +9343,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DTEL_INT_SESSION_ATTR_COLLECT_SWITCH_ID", 'false']
             }
@@ -9360,7 +9360,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DTEL_INT_SESSION_ATTR_COLLECT_SWITCH_ID"]
             }
@@ -9378,7 +9378,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DTEL_INT_SESSION_ATTR_COLLECT_SWITCH_PORTS", 'false']
             }
@@ -9395,7 +9395,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DTEL_INT_SESSION_ATTR_COLLECT_SWITCH_PORTS"]
             }
@@ -9413,7 +9413,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DTEL_INT_SESSION_ATTR_COLLECT_INGRESS_TIMESTAMP", 'false']
             }
@@ -9430,7 +9430,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DTEL_INT_SESSION_ATTR_COLLECT_INGRESS_TIMESTAMP"]
             }
@@ -9448,7 +9448,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DTEL_INT_SESSION_ATTR_COLLECT_EGRESS_TIMESTAMP", 'false']
             }
@@ -9465,7 +9465,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DTEL_INT_SESSION_ATTR_COLLECT_EGRESS_TIMESTAMP"]
             }
@@ -9483,7 +9483,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DTEL_INT_SESSION_ATTR_COLLECT_QUEUE_INFO", 'false']
             }
@@ -9500,7 +9500,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DTEL_INT_SESSION_ATTR_COLLECT_QUEUE_INFO"]
             }
@@ -9518,7 +9518,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DTEL_QUEUE_REPORT_ATTR_DEPTH_THRESHOLD", '0']
             }
@@ -9535,7 +9535,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DTEL_QUEUE_REPORT_ATTR_DEPTH_THRESHOLD"]
             }
@@ -9553,7 +9553,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DTEL_QUEUE_REPORT_ATTR_LATENCY_THRESHOLD", '0']
             }
@@ -9570,7 +9570,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DTEL_QUEUE_REPORT_ATTR_LATENCY_THRESHOLD"]
             }
@@ -9588,7 +9588,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DTEL_QUEUE_REPORT_ATTR_BREACH_QUOTA", '0']
             }
@@ -9605,7 +9605,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DTEL_QUEUE_REPORT_ATTR_BREACH_QUOTA"]
             }
@@ -9623,7 +9623,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DTEL_QUEUE_REPORT_ATTR_TAIL_DROP", 'false']
             }
@@ -9640,7 +9640,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DTEL_QUEUE_REPORT_ATTR_TAIL_DROP"]
             }
@@ -9658,7 +9658,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DTEL_REPORT_SESSION_ATTR_SRC_IP", '0.0.0.0']
             }
@@ -9675,7 +9675,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DTEL_REPORT_SESSION_ATTR_SRC_IP"]
             }
@@ -9693,7 +9693,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DTEL_REPORT_SESSION_ATTR_DST_IP_LIST", 'empty']
             }
@@ -9710,7 +9710,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DTEL_REPORT_SESSION_ATTR_DST_IP_LIST"]
             }
@@ -9728,7 +9728,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DTEL_REPORT_SESSION_ATTR_VIRTUAL_ROUTER_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -9745,7 +9745,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DTEL_REPORT_SESSION_ATTR_VIRTUAL_ROUTER_ID"]
             }
@@ -9763,7 +9763,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DTEL_REPORT_SESSION_ATTR_TRUNCATE_SIZE", '0']
             }
@@ -9780,7 +9780,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DTEL_REPORT_SESSION_ATTR_TRUNCATE_SIZE"]
             }
@@ -9798,7 +9798,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_DTEL_REPORT_SESSION_ATTR_UDP_DST_PORT", '0']
             }
@@ -9815,7 +9815,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_DTEL_REPORT_SESSION_ATTR_UDP_DST_PORT"]
             }
@@ -9833,7 +9833,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_CPS", '0']
             }
@@ -9850,7 +9850,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_CPS"]
             }
@@ -9868,7 +9868,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_PPS", '0']
             }
@@ -9885,7 +9885,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_PPS"]
             }
@@ -9903,7 +9903,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_FLOWS", '0']
             }
@@ -9920,7 +9920,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_FLOWS"]
             }
@@ -9938,7 +9938,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_ADMIN_STATE", 'false']
             }
@@ -9955,7 +9955,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_ADMIN_STATE"]
             }
@@ -9973,7 +9973,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_VM_UNDERLAY_DIP", '0.0.0.0']
             }
@@ -9990,7 +9990,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_VM_UNDERLAY_DIP"]
             }
@@ -10008,7 +10008,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_VM_VNI", '0']
             }
@@ -10025,7 +10025,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_VM_VNI"]
             }
@@ -10043,7 +10043,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_VNET_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -10060,7 +10060,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_VNET_ID"]
             }
@@ -10078,7 +10078,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_V4_METER_POLICY_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -10095,7 +10095,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_V4_METER_POLICY_ID"]
             }
@@ -10113,7 +10113,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_V6_METER_POLICY_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -10130,7 +10130,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_V6_METER_POLICY_ID"]
             }
@@ -10148,7 +10148,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_INBOUND_V4_STAGE1_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -10165,7 +10165,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_INBOUND_V4_STAGE1_DASH_ACL_GROUP_ID"]
             }
@@ -10183,7 +10183,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_INBOUND_V4_STAGE2_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -10200,7 +10200,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_INBOUND_V4_STAGE2_DASH_ACL_GROUP_ID"]
             }
@@ -10218,7 +10218,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_INBOUND_V4_STAGE3_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -10235,7 +10235,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_INBOUND_V4_STAGE3_DASH_ACL_GROUP_ID"]
             }
@@ -10253,7 +10253,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_INBOUND_V4_STAGE4_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -10270,7 +10270,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_INBOUND_V4_STAGE4_DASH_ACL_GROUP_ID"]
             }
@@ -10288,7 +10288,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_INBOUND_V4_STAGE5_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -10305,7 +10305,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_INBOUND_V4_STAGE5_DASH_ACL_GROUP_ID"]
             }
@@ -10323,7 +10323,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_INBOUND_V6_STAGE1_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -10340,7 +10340,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_INBOUND_V6_STAGE1_DASH_ACL_GROUP_ID"]
             }
@@ -10358,7 +10358,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_INBOUND_V6_STAGE2_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -10375,7 +10375,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_INBOUND_V6_STAGE2_DASH_ACL_GROUP_ID"]
             }
@@ -10393,7 +10393,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_INBOUND_V6_STAGE3_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -10410,7 +10410,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_INBOUND_V6_STAGE3_DASH_ACL_GROUP_ID"]
             }
@@ -10428,7 +10428,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_INBOUND_V6_STAGE4_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -10445,7 +10445,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_INBOUND_V6_STAGE4_DASH_ACL_GROUP_ID"]
             }
@@ -10463,7 +10463,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_INBOUND_V6_STAGE5_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -10480,7 +10480,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_INBOUND_V6_STAGE5_DASH_ACL_GROUP_ID"]
             }
@@ -10498,7 +10498,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_OUTBOUND_V4_STAGE1_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -10515,7 +10515,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_OUTBOUND_V4_STAGE1_DASH_ACL_GROUP_ID"]
             }
@@ -10533,7 +10533,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_OUTBOUND_V4_STAGE2_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -10550,7 +10550,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_OUTBOUND_V4_STAGE2_DASH_ACL_GROUP_ID"]
             }
@@ -10568,7 +10568,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_OUTBOUND_V4_STAGE3_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -10585,7 +10585,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_OUTBOUND_V4_STAGE3_DASH_ACL_GROUP_ID"]
             }
@@ -10603,7 +10603,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_OUTBOUND_V4_STAGE4_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -10620,7 +10620,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_OUTBOUND_V4_STAGE4_DASH_ACL_GROUP_ID"]
             }
@@ -10638,7 +10638,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_OUTBOUND_V4_STAGE5_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -10655,7 +10655,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_OUTBOUND_V4_STAGE5_DASH_ACL_GROUP_ID"]
             }
@@ -10673,7 +10673,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_OUTBOUND_V6_STAGE1_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -10690,7 +10690,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_OUTBOUND_V6_STAGE1_DASH_ACL_GROUP_ID"]
             }
@@ -10708,7 +10708,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_OUTBOUND_V6_STAGE2_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -10725,7 +10725,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_OUTBOUND_V6_STAGE2_DASH_ACL_GROUP_ID"]
             }
@@ -10743,7 +10743,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_OUTBOUND_V6_STAGE3_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -10760,7 +10760,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_OUTBOUND_V6_STAGE3_DASH_ACL_GROUP_ID"]
             }
@@ -10778,7 +10778,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_OUTBOUND_V6_STAGE4_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -10795,7 +10795,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_OUTBOUND_V6_STAGE4_DASH_ACL_GROUP_ID"]
             }
@@ -10813,7 +10813,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ATTR_OUTBOUND_V6_STAGE5_DASH_ACL_GROUP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -10830,7 +10830,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ATTR_OUTBOUND_V6_STAGE5_DASH_ACL_GROUP_ID"]
             }
@@ -10848,7 +10848,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ENI_ETHER_ADDRESS_MAP_ENTRY_ATTR_ENI_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -10865,7 +10865,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ENI_ETHER_ADDRESS_MAP_ENTRY_ATTR_ENI_ID"]
             }
@@ -10883,7 +10883,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_FDB_ENTRY_ATTR_TYPE", 'TODO']
             }
@@ -10900,7 +10900,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_FDB_ENTRY_ATTR_TYPE"]
             }
@@ -10918,7 +10918,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_FDB_ENTRY_ATTR_PACKET_ACTION", 'SAI_PACKET_ACTION_FORWARD']
             }
@@ -10935,7 +10935,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_FDB_ENTRY_ATTR_PACKET_ACTION"]
             }
@@ -10953,7 +10953,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_FDB_ENTRY_ATTR_USER_TRAP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -10970,7 +10970,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_FDB_ENTRY_ATTR_USER_TRAP_ID"]
             }
@@ -10988,7 +10988,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_FDB_ENTRY_ATTR_BRIDGE_PORT_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -11005,7 +11005,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_FDB_ENTRY_ATTR_BRIDGE_PORT_ID"]
             }
@@ -11023,7 +11023,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_FDB_ENTRY_ATTR_META_DATA", '0']
             }
@@ -11040,7 +11040,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_FDB_ENTRY_ATTR_META_DATA"]
             }
@@ -11058,7 +11058,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_FDB_ENTRY_ATTR_ENDPOINT_IP", '0.0.0.0']
             }
@@ -11075,7 +11075,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_FDB_ENTRY_ATTR_ENDPOINT_IP"]
             }
@@ -11093,7 +11093,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_FDB_ENTRY_ATTR_COUNTER_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -11110,7 +11110,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_FDB_ENTRY_ATTR_COUNTER_ID"]
             }
@@ -11128,7 +11128,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_FDB_ENTRY_ATTR_ALLOW_MAC_MOVE", 'false']
             }
@@ -11145,7 +11145,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_FDB_ENTRY_ATTR_ALLOW_MAC_MOVE"]
             }
@@ -11163,7 +11163,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_GENERIC_PROGRAMMABLE_ATTR_ENTRY", 'vendor']
             }
@@ -11180,7 +11180,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_GENERIC_PROGRAMMABLE_ATTR_ENTRY"]
             }
@@ -11198,7 +11198,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_GENERIC_PROGRAMMABLE_ATTR_COUNTER_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -11215,7 +11215,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_GENERIC_PROGRAMMABLE_ATTR_COUNTER_ID"]
             }
@@ -11233,7 +11233,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_HASH_ATTR_NATIVE_HASH_FIELD_LIST", 'empty']
             }
@@ -11250,7 +11250,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_HASH_ATTR_NATIVE_HASH_FIELD_LIST"]
             }
@@ -11268,7 +11268,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_HASH_ATTR_UDF_GROUP_LIST", 'empty']
             }
@@ -11285,7 +11285,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_HASH_ATTR_UDF_GROUP_LIST"]
             }
@@ -11303,7 +11303,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_HASH_ATTR_FINE_GRAINED_HASH_FIELD_LIST", 'empty']
             }
@@ -11320,7 +11320,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_HASH_ATTR_FINE_GRAINED_HASH_FIELD_LIST"]
             }
@@ -11338,7 +11338,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_HOSTIF_ATTR_OPER_STATUS", 'false']
             }
@@ -11355,7 +11355,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_HOSTIF_ATTR_OPER_STATUS"]
             }
@@ -11373,7 +11373,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_HOSTIF_ATTR_QUEUE", '0']
             }
@@ -11390,7 +11390,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_HOSTIF_ATTR_QUEUE"]
             }
@@ -11408,7 +11408,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_HOSTIF_ATTR_VLAN_TAG", 'SAI_HOSTIF_VLAN_TAG_STRIP']
             }
@@ -11425,7 +11425,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_HOSTIF_ATTR_VLAN_TAG"]
             }
@@ -11443,7 +11443,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_HOSTIF_PACKET_ATTR_HOSTIF_TRAP_ID"]
             }
@@ -11461,7 +11461,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_HOSTIF_PACKET_ATTR_INGRESS_PORT"]
             }
@@ -11479,7 +11479,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_HOSTIF_PACKET_ATTR_INGRESS_LAG"]
             }
@@ -11497,7 +11497,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_HOSTIF_PACKET_ATTR_BRIDGE_ID"]
             }
@@ -11515,7 +11515,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_HOSTIF_PACKET_ATTR_TIMESTAMP"]
             }
@@ -11533,7 +11533,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_HOSTIF_TRAP_ATTR_PACKET_ACTION", 'TODO']
             }
@@ -11550,7 +11550,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_HOSTIF_TRAP_ATTR_PACKET_ACTION"]
             }
@@ -11568,7 +11568,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_HOSTIF_TRAP_ATTR_TRAP_PRIORITY", 'SAI_SWITCH_ATTR_ACL_ENTRY_MINIMUM_PRIORITY']
             }
@@ -11585,7 +11585,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_HOSTIF_TRAP_ATTR_TRAP_PRIORITY"]
             }
@@ -11603,7 +11603,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_HOSTIF_TRAP_ATTR_EXCLUDE_PORT_LIST", 'empty']
             }
@@ -11620,7 +11620,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_HOSTIF_TRAP_ATTR_EXCLUDE_PORT_LIST"]
             }
@@ -11638,7 +11638,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_HOSTIF_TRAP_ATTR_TRAP_GROUP", 'SAI_SWITCH_ATTR_DEFAULT_TRAP_GROUP']
             }
@@ -11655,7 +11655,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_HOSTIF_TRAP_ATTR_TRAP_GROUP"]
             }
@@ -11673,7 +11673,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_HOSTIF_TRAP_ATTR_MIRROR_SESSION", 'empty']
             }
@@ -11690,7 +11690,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_HOSTIF_TRAP_ATTR_MIRROR_SESSION"]
             }
@@ -11708,7 +11708,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_HOSTIF_TRAP_ATTR_COUNTER_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -11725,7 +11725,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_HOSTIF_TRAP_ATTR_COUNTER_ID"]
             }
@@ -11743,7 +11743,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_HOSTIF_TRAP_GROUP_ATTR_ADMIN_STATE", 'true']
             }
@@ -11760,7 +11760,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_HOSTIF_TRAP_GROUP_ATTR_ADMIN_STATE"]
             }
@@ -11778,7 +11778,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_HOSTIF_TRAP_GROUP_ATTR_QUEUE", '0']
             }
@@ -11795,7 +11795,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_HOSTIF_TRAP_GROUP_ATTR_QUEUE"]
             }
@@ -11813,7 +11813,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_HOSTIF_TRAP_GROUP_ATTR_POLICER", 'SAI_NULL_OBJECT_ID']
             }
@@ -11830,7 +11830,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_HOSTIF_TRAP_GROUP_ATTR_POLICER"]
             }
@@ -11848,7 +11848,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_HOSTIF_USER_DEFINED_TRAP_ATTR_TRAP_PRIORITY", 'SAI_SWITCH_ATTR_ACL_ENTRY_MINIMUM_PRIORITY']
             }
@@ -11865,7 +11865,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_HOSTIF_USER_DEFINED_TRAP_ATTR_TRAP_PRIORITY"]
             }
@@ -11883,7 +11883,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_HOSTIF_USER_DEFINED_TRAP_ATTR_TRAP_GROUP", 'SAI_SWITCH_ATTR_DEFAULT_TRAP_GROUP']
             }
@@ -11900,7 +11900,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_HOSTIF_USER_DEFINED_TRAP_ATTR_TRAP_GROUP"]
             }
@@ -11918,7 +11918,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_INBOUND_ROUTING_ENTRY_ATTR_ACTION", 'SAI_INBOUND_ROUTING_ENTRY_ACTION_VXLAN_DECAP']
             }
@@ -11935,7 +11935,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_INBOUND_ROUTING_ENTRY_ATTR_ACTION"]
             }
@@ -11953,7 +11953,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_INBOUND_ROUTING_ENTRY_ATTR_SRC_VNET_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -11970,7 +11970,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_INBOUND_ROUTING_ENTRY_ATTR_SRC_VNET_ID"]
             }
@@ -11988,7 +11988,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_INBOUND_ROUTING_ENTRY_ATTR_IP_ADDR_FAMILY"]
             }
@@ -12006,7 +12006,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_INGRESS_PRIORITY_GROUP_ATTR_BUFFER_PROFILE", 'SAI_NULL_OBJECT_ID']
             }
@@ -12023,7 +12023,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_INGRESS_PRIORITY_GROUP_ATTR_BUFFER_PROFILE"]
             }
@@ -12041,7 +12041,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_INGRESS_PRIORITY_GROUP_ATTR_TAM", 'empty']
             }
@@ -12058,7 +12058,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_INGRESS_PRIORITY_GROUP_ATTR_TAM"]
             }
@@ -12076,7 +12076,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_INSEG_ENTRY_ATTR_NUM_OF_POP", '0']
             }
@@ -12093,7 +12093,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_INSEG_ENTRY_ATTR_NUM_OF_POP"]
             }
@@ -12111,7 +12111,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_INSEG_ENTRY_ATTR_PACKET_ACTION", 'SAI_PACKET_ACTION_FORWARD']
             }
@@ -12128,7 +12128,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_INSEG_ENTRY_ATTR_PACKET_ACTION"]
             }
@@ -12146,7 +12146,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_INSEG_ENTRY_ATTR_TRAP_PRIORITY", '0']
             }
@@ -12163,7 +12163,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_INSEG_ENTRY_ATTR_TRAP_PRIORITY"]
             }
@@ -12181,7 +12181,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_INSEG_ENTRY_ATTR_NEXT_HOP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -12198,7 +12198,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_INSEG_ENTRY_ATTR_NEXT_HOP_ID"]
             }
@@ -12216,7 +12216,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_INSEG_ENTRY_ATTR_PSC_TYPE", 'SAI_INSEG_ENTRY_PSC_TYPE_ELSP']
             }
@@ -12233,7 +12233,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_INSEG_ENTRY_ATTR_PSC_TYPE"]
             }
@@ -12251,7 +12251,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_INSEG_ENTRY_ATTR_QOS_TC", '0']
             }
@@ -12268,7 +12268,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_INSEG_ENTRY_ATTR_QOS_TC"]
             }
@@ -12286,7 +12286,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_INSEG_ENTRY_ATTR_MPLS_EXP_TO_TC_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -12303,7 +12303,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_INSEG_ENTRY_ATTR_MPLS_EXP_TO_TC_MAP"]
             }
@@ -12321,7 +12321,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_INSEG_ENTRY_ATTR_MPLS_EXP_TO_COLOR_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -12338,7 +12338,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_INSEG_ENTRY_ATTR_MPLS_EXP_TO_COLOR_MAP"]
             }
@@ -12356,7 +12356,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_INSEG_ENTRY_ATTR_POP_TTL_MODE", 'SAI_INSEG_ENTRY_POP_TTL_MODE_UNIFORM']
             }
@@ -12373,7 +12373,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_INSEG_ENTRY_ATTR_POP_TTL_MODE"]
             }
@@ -12391,7 +12391,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_INSEG_ENTRY_ATTR_POP_QOS_MODE", 'SAI_INSEG_ENTRY_POP_QOS_MODE_UNIFORM']
             }
@@ -12408,7 +12408,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_INSEG_ENTRY_ATTR_POP_QOS_MODE"]
             }
@@ -12426,7 +12426,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_INSEG_ENTRY_ATTR_COUNTER_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -12443,7 +12443,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_INSEG_ENTRY_ATTR_COUNTER_ID"]
             }
@@ -12461,7 +12461,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_IPMC_ENTRY_ATTR_PACKET_ACTION", 'TODO']
             }
@@ -12478,7 +12478,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPMC_ENTRY_ATTR_PACKET_ACTION"]
             }
@@ -12496,7 +12496,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_IPMC_ENTRY_ATTR_OUTPUT_GROUP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -12513,7 +12513,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPMC_ENTRY_ATTR_OUTPUT_GROUP_ID"]
             }
@@ -12531,7 +12531,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_IPMC_ENTRY_ATTR_RPF_GROUP_ID", 'TODO']
             }
@@ -12548,7 +12548,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPMC_ENTRY_ATTR_RPF_GROUP_ID"]
             }
@@ -12566,7 +12566,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_IPMC_ENTRY_ATTR_COUNTER_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -12583,7 +12583,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPMC_ENTRY_ATTR_COUNTER_ID"]
             }
@@ -12601,7 +12601,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPMC_GROUP_ATTR_IPMC_OUTPUT_COUNT"]
             }
@@ -12619,7 +12619,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPMC_GROUP_ATTR_IPMC_MEMBER_LIST"]
             }
@@ -12637,7 +12637,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_ATTR_TERM_REMOTE_IP_MATCH_SUPPORTED"]
             }
@@ -12655,7 +12655,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_ATTR_SWITCHING_MODE_CUT_THROUGH_SUPPORTED"]
             }
@@ -12673,7 +12673,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_ATTR_SWITCHING_MODE_STORE_AND_FORWARD_SUPPORTED"]
             }
@@ -12691,7 +12691,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_ATTR_STATS_MODE_READ_SUPPORTED"]
             }
@@ -12709,7 +12709,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_ATTR_STATS_MODE_READ_CLEAR_SUPPORTED"]
             }
@@ -12727,7 +12727,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_ATTR_SN_32BIT_SUPPORTED"]
             }
@@ -12745,7 +12745,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_ATTR_ESN_64BIT_SUPPORTED"]
             }
@@ -12763,7 +12763,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_ATTR_SUPPORTED_CIPHER_LIST"]
             }
@@ -12781,7 +12781,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_ATTR_SYSTEM_SIDE_MTU"]
             }
@@ -12799,7 +12799,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_ATTR_WARM_BOOT_SUPPORTED"]
             }
@@ -12817,7 +12817,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_IPSEC_ATTR_WARM_BOOT_ENABLE", 'false']
             }
@@ -12834,7 +12834,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_ATTR_WARM_BOOT_ENABLE"]
             }
@@ -12852,7 +12852,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_IPSEC_ATTR_CTAG_TPID", '0x8100']
             }
@@ -12869,7 +12869,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_ATTR_CTAG_TPID"]
             }
@@ -12887,7 +12887,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_IPSEC_ATTR_STAG_TPID", '0x88A8']
             }
@@ -12904,7 +12904,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_ATTR_STAG_TPID"]
             }
@@ -12922,7 +12922,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_IPSEC_ATTR_MAX_VLAN_TAGS_PARSED", '0']
             }
@@ -12939,7 +12939,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_ATTR_MAX_VLAN_TAGS_PARSED"]
             }
@@ -12957,7 +12957,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_IPSEC_ATTR_OCTET_COUNT_HIGH_WATERMARK", '0']
             }
@@ -12974,7 +12974,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_ATTR_OCTET_COUNT_HIGH_WATERMARK"]
             }
@@ -12992,7 +12992,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_IPSEC_ATTR_OCTET_COUNT_LOW_WATERMARK", '0']
             }
@@ -13009,7 +13009,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_ATTR_OCTET_COUNT_LOW_WATERMARK"]
             }
@@ -13027,7 +13027,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_IPSEC_ATTR_STATS_MODE", 'SAI_STATS_MODE_READ_AND_CLEAR']
             }
@@ -13044,7 +13044,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_ATTR_STATS_MODE"]
             }
@@ -13062,7 +13062,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_ATTR_AVAILABLE_IPSEC_SA"]
             }
@@ -13080,7 +13080,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_ATTR_SA_LIST"]
             }
@@ -13098,7 +13098,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_IPSEC_PORT_ATTR_CTAG_ENABLE", 'false']
             }
@@ -13115,7 +13115,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_PORT_ATTR_CTAG_ENABLE"]
             }
@@ -13133,7 +13133,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_IPSEC_PORT_ATTR_STAG_ENABLE", 'false']
             }
@@ -13150,7 +13150,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_PORT_ATTR_STAG_ENABLE"]
             }
@@ -13168,7 +13168,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_IPSEC_PORT_ATTR_VRF_FROM_PACKET_VLAN_ENABLE", 'false']
             }
@@ -13185,7 +13185,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_PORT_ATTR_VRF_FROM_PACKET_VLAN_ENABLE"]
             }
@@ -13203,7 +13203,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_IPSEC_PORT_ATTR_SWITCH_SWITCHING_MODE", 'SAI_SWITCH_SWITCHING_MODE_CUT_THROUGH']
             }
@@ -13220,7 +13220,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_PORT_ATTR_SWITCH_SWITCHING_MODE"]
             }
@@ -13238,7 +13238,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_SA_ATTR_OCTET_COUNT_STATUS"]
             }
@@ -13256,7 +13256,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_IPSEC_SA_ATTR_EXTERNAL_SA_INDEX", '0']
             }
@@ -13273,7 +13273,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_SA_ATTR_EXTERNAL_SA_INDEX"]
             }
@@ -13291,7 +13291,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_SA_ATTR_SA_INDEX"]
             }
@@ -13309,7 +13309,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_IPSEC_SA_ATTR_IPSEC_PORT_LIST", 'empty']
             }
@@ -13326,7 +13326,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_SA_ATTR_IPSEC_PORT_LIST"]
             }
@@ -13344,7 +13344,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_IPSEC_SA_ATTR_IPSEC_REPLAY_PROTECTION_ENABLE", 'false']
             }
@@ -13361,7 +13361,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_SA_ATTR_IPSEC_REPLAY_PROTECTION_ENABLE"]
             }
@@ -13379,7 +13379,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_IPSEC_SA_ATTR_IPSEC_REPLAY_PROTECTION_WINDOW", '0']
             }
@@ -13396,7 +13396,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_SA_ATTR_IPSEC_REPLAY_PROTECTION_WINDOW"]
             }
@@ -13414,7 +13414,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_IPSEC_SA_ATTR_EGRESS_ESN", '0']
             }
@@ -13431,7 +13431,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_SA_ATTR_EGRESS_ESN"]
             }
@@ -13449,7 +13449,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_IPSEC_SA_ATTR_MINIMUM_INGRESS_ESN", '1']
             }
@@ -13466,7 +13466,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_IPSEC_SA_ATTR_MINIMUM_INGRESS_ESN"]
             }
@@ -13484,7 +13484,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ISOLATION_GROUP_ATTR_ISOLATION_MEMBER_LIST"]
             }
@@ -13502,7 +13502,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_L2MC_ENTRY_ATTR_PACKET_ACTION", 'TODO']
             }
@@ -13519,7 +13519,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_L2MC_ENTRY_ATTR_PACKET_ACTION"]
             }
@@ -13537,7 +13537,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_L2MC_ENTRY_ATTR_OUTPUT_GROUP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -13554,7 +13554,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_L2MC_ENTRY_ATTR_OUTPUT_GROUP_ID"]
             }
@@ -13572,7 +13572,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_L2MC_GROUP_ATTR_L2MC_OUTPUT_COUNT"]
             }
@@ -13590,7 +13590,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_L2MC_GROUP_ATTR_L2MC_MEMBER_LIST"]
             }
@@ -13608,7 +13608,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_LAG_ATTR_PORT_LIST"]
             }
@@ -13626,7 +13626,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_LAG_ATTR_INGRESS_ACL", 'SAI_NULL_OBJECT_ID']
             }
@@ -13643,7 +13643,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_LAG_ATTR_INGRESS_ACL"]
             }
@@ -13661,7 +13661,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_LAG_ATTR_EGRESS_ACL", 'SAI_NULL_OBJECT_ID']
             }
@@ -13678,7 +13678,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_LAG_ATTR_EGRESS_ACL"]
             }
@@ -13696,7 +13696,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_LAG_ATTR_PORT_VLAN_ID", '1']
             }
@@ -13713,7 +13713,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_LAG_ATTR_PORT_VLAN_ID"]
             }
@@ -13731,7 +13731,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_LAG_ATTR_DEFAULT_VLAN_PRIORITY", '0']
             }
@@ -13748,7 +13748,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_LAG_ATTR_DEFAULT_VLAN_PRIORITY"]
             }
@@ -13766,7 +13766,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_LAG_ATTR_DROP_UNTAGGED", 'false']
             }
@@ -13783,7 +13783,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_LAG_ATTR_DROP_UNTAGGED"]
             }
@@ -13801,7 +13801,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_LAG_ATTR_DROP_TAGGED", 'false']
             }
@@ -13818,7 +13818,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_LAG_ATTR_DROP_TAGGED"]
             }
@@ -13836,7 +13836,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_LAG_ATTR_TPID", '0x8100']
             }
@@ -13853,7 +13853,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_LAG_ATTR_TPID"]
             }
@@ -13871,7 +13871,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_LAG_ATTR_LABEL", '""']
             }
@@ -13888,7 +13888,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_LAG_ATTR_LABEL"]
             }
@@ -13906,7 +13906,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_LAG_ATTR_ARS_OBJECT_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -13923,7 +13923,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_LAG_ATTR_ARS_OBJECT_ID"]
             }
@@ -13941,7 +13941,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_LAG_ATTR_ARS_PACKET_DROPS"]
             }
@@ -13959,7 +13959,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_LAG_ATTR_ARS_PORT_REASSIGNMENTS"]
             }
@@ -13977,7 +13977,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_LAG_MEMBER_ATTR_EGRESS_DISABLE", 'false']
             }
@@ -13994,7 +13994,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_LAG_MEMBER_ATTR_EGRESS_DISABLE"]
             }
@@ -14012,7 +14012,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_LAG_MEMBER_ATTR_INGRESS_DISABLE", 'false']
             }
@@ -14029,7 +14029,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_LAG_MEMBER_ATTR_INGRESS_DISABLE"]
             }
@@ -14047,7 +14047,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_ATTR_SWITCHING_MODE_CUT_THROUGH_SUPPORTED"]
             }
@@ -14065,7 +14065,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_ATTR_SWITCHING_MODE_STORE_AND_FORWARD_SUPPORTED"]
             }
@@ -14083,7 +14083,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_ATTR_STATS_MODE_READ_SUPPORTED"]
             }
@@ -14101,7 +14101,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_ATTR_STATS_MODE_READ_CLEAR_SUPPORTED"]
             }
@@ -14119,7 +14119,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_ATTR_SCI_IN_INGRESS_MACSEC_ACL"]
             }
@@ -14137,7 +14137,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_ATTR_SUPPORTED_CIPHER_SUITE_LIST"]
             }
@@ -14155,7 +14155,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_ATTR_PN_32BIT_SUPPORTED"]
             }
@@ -14173,7 +14173,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_ATTR_XPN_64BIT_SUPPORTED"]
             }
@@ -14191,7 +14191,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_ATTR_GCM_AES128_SUPPORTED"]
             }
@@ -14209,7 +14209,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_ATTR_GCM_AES256_SUPPORTED"]
             }
@@ -14227,7 +14227,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_ATTR_SECTAG_OFFSETS_SUPPORTED"]
             }
@@ -14245,7 +14245,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_ATTR_SYSTEM_SIDE_MTU"]
             }
@@ -14263,7 +14263,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_ATTR_WARM_BOOT_SUPPORTED"]
             }
@@ -14281,7 +14281,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MACSEC_ATTR_WARM_BOOT_ENABLE", 'false']
             }
@@ -14298,7 +14298,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_ATTR_WARM_BOOT_ENABLE"]
             }
@@ -14316,7 +14316,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MACSEC_ATTR_CTAG_TPID", '0x8100']
             }
@@ -14333,7 +14333,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_ATTR_CTAG_TPID"]
             }
@@ -14351,7 +14351,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MACSEC_ATTR_STAG_TPID", '0x88A8']
             }
@@ -14368,7 +14368,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_ATTR_STAG_TPID"]
             }
@@ -14386,7 +14386,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MACSEC_ATTR_MAX_VLAN_TAGS_PARSED", '0']
             }
@@ -14403,7 +14403,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_ATTR_MAX_VLAN_TAGS_PARSED"]
             }
@@ -14421,7 +14421,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MACSEC_ATTR_STATS_MODE", 'SAI_STATS_MODE_READ_AND_CLEAR']
             }
@@ -14438,7 +14438,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_ATTR_STATS_MODE"]
             }
@@ -14456,7 +14456,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MACSEC_ATTR_PHYSICAL_BYPASS_ENABLE", 'false']
             }
@@ -14473,7 +14473,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_ATTR_PHYSICAL_BYPASS_ENABLE"]
             }
@@ -14491,7 +14491,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_ATTR_SUPPORTED_PORT_LIST"]
             }
@@ -14509,7 +14509,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_ATTR_AVAILABLE_MACSEC_FLOW"]
             }
@@ -14527,7 +14527,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_ATTR_FLOW_LIST"]
             }
@@ -14545,7 +14545,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_ATTR_AVAILABLE_MACSEC_SC"]
             }
@@ -14563,7 +14563,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_ATTR_AVAILABLE_MACSEC_SA"]
             }
@@ -14581,7 +14581,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_ATTR_MAX_SECURE_ASSOCIATIONS_PER_SC"]
             }
@@ -14599,7 +14599,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_FLOW_ATTR_ACL_ENTRY_LIST"]
             }
@@ -14617,7 +14617,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_FLOW_ATTR_SC_LIST"]
             }
@@ -14635,7 +14635,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MACSEC_PORT_ATTR_CTAG_ENABLE", 'false']
             }
@@ -14652,7 +14652,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_PORT_ATTR_CTAG_ENABLE"]
             }
@@ -14670,7 +14670,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MACSEC_PORT_ATTR_STAG_ENABLE", 'false']
             }
@@ -14687,7 +14687,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_PORT_ATTR_STAG_ENABLE"]
             }
@@ -14705,7 +14705,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MACSEC_PORT_ATTR_SWITCH_SWITCHING_MODE", 'SAI_SWITCH_SWITCHING_MODE_CUT_THROUGH']
             }
@@ -14722,7 +14722,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_PORT_ATTR_SWITCH_SWITCHING_MODE"]
             }
@@ -14740,7 +14740,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MACSEC_SA_ATTR_CONFIGURED_EGRESS_XPN", '0']
             }
@@ -14757,7 +14757,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_SA_ATTR_CONFIGURED_EGRESS_XPN"]
             }
@@ -14775,7 +14775,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_SA_ATTR_CURRENT_XPN"]
             }
@@ -14793,7 +14793,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MACSEC_SA_ATTR_MINIMUM_INGRESS_XPN", '1']
             }
@@ -14810,7 +14810,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_SA_ATTR_MINIMUM_INGRESS_XPN"]
             }
@@ -14828,7 +14828,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MACSEC_SC_ATTR_MACSEC_EXPLICIT_SCI_ENABLE", 'false']
             }
@@ -14845,7 +14845,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_SC_ATTR_MACSEC_EXPLICIT_SCI_ENABLE"]
             }
@@ -14863,7 +14863,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MACSEC_SC_ATTR_MACSEC_SECTAG_OFFSET", '0']
             }
@@ -14880,7 +14880,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_SC_ATTR_MACSEC_SECTAG_OFFSET"]
             }
@@ -14898,7 +14898,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_SC_ATTR_ACTIVE_EGRESS_SA_ID"]
             }
@@ -14916,7 +14916,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MACSEC_SC_ATTR_MACSEC_REPLAY_PROTECTION_ENABLE", 'true']
             }
@@ -14933,7 +14933,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_SC_ATTR_MACSEC_REPLAY_PROTECTION_ENABLE"]
             }
@@ -14951,7 +14951,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MACSEC_SC_ATTR_MACSEC_REPLAY_PROTECTION_WINDOW", '0']
             }
@@ -14968,7 +14968,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_SC_ATTR_MACSEC_REPLAY_PROTECTION_WINDOW"]
             }
@@ -14986,7 +14986,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_SC_ATTR_SA_LIST"]
             }
@@ -15004,7 +15004,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MACSEC_SC_ATTR_MACSEC_CIPHER_SUITE", 'TODO']
             }
@@ -15021,7 +15021,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_SC_ATTR_MACSEC_CIPHER_SUITE"]
             }
@@ -15039,7 +15039,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MACSEC_SC_ATTR_ENCRYPTION_ENABLE", 'true']
             }
@@ -15056,7 +15056,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MACSEC_SC_ATTR_ENCRYPTION_ENABLE"]
             }
@@ -15074,7 +15074,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MCAST_FDB_ENTRY_ATTR_GROUP_ID", 'TODO']
             }
@@ -15091,7 +15091,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MCAST_FDB_ENTRY_ATTR_GROUP_ID"]
             }
@@ -15109,7 +15109,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MCAST_FDB_ENTRY_ATTR_PACKET_ACTION", 'TODO']
             }
@@ -15126,7 +15126,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MCAST_FDB_ENTRY_ATTR_PACKET_ACTION"]
             }
@@ -15144,7 +15144,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MCAST_FDB_ENTRY_ATTR_META_DATA", '0']
             }
@@ -15161,7 +15161,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MCAST_FDB_ENTRY_ATTR_META_DATA"]
             }
@@ -15179,7 +15179,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_MONITOR_PORT", 'TODO']
             }
@@ -15196,7 +15196,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_MONITOR_PORT"]
             }
@@ -15214,7 +15214,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_TRUNCATE_SIZE", '0']
             }
@@ -15231,7 +15231,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_TRUNCATE_SIZE"]
             }
@@ -15249,7 +15249,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_SAMPLE_RATE", '1']
             }
@@ -15266,7 +15266,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_SAMPLE_RATE"]
             }
@@ -15284,7 +15284,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_CONGESTION_MODE", 'SAI_MIRROR_SESSION_CONGESTION_MODE_INDEPENDENT']
             }
@@ -15301,7 +15301,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_CONGESTION_MODE"]
             }
@@ -15319,7 +15319,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_TC", '0']
             }
@@ -15336,7 +15336,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_TC"]
             }
@@ -15354,7 +15354,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_VLAN_TPID", '0x8100']
             }
@@ -15371,7 +15371,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_VLAN_TPID"]
             }
@@ -15389,7 +15389,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_VLAN_ID", '0']
             }
@@ -15406,7 +15406,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_VLAN_ID"]
             }
@@ -15424,7 +15424,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_VLAN_PRI", '0']
             }
@@ -15441,7 +15441,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_VLAN_PRI"]
             }
@@ -15459,7 +15459,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_VLAN_CFI", '0']
             }
@@ -15476,7 +15476,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_VLAN_CFI"]
             }
@@ -15494,7 +15494,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_VLAN_HEADER_VALID", 'false']
             }
@@ -15511,7 +15511,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_VLAN_HEADER_VALID"]
             }
@@ -15529,7 +15529,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_IPHDR_VERSION", 'TODO']
             }
@@ -15546,7 +15546,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_IPHDR_VERSION"]
             }
@@ -15564,7 +15564,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_TOS", 'TODO']
             }
@@ -15581,7 +15581,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_TOS"]
             }
@@ -15599,7 +15599,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_TTL", '255']
             }
@@ -15616,7 +15616,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_TTL"]
             }
@@ -15634,7 +15634,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_SRC_IP_ADDRESS", 'TODO']
             }
@@ -15651,7 +15651,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_SRC_IP_ADDRESS"]
             }
@@ -15669,7 +15669,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_DST_IP_ADDRESS", 'TODO']
             }
@@ -15686,7 +15686,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_DST_IP_ADDRESS"]
             }
@@ -15704,7 +15704,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_SRC_MAC_ADDRESS", 'TODO']
             }
@@ -15721,7 +15721,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_SRC_MAC_ADDRESS"]
             }
@@ -15739,7 +15739,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_DST_MAC_ADDRESS", 'TODO']
             }
@@ -15756,7 +15756,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_DST_MAC_ADDRESS"]
             }
@@ -15774,7 +15774,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_GRE_PROTOCOL_TYPE", 'TODO']
             }
@@ -15791,7 +15791,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_GRE_PROTOCOL_TYPE"]
             }
@@ -15809,7 +15809,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_MONITOR_PORTLIST", 'TODO']
             }
@@ -15826,7 +15826,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_MONITOR_PORTLIST"]
             }
@@ -15844,7 +15844,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_POLICER", 'SAI_NULL_OBJECT_ID']
             }
@@ -15861,7 +15861,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_POLICER"]
             }
@@ -15879,7 +15879,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_UDP_SRC_PORT", 'TODO']
             }
@@ -15896,7 +15896,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_UDP_SRC_PORT"]
             }
@@ -15914,7 +15914,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_UDP_DST_PORT", 'TODO']
             }
@@ -15931,7 +15931,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_UDP_DST_PORT"]
             }
@@ -15949,7 +15949,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_COUNTER_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -15966,7 +15966,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MIRROR_SESSION_ATTR_COUNTER_ID"]
             }
@@ -15984,7 +15984,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MY_MAC_ATTR_PRIORITY", '0']
             }
@@ -16001,7 +16001,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MY_MAC_ATTR_PRIORITY"]
             }
@@ -16019,7 +16019,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MY_SID_ENTRY_ATTR_ENDPOINT_BEHAVIOR", 'TODO']
             }
@@ -16036,7 +16036,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MY_SID_ENTRY_ATTR_ENDPOINT_BEHAVIOR"]
             }
@@ -16054,7 +16054,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MY_SID_ENTRY_ATTR_ENDPOINT_BEHAVIOR_FLAVOR", 'SAI_MY_SID_ENTRY_ENDPOINT_BEHAVIOR_FLAVOR_NONE']
             }
@@ -16071,7 +16071,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MY_SID_ENTRY_ATTR_ENDPOINT_BEHAVIOR_FLAVOR"]
             }
@@ -16089,7 +16089,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MY_SID_ENTRY_ATTR_PACKET_ACTION", 'SAI_PACKET_ACTION_FORWARD']
             }
@@ -16106,7 +16106,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MY_SID_ENTRY_ATTR_PACKET_ACTION"]
             }
@@ -16124,7 +16124,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MY_SID_ENTRY_ATTR_TRAP_PRIORITY", '0']
             }
@@ -16141,7 +16141,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MY_SID_ENTRY_ATTR_TRAP_PRIORITY"]
             }
@@ -16159,7 +16159,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MY_SID_ENTRY_ATTR_NEXT_HOP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -16176,7 +16176,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MY_SID_ENTRY_ATTR_NEXT_HOP_ID"]
             }
@@ -16194,7 +16194,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MY_SID_ENTRY_ATTR_TUNNEL_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -16211,7 +16211,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MY_SID_ENTRY_ATTR_TUNNEL_ID"]
             }
@@ -16229,7 +16229,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MY_SID_ENTRY_ATTR_VRF", 'SAI_NULL_OBJECT_ID']
             }
@@ -16246,7 +16246,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MY_SID_ENTRY_ATTR_VRF"]
             }
@@ -16264,7 +16264,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_MY_SID_ENTRY_ATTR_COUNTER_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -16281,7 +16281,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_MY_SID_ENTRY_ATTR_COUNTER_ID"]
             }
@@ -16299,7 +16299,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_NAT_TYPE", 'SAI_NAT_TYPE_NONE']
             }
@@ -16316,7 +16316,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_NAT_TYPE"]
             }
@@ -16334,7 +16334,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_SRC_IP", '0.0.0.0']
             }
@@ -16351,7 +16351,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_SRC_IP"]
             }
@@ -16369,7 +16369,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_SRC_IP_MASK", '0.0.0.0']
             }
@@ -16386,7 +16386,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_SRC_IP_MASK"]
             }
@@ -16404,7 +16404,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_VR_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -16421,7 +16421,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_VR_ID"]
             }
@@ -16439,7 +16439,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_DST_IP", '0.0.0.0']
             }
@@ -16456,7 +16456,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_DST_IP"]
             }
@@ -16474,7 +16474,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_DST_IP_MASK", '0.0.0.0']
             }
@@ -16491,7 +16491,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_DST_IP_MASK"]
             }
@@ -16509,7 +16509,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_L4_SRC_PORT", '0']
             }
@@ -16526,7 +16526,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_L4_SRC_PORT"]
             }
@@ -16544,7 +16544,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_L4_DST_PORT", '0']
             }
@@ -16561,7 +16561,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_L4_DST_PORT"]
             }
@@ -16579,7 +16579,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_ENABLE_PACKET_COUNT", 'false']
             }
@@ -16596,7 +16596,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_ENABLE_PACKET_COUNT"]
             }
@@ -16614,7 +16614,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_PACKET_COUNT", '0']
             }
@@ -16631,7 +16631,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_PACKET_COUNT"]
             }
@@ -16649,7 +16649,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_ENABLE_BYTE_COUNT", 'false']
             }
@@ -16666,7 +16666,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_ENABLE_BYTE_COUNT"]
             }
@@ -16684,7 +16684,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_BYTE_COUNT", '0']
             }
@@ -16701,7 +16701,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_BYTE_COUNT"]
             }
@@ -16719,7 +16719,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_HIT_BIT_COR", 'false']
             }
@@ -16736,7 +16736,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_HIT_BIT_COR"]
             }
@@ -16754,7 +16754,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_HIT_BIT", 'false']
             }
@@ -16771,7 +16771,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_HIT_BIT"]
             }
@@ -16789,7 +16789,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_AGING_TIME", '0']
             }
@@ -16806,7 +16806,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NAT_ENTRY_ATTR_AGING_TIME"]
             }
@@ -16824,7 +16824,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NAT_ZONE_COUNTER_ATTR_NAT_TYPE", 'SAI_NAT_TYPE_NONE']
             }
@@ -16841,7 +16841,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NAT_ZONE_COUNTER_ATTR_NAT_TYPE"]
             }
@@ -16859,7 +16859,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NAT_ZONE_COUNTER_ATTR_ZONE_ID", '0']
             }
@@ -16876,7 +16876,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NAT_ZONE_COUNTER_ATTR_ZONE_ID"]
             }
@@ -16894,7 +16894,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NAT_ZONE_COUNTER_ATTR_DISCARD_PACKET_COUNT", '0']
             }
@@ -16911,7 +16911,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NAT_ZONE_COUNTER_ATTR_DISCARD_PACKET_COUNT"]
             }
@@ -16929,7 +16929,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NAT_ZONE_COUNTER_ATTR_TRANSLATION_NEEDED_PACKET_COUNT", '0']
             }
@@ -16946,7 +16946,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NAT_ZONE_COUNTER_ATTR_TRANSLATION_NEEDED_PACKET_COUNT"]
             }
@@ -16964,7 +16964,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NAT_ZONE_COUNTER_ATTR_TRANSLATIONS_PACKET_COUNT", '0']
             }
@@ -16981,7 +16981,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NAT_ZONE_COUNTER_ATTR_TRANSLATIONS_PACKET_COUNT"]
             }
@@ -16999,7 +16999,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEIGHBOR_ENTRY_ATTR_DST_MAC_ADDRESS", 'TODO']
             }
@@ -17016,7 +17016,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEIGHBOR_ENTRY_ATTR_DST_MAC_ADDRESS"]
             }
@@ -17034,7 +17034,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEIGHBOR_ENTRY_ATTR_PACKET_ACTION", 'SAI_PACKET_ACTION_FORWARD']
             }
@@ -17051,7 +17051,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEIGHBOR_ENTRY_ATTR_PACKET_ACTION"]
             }
@@ -17069,7 +17069,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEIGHBOR_ENTRY_ATTR_USER_TRAP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -17086,7 +17086,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEIGHBOR_ENTRY_ATTR_USER_TRAP_ID"]
             }
@@ -17104,7 +17104,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEIGHBOR_ENTRY_ATTR_NO_HOST_ROUTE", 'false']
             }
@@ -17121,7 +17121,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEIGHBOR_ENTRY_ATTR_NO_HOST_ROUTE"]
             }
@@ -17139,7 +17139,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEIGHBOR_ENTRY_ATTR_META_DATA", '0']
             }
@@ -17156,7 +17156,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEIGHBOR_ENTRY_ATTR_META_DATA"]
             }
@@ -17174,7 +17174,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEIGHBOR_ENTRY_ATTR_COUNTER_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -17191,7 +17191,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEIGHBOR_ENTRY_ATTR_COUNTER_ID"]
             }
@@ -17209,7 +17209,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEIGHBOR_ENTRY_ATTR_ENCAP_INDEX", 'internal']
             }
@@ -17226,7 +17226,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEIGHBOR_ENTRY_ATTR_ENCAP_INDEX"]
             }
@@ -17244,7 +17244,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEIGHBOR_ENTRY_ATTR_ENCAP_IMPOSE_INDEX", 'false']
             }
@@ -17261,7 +17261,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEIGHBOR_ENTRY_ATTR_ENCAP_IMPOSE_INDEX"]
             }
@@ -17279,7 +17279,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEIGHBOR_ENTRY_ATTR_IS_LOCAL", 'true']
             }
@@ -17296,7 +17296,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEIGHBOR_ENTRY_ATTR_IS_LOCAL"]
             }
@@ -17314,7 +17314,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEIGHBOR_ENTRY_ATTR_IP_ADDR_FAMILY"]
             }
@@ -17332,7 +17332,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEXT_HOP_ATTR_TUNNEL_VNI", '0']
             }
@@ -17349,7 +17349,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_ATTR_TUNNEL_VNI"]
             }
@@ -17367,7 +17367,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEXT_HOP_ATTR_TUNNEL_MAC", 'SAI_SWITCH_ATTR_VXLAN_DEFAULT_ROUTER_MAC']
             }
@@ -17384,7 +17384,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_ATTR_TUNNEL_MAC"]
             }
@@ -17402,7 +17402,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEXT_HOP_ATTR_COUNTER_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -17419,7 +17419,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_ATTR_COUNTER_ID"]
             }
@@ -17437,7 +17437,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEXT_HOP_ATTR_DISABLE_DECREMENT_TTL", 'false']
             }
@@ -17454,7 +17454,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_ATTR_DISABLE_DECREMENT_TTL"]
             }
@@ -17472,7 +17472,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEXT_HOP_ATTR_OUTSEG_TYPE", 'SAI_OUTSEG_TYPE_SWAP']
             }
@@ -17489,7 +17489,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_ATTR_OUTSEG_TYPE"]
             }
@@ -17507,7 +17507,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEXT_HOP_ATTR_OUTSEG_TTL_MODE", 'SAI_OUTSEG_TTL_MODE_UNIFORM']
             }
@@ -17524,7 +17524,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_ATTR_OUTSEG_TTL_MODE"]
             }
@@ -17542,7 +17542,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEXT_HOP_ATTR_OUTSEG_TTL_VALUE", '255']
             }
@@ -17559,7 +17559,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_ATTR_OUTSEG_TTL_VALUE"]
             }
@@ -17577,7 +17577,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEXT_HOP_ATTR_OUTSEG_EXP_MODE", 'SAI_OUTSEG_EXP_MODE_UNIFORM']
             }
@@ -17594,7 +17594,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_ATTR_OUTSEG_EXP_MODE"]
             }
@@ -17612,7 +17612,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEXT_HOP_ATTR_OUTSEG_EXP_VALUE", '0']
             }
@@ -17629,7 +17629,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_ATTR_OUTSEG_EXP_VALUE"]
             }
@@ -17647,7 +17647,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEXT_HOP_ATTR_QOS_TC_AND_COLOR_TO_MPLS_EXP_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -17664,7 +17664,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_ATTR_QOS_TC_AND_COLOR_TO_MPLS_EXP_MAP"]
             }
@@ -17682,7 +17682,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_GROUP_ATTR_NEXT_HOP_COUNT"]
             }
@@ -17700,7 +17700,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_GROUP_ATTR_NEXT_HOP_MEMBER_LIST"]
             }
@@ -17718,7 +17718,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEXT_HOP_GROUP_ATTR_SET_SWITCHOVER", 'false']
             }
@@ -17735,7 +17735,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_GROUP_ATTR_SET_SWITCHOVER"]
             }
@@ -17753,7 +17753,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEXT_HOP_GROUP_ATTR_COUNTER_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -17770,7 +17770,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_GROUP_ATTR_COUNTER_ID"]
             }
@@ -17788,7 +17788,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_GROUP_ATTR_REAL_SIZE"]
             }
@@ -17806,7 +17806,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEXT_HOP_GROUP_ATTR_SELECTION_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -17823,7 +17823,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_GROUP_ATTR_SELECTION_MAP"]
             }
@@ -17841,7 +17841,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEXT_HOP_GROUP_ATTR_ARS_OBJECT_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -17858,7 +17858,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_GROUP_ATTR_ARS_OBJECT_ID"]
             }
@@ -17876,7 +17876,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_GROUP_ATTR_ARS_PACKET_DROPS"]
             }
@@ -17894,7 +17894,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_GROUP_ATTR_ARS_NEXT_HOP_REASSIGNMENTS"]
             }
@@ -17912,7 +17912,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_GROUP_ATTR_ARS_PORT_REASSIGNMENTS"]
             }
@@ -17930,7 +17930,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEXT_HOP_GROUP_MAP_ATTR_MAP_TO_VALUE_LIST", 'empty']
             }
@@ -17947,7 +17947,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_GROUP_MAP_ATTR_MAP_TO_VALUE_LIST"]
             }
@@ -17965,7 +17965,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEXT_HOP_GROUP_MEMBER_ATTR_NEXT_HOP_ID", 'TODO']
             }
@@ -17982,7 +17982,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_GROUP_MEMBER_ATTR_NEXT_HOP_ID"]
             }
@@ -18000,7 +18000,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEXT_HOP_GROUP_MEMBER_ATTR_WEIGHT", '1']
             }
@@ -18017,7 +18017,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_GROUP_MEMBER_ATTR_WEIGHT"]
             }
@@ -18035,7 +18035,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_GROUP_MEMBER_ATTR_OBSERVED_ROLE"]
             }
@@ -18053,7 +18053,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEXT_HOP_GROUP_MEMBER_ATTR_MONITORED_OBJECT", 'SAI_NULL_OBJECT_ID']
             }
@@ -18070,7 +18070,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_GROUP_MEMBER_ATTR_MONITORED_OBJECT"]
             }
@@ -18088,7 +18088,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEXT_HOP_GROUP_MEMBER_ATTR_SEQUENCE_ID", '0']
             }
@@ -18105,7 +18105,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_GROUP_MEMBER_ATTR_SEQUENCE_ID"]
             }
@@ -18123,7 +18123,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEXT_HOP_GROUP_MEMBER_ATTR_COUNTER_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -18140,7 +18140,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_GROUP_MEMBER_ATTR_COUNTER_ID"]
             }
@@ -18158,7 +18158,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_NEXT_HOP_GROUP_MEMBER_ATTR_ARS_ALTERNATE_PATH", 'false']
             }
@@ -18175,7 +18175,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_NEXT_HOP_GROUP_MEMBER_ATTR_ARS_ALTERNATE_PATH"]
             }
@@ -18193,7 +18193,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_UNDERLAY_DIP", '0.0.0.0']
             }
@@ -18210,7 +18210,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_UNDERLAY_DIP"]
             }
@@ -18228,7 +18228,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_OVERLAY_DMAC", '0:0:0:0:0:0']
             }
@@ -18245,7 +18245,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_OVERLAY_DMAC"]
             }
@@ -18263,7 +18263,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_USE_DST_VNET_VNI", 'false']
             }
@@ -18280,7 +18280,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_USE_DST_VNET_VNI"]
             }
@@ -18298,7 +18298,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_METER_CLASS", '0']
             }
@@ -18315,7 +18315,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_METER_CLASS"]
             }
@@ -18333,7 +18333,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_METER_CLASS_OVERRIDE", 'false']
             }
@@ -18350,7 +18350,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_METER_CLASS_OVERRIDE"]
             }
@@ -18368,7 +18368,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_COUNTER_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -18385,7 +18385,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_COUNTER_ID"]
             }
@@ -18403,7 +18403,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_OUTBOUND_CA_TO_PA_ENTRY_ATTR_IP_ADDR_FAMILY"]
             }
@@ -18421,7 +18421,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_ACTION", 'SAI_OUTBOUND_ROUTING_ENTRY_ACTION_ROUTE_VNET']
             }
@@ -18438,7 +18438,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_ACTION"]
             }
@@ -18456,7 +18456,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_DST_VNET_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -18473,7 +18473,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_DST_VNET_ID"]
             }
@@ -18491,7 +18491,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_METER_POLICY_EN", 'false']
             }
@@ -18508,7 +18508,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_METER_POLICY_EN"]
             }
@@ -18526,7 +18526,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_METER_CLASS", '0']
             }
@@ -18543,7 +18543,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_METER_CLASS"]
             }
@@ -18561,7 +18561,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_OVERLAY_IP", '0.0.0.0']
             }
@@ -18578,7 +18578,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_OVERLAY_IP"]
             }
@@ -18596,7 +18596,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_OVERLAY_DIP", '0.0.0.0']
             }
@@ -18613,7 +18613,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_OVERLAY_DIP"]
             }
@@ -18631,7 +18631,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_OVERLAY_DIP_MASK", '0.0.0.0']
             }
@@ -18648,7 +18648,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_OVERLAY_DIP_MASK"]
             }
@@ -18666,7 +18666,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_OVERLAY_SIP", '0.0.0.0']
             }
@@ -18683,7 +18683,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_OVERLAY_SIP"]
             }
@@ -18701,7 +18701,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_OVERLAY_SIP_MASK", '0.0.0.0']
             }
@@ -18718,7 +18718,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_OVERLAY_SIP_MASK"]
             }
@@ -18736,7 +18736,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_UNDERLAY_DIP", '0.0.0.0']
             }
@@ -18753,7 +18753,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_UNDERLAY_DIP"]
             }
@@ -18771,7 +18771,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_UNDERLAY_SIP", '0.0.0.0']
             }
@@ -18788,7 +18788,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_UNDERLAY_SIP"]
             }
@@ -18806,7 +18806,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_DASH_ENCAPSULATION", 'SAI_DASH_ENCAPSULATION_VXLAN']
             }
@@ -18823,7 +18823,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_DASH_ENCAPSULATION"]
             }
@@ -18841,7 +18841,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_TUNNEL_KEY", '0']
             }
@@ -18858,7 +18858,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_TUNNEL_KEY"]
             }
@@ -18876,7 +18876,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_COUNTER_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -18893,7 +18893,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_COUNTER_ID"]
             }
@@ -18911,7 +18911,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_OUTBOUND_ROUTING_ENTRY_ATTR_IP_ADDR_FAMILY"]
             }
@@ -18929,7 +18929,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PA_VALIDATION_ENTRY_ATTR_ACTION", 'SAI_PA_VALIDATION_ENTRY_ACTION_PERMIT']
             }
@@ -18946,7 +18946,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PA_VALIDATION_ENTRY_ATTR_ACTION"]
             }
@@ -18964,7 +18964,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PA_VALIDATION_ENTRY_ATTR_IP_ADDR_FAMILY"]
             }
@@ -18982,7 +18982,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_POLICER_ATTR_CBS", '0']
             }
@@ -18999,7 +18999,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_POLICER_ATTR_CBS"]
             }
@@ -19017,7 +19017,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_POLICER_ATTR_CIR", '0']
             }
@@ -19034,7 +19034,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_POLICER_ATTR_CIR"]
             }
@@ -19052,7 +19052,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_POLICER_ATTR_PBS", '0']
             }
@@ -19069,7 +19069,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_POLICER_ATTR_PBS"]
             }
@@ -19087,7 +19087,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_POLICER_ATTR_PIR", '0']
             }
@@ -19104,7 +19104,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_POLICER_ATTR_PIR"]
             }
@@ -19122,7 +19122,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_POLICER_ATTR_GREEN_PACKET_ACTION", 'SAI_PACKET_ACTION_FORWARD']
             }
@@ -19139,7 +19139,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_POLICER_ATTR_GREEN_PACKET_ACTION"]
             }
@@ -19157,7 +19157,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_POLICER_ATTR_YELLOW_PACKET_ACTION", 'SAI_PACKET_ACTION_FORWARD']
             }
@@ -19174,7 +19174,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_POLICER_ATTR_YELLOW_PACKET_ACTION"]
             }
@@ -19192,7 +19192,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_POLICER_ATTR_RED_PACKET_ACTION", 'SAI_PACKET_ACTION_FORWARD']
             }
@@ -19209,7 +19209,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_POLICER_ATTR_RED_PACKET_ACTION"]
             }
@@ -19227,7 +19227,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_POLICER_ATTR_ENABLE_COUNTER_PACKET_ACTION_LIST", 'empty']
             }
@@ -19244,7 +19244,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_POLICER_ATTR_ENABLE_COUNTER_PACKET_ACTION_LIST"]
             }
@@ -19262,7 +19262,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_TYPE"]
             }
@@ -19280,7 +19280,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_OPER_STATUS"]
             }
@@ -19298,7 +19298,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_SUPPORTED_BREAKOUT_MODE_TYPE"]
             }
@@ -19316,7 +19316,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_CURRENT_BREAKOUT_MODE_TYPE"]
             }
@@ -19334,7 +19334,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_QOS_NUMBER_OF_QUEUES"]
             }
@@ -19352,7 +19352,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_QOS_QUEUE_LIST"]
             }
@@ -19370,7 +19370,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_QOS_NUMBER_OF_SCHEDULER_GROUPS"]
             }
@@ -19388,7 +19388,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_QOS_SCHEDULER_GROUP_LIST"]
             }
@@ -19406,7 +19406,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_QOS_MAXIMUM_HEADROOM_SIZE"]
             }
@@ -19424,7 +19424,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_SUPPORTED_SPEED"]
             }
@@ -19442,7 +19442,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_SUPPORTED_FEC_MODE"]
             }
@@ -19460,7 +19460,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_SUPPORTED_FEC_MODE_EXTENDED"]
             }
@@ -19478,7 +19478,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_SUPPORTED_HALF_DUPLEX_SPEED"]
             }
@@ -19496,7 +19496,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_SUPPORTED_AUTO_NEG_MODE"]
             }
@@ -19514,7 +19514,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_SUPPORTED_FLOW_CONTROL_MODE"]
             }
@@ -19532,7 +19532,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_SUPPORTED_ASYMMETRIC_PAUSE_MODE"]
             }
@@ -19550,7 +19550,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_SUPPORTED_MEDIA_TYPE"]
             }
@@ -19568,7 +19568,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_REMOTE_ADVERTISED_SPEED"]
             }
@@ -19586,7 +19586,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_REMOTE_ADVERTISED_FEC_MODE"]
             }
@@ -19604,7 +19604,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_REMOTE_ADVERTISED_FEC_MODE_EXTENDED"]
             }
@@ -19622,7 +19622,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_REMOTE_ADVERTISED_HALF_DUPLEX_SPEED"]
             }
@@ -19640,7 +19640,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_REMOTE_ADVERTISED_AUTO_NEG_MODE"]
             }
@@ -19658,7 +19658,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_REMOTE_ADVERTISED_FLOW_CONTROL_MODE"]
             }
@@ -19676,7 +19676,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_REMOTE_ADVERTISED_ASYMMETRIC_PAUSE_MODE"]
             }
@@ -19694,7 +19694,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_REMOTE_ADVERTISED_MEDIA_TYPE"]
             }
@@ -19712,7 +19712,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_REMOTE_ADVERTISED_OUI_CODE"]
             }
@@ -19730,7 +19730,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_NUMBER_OF_INGRESS_PRIORITY_GROUPS"]
             }
@@ -19748,7 +19748,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_INGRESS_PRIORITY_GROUP_LIST"]
             }
@@ -19766,7 +19766,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_EYE_VALUES"]
             }
@@ -19784,7 +19784,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_OPER_SPEED"]
             }
@@ -19802,7 +19802,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_SPEED", 'TODO']
             }
@@ -19819,7 +19819,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_SPEED"]
             }
@@ -19837,7 +19837,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_AUTO_NEG_MODE", 'false']
             }
@@ -19854,7 +19854,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_AUTO_NEG_MODE"]
             }
@@ -19872,7 +19872,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_ADMIN_STATE", 'false']
             }
@@ -19889,7 +19889,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_ADMIN_STATE"]
             }
@@ -19907,7 +19907,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_MEDIA_TYPE", 'SAI_PORT_MEDIA_TYPE_NOT_PRESENT']
             }
@@ -19924,7 +19924,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_MEDIA_TYPE"]
             }
@@ -19942,7 +19942,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_ADVERTISED_SPEED", 'empty']
             }
@@ -19959,7 +19959,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_ADVERTISED_SPEED"]
             }
@@ -19977,7 +19977,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_ADVERTISED_FEC_MODE", 'empty']
             }
@@ -19994,7 +19994,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_ADVERTISED_FEC_MODE"]
             }
@@ -20012,7 +20012,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_ADVERTISED_FEC_MODE_EXTENDED", 'empty']
             }
@@ -20029,7 +20029,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_ADVERTISED_FEC_MODE_EXTENDED"]
             }
@@ -20047,7 +20047,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_ADVERTISED_HALF_DUPLEX_SPEED", 'empty']
             }
@@ -20064,7 +20064,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_ADVERTISED_HALF_DUPLEX_SPEED"]
             }
@@ -20082,7 +20082,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_ADVERTISED_AUTO_NEG_MODE", 'false']
             }
@@ -20099,7 +20099,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_ADVERTISED_AUTO_NEG_MODE"]
             }
@@ -20117,7 +20117,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_ADVERTISED_FLOW_CONTROL_MODE", 'SAI_PORT_FLOW_CONTROL_MODE_DISABLE']
             }
@@ -20134,7 +20134,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_ADVERTISED_FLOW_CONTROL_MODE"]
             }
@@ -20152,7 +20152,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_ADVERTISED_ASYMMETRIC_PAUSE_MODE", 'false']
             }
@@ -20169,7 +20169,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_ADVERTISED_ASYMMETRIC_PAUSE_MODE"]
             }
@@ -20187,7 +20187,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_ADVERTISED_MEDIA_TYPE", 'SAI_PORT_MEDIA_TYPE_UNKNOWN']
             }
@@ -20204,7 +20204,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_ADVERTISED_MEDIA_TYPE"]
             }
@@ -20222,7 +20222,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_ADVERTISED_OUI_CODE", '0x6A737D']
             }
@@ -20239,7 +20239,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_ADVERTISED_OUI_CODE"]
             }
@@ -20257,7 +20257,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_PORT_VLAN_ID", '1']
             }
@@ -20274,7 +20274,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_PORT_VLAN_ID"]
             }
@@ -20292,7 +20292,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_DEFAULT_VLAN_PRIORITY", '0']
             }
@@ -20309,7 +20309,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_DEFAULT_VLAN_PRIORITY"]
             }
@@ -20327,7 +20327,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_DROP_UNTAGGED", 'false']
             }
@@ -20344,7 +20344,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_DROP_UNTAGGED"]
             }
@@ -20362,7 +20362,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_DROP_TAGGED", 'false']
             }
@@ -20379,7 +20379,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_DROP_TAGGED"]
             }
@@ -20397,7 +20397,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_INTERNAL_LOOPBACK_MODE", 'SAI_PORT_INTERNAL_LOOPBACK_MODE_NONE']
             }
@@ -20414,7 +20414,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_INTERNAL_LOOPBACK_MODE"]
             }
@@ -20432,7 +20432,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_USE_EXTENDED_FEC", 'false']
             }
@@ -20449,7 +20449,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_USE_EXTENDED_FEC"]
             }
@@ -20467,7 +20467,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_FEC_MODE", 'SAI_PORT_FEC_MODE_NONE']
             }
@@ -20484,7 +20484,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_FEC_MODE"]
             }
@@ -20502,7 +20502,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_FEC_MODE_EXTENDED", 'SAI_PORT_FEC_MODE_EXTENDED_NONE']
             }
@@ -20519,7 +20519,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_FEC_MODE_EXTENDED"]
             }
@@ -20537,7 +20537,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_UPDATE_DSCP", 'false']
             }
@@ -20554,7 +20554,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_UPDATE_DSCP"]
             }
@@ -20572,7 +20572,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_MTU", '1514']
             }
@@ -20589,7 +20589,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_MTU"]
             }
@@ -20607,7 +20607,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_FLOOD_STORM_CONTROL_POLICER_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -20624,7 +20624,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_FLOOD_STORM_CONTROL_POLICER_ID"]
             }
@@ -20642,7 +20642,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_BROADCAST_STORM_CONTROL_POLICER_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -20659,7 +20659,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_BROADCAST_STORM_CONTROL_POLICER_ID"]
             }
@@ -20677,7 +20677,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_MULTICAST_STORM_CONTROL_POLICER_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -20694,7 +20694,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_MULTICAST_STORM_CONTROL_POLICER_ID"]
             }
@@ -20712,7 +20712,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_GLOBAL_FLOW_CONTROL_MODE", 'SAI_PORT_FLOW_CONTROL_MODE_DISABLE']
             }
@@ -20729,7 +20729,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_GLOBAL_FLOW_CONTROL_MODE"]
             }
@@ -20747,7 +20747,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_INGRESS_ACL", 'SAI_NULL_OBJECT_ID']
             }
@@ -20764,7 +20764,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_INGRESS_ACL"]
             }
@@ -20782,7 +20782,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_EGRESS_ACL", 'SAI_NULL_OBJECT_ID']
             }
@@ -20799,7 +20799,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_EGRESS_ACL"]
             }
@@ -20817,7 +20817,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_INGRESS_MACSEC_ACL", 'SAI_NULL_OBJECT_ID']
             }
@@ -20834,7 +20834,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_INGRESS_MACSEC_ACL"]
             }
@@ -20852,7 +20852,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_EGRESS_MACSEC_ACL", 'SAI_NULL_OBJECT_ID']
             }
@@ -20869,7 +20869,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_EGRESS_MACSEC_ACL"]
             }
@@ -20887,7 +20887,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_MACSEC_PORT_LIST"]
             }
@@ -20905,7 +20905,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_INGRESS_MIRROR_SESSION", 'empty']
             }
@@ -20922,7 +20922,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_INGRESS_MIRROR_SESSION"]
             }
@@ -20940,7 +20940,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_EGRESS_MIRROR_SESSION", 'empty']
             }
@@ -20957,7 +20957,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_EGRESS_MIRROR_SESSION"]
             }
@@ -20975,7 +20975,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_INGRESS_SAMPLEPACKET_ENABLE", 'SAI_NULL_OBJECT_ID']
             }
@@ -20992,7 +20992,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_INGRESS_SAMPLEPACKET_ENABLE"]
             }
@@ -21010,7 +21010,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_EGRESS_SAMPLEPACKET_ENABLE", 'SAI_NULL_OBJECT_ID']
             }
@@ -21027,7 +21027,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_EGRESS_SAMPLEPACKET_ENABLE"]
             }
@@ -21045,7 +21045,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_INGRESS_SAMPLE_MIRROR_SESSION", 'empty']
             }
@@ -21062,7 +21062,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_INGRESS_SAMPLE_MIRROR_SESSION"]
             }
@@ -21080,7 +21080,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_EGRESS_SAMPLE_MIRROR_SESSION", 'empty']
             }
@@ -21097,7 +21097,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_EGRESS_SAMPLE_MIRROR_SESSION"]
             }
@@ -21115,7 +21115,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_POLICER_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -21132,7 +21132,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_POLICER_ID"]
             }
@@ -21150,7 +21150,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_QOS_DEFAULT_TC", '0']
             }
@@ -21167,7 +21167,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_QOS_DEFAULT_TC"]
             }
@@ -21185,7 +21185,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_QOS_DOT1P_TO_TC_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -21202,7 +21202,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_QOS_DOT1P_TO_TC_MAP"]
             }
@@ -21220,7 +21220,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_QOS_DOT1P_TO_COLOR_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -21237,7 +21237,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_QOS_DOT1P_TO_COLOR_MAP"]
             }
@@ -21255,7 +21255,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_QOS_DSCP_TO_TC_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -21272,7 +21272,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_QOS_DSCP_TO_TC_MAP"]
             }
@@ -21290,7 +21290,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_QOS_DSCP_TO_COLOR_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -21307,7 +21307,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_QOS_DSCP_TO_COLOR_MAP"]
             }
@@ -21325,7 +21325,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_QOS_TC_TO_QUEUE_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -21342,7 +21342,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_QOS_TC_TO_QUEUE_MAP"]
             }
@@ -21360,7 +21360,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_QOS_TC_AND_COLOR_TO_DOT1P_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -21377,7 +21377,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_QOS_TC_AND_COLOR_TO_DOT1P_MAP"]
             }
@@ -21395,7 +21395,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_QOS_TC_AND_COLOR_TO_DSCP_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -21412,7 +21412,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_QOS_TC_AND_COLOR_TO_DSCP_MAP"]
             }
@@ -21430,7 +21430,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_QOS_TC_TO_PRIORITY_GROUP_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -21447,7 +21447,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_QOS_TC_TO_PRIORITY_GROUP_MAP"]
             }
@@ -21465,7 +21465,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_QOS_PFC_PRIORITY_TO_PRIORITY_GROUP_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -21482,7 +21482,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_QOS_PFC_PRIORITY_TO_PRIORITY_GROUP_MAP"]
             }
@@ -21500,7 +21500,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_QOS_PFC_PRIORITY_TO_QUEUE_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -21517,7 +21517,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_QOS_PFC_PRIORITY_TO_QUEUE_MAP"]
             }
@@ -21535,7 +21535,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_QOS_SCHEDULER_PROFILE_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -21552,7 +21552,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_QOS_SCHEDULER_PROFILE_ID"]
             }
@@ -21570,7 +21570,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_QOS_INGRESS_BUFFER_PROFILE_LIST", 'empty']
             }
@@ -21587,7 +21587,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_QOS_INGRESS_BUFFER_PROFILE_LIST"]
             }
@@ -21605,7 +21605,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_QOS_EGRESS_BUFFER_PROFILE_LIST", 'empty']
             }
@@ -21622,7 +21622,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_QOS_EGRESS_BUFFER_PROFILE_LIST"]
             }
@@ -21640,7 +21640,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_PRIORITY_FLOW_CONTROL_MODE", 'SAI_PORT_PRIORITY_FLOW_CONTROL_MODE_COMBINED']
             }
@@ -21657,7 +21657,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_PRIORITY_FLOW_CONTROL_MODE"]
             }
@@ -21675,7 +21675,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_PRIORITY_FLOW_CONTROL", '0']
             }
@@ -21692,7 +21692,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_PRIORITY_FLOW_CONTROL"]
             }
@@ -21710,7 +21710,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_PRIORITY_FLOW_CONTROL_RX", '0']
             }
@@ -21727,7 +21727,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_PRIORITY_FLOW_CONTROL_RX"]
             }
@@ -21745,7 +21745,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_PRIORITY_FLOW_CONTROL_TX", '0']
             }
@@ -21762,7 +21762,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_PRIORITY_FLOW_CONTROL_TX"]
             }
@@ -21780,7 +21780,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_META_DATA", '0']
             }
@@ -21797,7 +21797,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_META_DATA"]
             }
@@ -21815,7 +21815,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_EGRESS_BLOCK_PORT_LIST", 'empty']
             }
@@ -21832,7 +21832,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_EGRESS_BLOCK_PORT_LIST"]
             }
@@ -21850,7 +21850,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_HW_PROFILE_ID", 'vendor']
             }
@@ -21867,7 +21867,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_HW_PROFILE_ID"]
             }
@@ -21885,7 +21885,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_EEE_ENABLE", 'false']
             }
@@ -21902,7 +21902,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_EEE_ENABLE"]
             }
@@ -21920,7 +21920,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_EEE_IDLE_TIME", '2500']
             }
@@ -21937,7 +21937,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_EEE_IDLE_TIME"]
             }
@@ -21955,7 +21955,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_EEE_WAKE_TIME", '5']
             }
@@ -21972,7 +21972,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_EEE_WAKE_TIME"]
             }
@@ -21990,7 +21990,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_PORT_POOL_LIST"]
             }
@@ -22008,7 +22008,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_ISOLATION_GROUP", 'SAI_NULL_OBJECT_ID']
             }
@@ -22025,7 +22025,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_ISOLATION_GROUP"]
             }
@@ -22043,7 +22043,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_PKT_TX_ENABLE", 'true']
             }
@@ -22060,7 +22060,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_PKT_TX_ENABLE"]
             }
@@ -22078,7 +22078,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_TAM_OBJECT", 'empty']
             }
@@ -22095,7 +22095,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_TAM_OBJECT"]
             }
@@ -22113,7 +22113,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_SERDES_PREEMPHASIS", 'internal']
             }
@@ -22130,7 +22130,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_SERDES_PREEMPHASIS"]
             }
@@ -22148,7 +22148,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_SERDES_IDRIVER", 'internal']
             }
@@ -22165,7 +22165,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_SERDES_IDRIVER"]
             }
@@ -22183,7 +22183,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_SERDES_IPREDRIVER", 'internal']
             }
@@ -22200,7 +22200,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_SERDES_IPREDRIVER"]
             }
@@ -22218,7 +22218,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_LINK_TRAINING_ENABLE", 'false']
             }
@@ -22235,7 +22235,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_LINK_TRAINING_ENABLE"]
             }
@@ -22253,7 +22253,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_PTP_MODE", 'SAI_PORT_PTP_MODE_NONE']
             }
@@ -22270,7 +22270,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_PTP_MODE"]
             }
@@ -22288,7 +22288,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_INTERFACE_TYPE", 'SAI_PORT_INTERFACE_TYPE_NONE']
             }
@@ -22305,7 +22305,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_INTERFACE_TYPE"]
             }
@@ -22323,7 +22323,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_ADVERTISED_INTERFACE_TYPE", 'empty']
             }
@@ -22340,7 +22340,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_ADVERTISED_INTERFACE_TYPE"]
             }
@@ -22358,7 +22358,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_PRBS_POLYNOMIAL", 'internal']
             }
@@ -22375,7 +22375,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_PRBS_POLYNOMIAL"]
             }
@@ -22393,7 +22393,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_PORT_SERDES_ID"]
             }
@@ -22411,7 +22411,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_LINK_TRAINING_FAILURE_STATUS"]
             }
@@ -22429,7 +22429,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_LINK_TRAINING_RX_STATUS"]
             }
@@ -22447,7 +22447,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_PRBS_CONFIG", 'SAI_PORT_PRBS_CONFIG_DISABLE']
             }
@@ -22464,7 +22464,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_PRBS_CONFIG"]
             }
@@ -22482,7 +22482,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_PRBS_LOCK_STATUS"]
             }
@@ -22500,7 +22500,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_PRBS_LOCK_LOSS_STATUS"]
             }
@@ -22518,7 +22518,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_PRBS_RX_STATUS"]
             }
@@ -22536,7 +22536,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_PRBS_RX_STATE"]
             }
@@ -22554,7 +22554,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_AUTO_NEG_STATUS"]
             }
@@ -22572,7 +22572,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_DISABLE_DECREMENT_TTL", 'false']
             }
@@ -22589,7 +22589,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_DISABLE_DECREMENT_TTL"]
             }
@@ -22607,7 +22607,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_QOS_MPLS_EXP_TO_TC_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -22624,7 +22624,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_QOS_MPLS_EXP_TO_TC_MAP"]
             }
@@ -22642,7 +22642,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_QOS_MPLS_EXP_TO_COLOR_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -22659,7 +22659,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_QOS_MPLS_EXP_TO_COLOR_MAP"]
             }
@@ -22677,7 +22677,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_QOS_TC_AND_COLOR_TO_MPLS_EXP_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -22694,7 +22694,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_QOS_TC_AND_COLOR_TO_MPLS_EXP_MAP"]
             }
@@ -22712,7 +22712,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_TPID", '0x8100']
             }
@@ -22729,7 +22729,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_TPID"]
             }
@@ -22747,7 +22747,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_ERR_STATUS_LIST"]
             }
@@ -22765,7 +22765,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_FABRIC_ATTACHED"]
             }
@@ -22783,7 +22783,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_FABRIC_ATTACHED_SWITCH_TYPE"]
             }
@@ -22801,7 +22801,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_FABRIC_ATTACHED_SWITCH_ID"]
             }
@@ -22819,7 +22819,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_FABRIC_ATTACHED_PORT_INDEX"]
             }
@@ -22837,7 +22837,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_FABRIC_REACHABILITY"]
             }
@@ -22855,7 +22855,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_SYSTEM_PORT"]
             }
@@ -22873,7 +22873,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_AUTO_NEG_FEC_MODE_OVERRIDE", 'false']
             }
@@ -22890,7 +22890,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_AUTO_NEG_FEC_MODE_OVERRIDE"]
             }
@@ -22908,7 +22908,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_LOOPBACK_MODE", 'SAI_PORT_LOOPBACK_MODE_NONE']
             }
@@ -22925,7 +22925,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_LOOPBACK_MODE"]
             }
@@ -22943,7 +22943,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_MDIX_MODE_STATUS"]
             }
@@ -22961,7 +22961,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_MDIX_MODE_CONFIG", 'SAI_PORT_MDIX_MODE_CONFIG_AUTO']
             }
@@ -22978,7 +22978,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_MDIX_MODE_CONFIG"]
             }
@@ -22996,7 +22996,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_AUTO_NEG_CONFIG_MODE", 'SAI_PORT_AUTO_NEG_CONFIG_MODE_DISABLED']
             }
@@ -23013,7 +23013,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_AUTO_NEG_CONFIG_MODE"]
             }
@@ -23031,7 +23031,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_1000X_SGMII_SLAVE_AUTODETECT", 'false']
             }
@@ -23048,7 +23048,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_1000X_SGMII_SLAVE_AUTODETECT"]
             }
@@ -23066,7 +23066,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_MODULE_TYPE", 'SAI_PORT_MODULE_TYPE_1000BASE_X']
             }
@@ -23083,7 +23083,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_MODULE_TYPE"]
             }
@@ -23101,7 +23101,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_DUAL_MEDIA", 'SAI_PORT_DUAL_MEDIA_NONE']
             }
@@ -23118,7 +23118,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_DUAL_MEDIA"]
             }
@@ -23136,7 +23136,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_AUTO_NEG_FEC_MODE_EXTENDED"]
             }
@@ -23154,7 +23154,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_IPG", '96']
             }
@@ -23171,7 +23171,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_IPG"]
             }
@@ -23189,7 +23189,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_GLOBAL_FLOW_CONTROL_FORWARD", 'false']
             }
@@ -23206,7 +23206,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_GLOBAL_FLOW_CONTROL_FORWARD"]
             }
@@ -23224,7 +23224,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_PRIORITY_FLOW_CONTROL_FORWARD", 'false']
             }
@@ -23241,7 +23241,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_PRIORITY_FLOW_CONTROL_FORWARD"]
             }
@@ -23259,7 +23259,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_QOS_DSCP_TO_FORWARDING_CLASS_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -23276,7 +23276,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_QOS_DSCP_TO_FORWARDING_CLASS_MAP"]
             }
@@ -23294,7 +23294,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_QOS_MPLS_EXP_TO_FORWARDING_CLASS_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -23311,7 +23311,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_QOS_MPLS_EXP_TO_FORWARDING_CLASS_MAP"]
             }
@@ -23329,7 +23329,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_IPSEC_PORT"]
             }
@@ -23347,7 +23347,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_PFC_TC_DLD_INTERVAL_RANGE"]
             }
@@ -23365,7 +23365,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_PFC_TC_DLD_INTERVAL", 'empty']
             }
@@ -23382,7 +23382,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_PFC_TC_DLD_INTERVAL"]
             }
@@ -23400,7 +23400,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_PFC_TC_DLR_INTERVAL_RANGE"]
             }
@@ -23418,7 +23418,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_PFC_TC_DLR_INTERVAL", 'empty']
             }
@@ -23435,7 +23435,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_PFC_TC_DLR_INTERVAL"]
             }
@@ -23453,7 +23453,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_SUPPORTED_LINK_TRAINING_MODE"]
             }
@@ -23471,7 +23471,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_RX_SIGNAL_DETECT"]
             }
@@ -23489,7 +23489,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_RX_LOCK_STATUS"]
             }
@@ -23507,7 +23507,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_PCS_RX_LINK_STATUS"]
             }
@@ -23525,7 +23525,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_FEC_ALIGNMENT_LOCK"]
             }
@@ -23543,7 +23543,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_FABRIC_ISOLATE", 'false']
             }
@@ -23560,7 +23560,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_FABRIC_ISOLATE"]
             }
@@ -23578,7 +23578,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_MAX_FEC_SYMBOL_ERRORS_DETECTABLE"]
             }
@@ -23596,7 +23596,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_ARS_ENABLE", 'false']
             }
@@ -23613,7 +23613,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_ARS_ENABLE"]
             }
@@ -23631,7 +23631,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_ARS_PORT_LOAD_SCALING_FACTOR", '0']
             }
@@ -23648,7 +23648,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_ARS_PORT_LOAD_SCALING_FACTOR"]
             }
@@ -23666,7 +23666,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_ARS_PORT_LOAD_PAST_ENABLE", 'false']
             }
@@ -23683,7 +23683,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_ARS_PORT_LOAD_PAST_ENABLE"]
             }
@@ -23701,7 +23701,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_ARS_PORT_LOAD_FUTURE_ENABLE", 'false']
             }
@@ -23718,7 +23718,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_ARS_PORT_LOAD_FUTURE_ENABLE"]
             }
@@ -23736,7 +23736,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_ARS_ALTERNATE_PATH", 'false']
             }
@@ -23753,7 +23753,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_ARS_ALTERNATE_PATH"]
             }
@@ -23771,7 +23771,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_JSON_FORMATTED_DEBUG_DATA"]
             }
@@ -23789,7 +23789,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_ECMP_HASH_ALGORITHM", 'SAI_HASH_ALGORITHM_CRC']
             }
@@ -23806,7 +23806,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_ECMP_HASH_ALGORITHM"]
             }
@@ -23824,7 +23824,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_ECMP_HASH_SEED", '0']
             }
@@ -23841,7 +23841,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_ECMP_HASH_SEED"]
             }
@@ -23859,7 +23859,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_ATTR_ECMP_HASH_OFFSET", '0']
             }
@@ -23876,7 +23876,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_ECMP_HASH_OFFSET"]
             }
@@ -23894,7 +23894,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_ATTR_OPER_PORT_FEC_MODE"]
             }
@@ -23912,7 +23912,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_CONNECTOR_ATTR_FAILOVER_MODE", 'SAI_PORT_CONNECTOR_FAILOVER_MODE_DISABLE']
             }
@@ -23929,7 +23929,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_CONNECTOR_ATTR_FAILOVER_MODE"]
             }
@@ -23947,7 +23947,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_PORT_POOL_ATTR_QOS_WRED_PROFILE_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -23964,7 +23964,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_PORT_POOL_ATTR_QOS_WRED_PROFILE_ID"]
             }
@@ -23982,7 +23982,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_QOS_MAP_ATTR_MAP_TO_VALUE_LIST", 'TODO']
             }
@@ -23999,7 +23999,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_QOS_MAP_ATTR_MAP_TO_VALUE_LIST"]
             }
@@ -24017,7 +24017,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_QUEUE_ATTR_PARENT_SCHEDULER_NODE", 'TODO']
             }
@@ -24034,7 +24034,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_QUEUE_ATTR_PARENT_SCHEDULER_NODE"]
             }
@@ -24052,7 +24052,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_QUEUE_ATTR_WRED_PROFILE_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -24069,7 +24069,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_QUEUE_ATTR_WRED_PROFILE_ID"]
             }
@@ -24087,7 +24087,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_QUEUE_ATTR_BUFFER_PROFILE_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -24104,7 +24104,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_QUEUE_ATTR_BUFFER_PROFILE_ID"]
             }
@@ -24122,7 +24122,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_QUEUE_ATTR_SCHEDULER_PROFILE_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -24139,7 +24139,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_QUEUE_ATTR_SCHEDULER_PROFILE_ID"]
             }
@@ -24157,7 +24157,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_QUEUE_ATTR_PAUSE_STATUS"]
             }
@@ -24175,7 +24175,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_QUEUE_ATTR_ENABLE_PFC_DLDR", 'false']
             }
@@ -24192,7 +24192,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_QUEUE_ATTR_ENABLE_PFC_DLDR"]
             }
@@ -24210,7 +24210,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_QUEUE_ATTR_PFC_DLR_INIT", 'false']
             }
@@ -24227,7 +24227,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_QUEUE_ATTR_PFC_DLR_INIT"]
             }
@@ -24245,7 +24245,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_QUEUE_ATTR_TAM_OBJECT", 'empty']
             }
@@ -24262,7 +24262,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_QUEUE_ATTR_TAM_OBJECT"]
             }
@@ -24280,7 +24280,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_QUEUE_ATTR_PFC_DLR_PACKET_ACTION", 'SAI_PACKET_ACTION_DROP']
             }
@@ -24297,7 +24297,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_QUEUE_ATTR_PFC_DLR_PACKET_ACTION"]
             }
@@ -24315,7 +24315,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_QUEUE_ATTR_PFC_CONTINUOUS_DEADLOCK_STATE"]
             }
@@ -24333,7 +24333,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ROUTE_ENTRY_ATTR_PACKET_ACTION", 'SAI_PACKET_ACTION_FORWARD']
             }
@@ -24350,7 +24350,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ROUTE_ENTRY_ATTR_PACKET_ACTION"]
             }
@@ -24368,7 +24368,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ROUTE_ENTRY_ATTR_USER_TRAP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -24385,7 +24385,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ROUTE_ENTRY_ATTR_USER_TRAP_ID"]
             }
@@ -24403,7 +24403,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ROUTE_ENTRY_ATTR_NEXT_HOP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -24420,7 +24420,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ROUTE_ENTRY_ATTR_NEXT_HOP_ID"]
             }
@@ -24438,7 +24438,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ROUTE_ENTRY_ATTR_META_DATA", '0']
             }
@@ -24455,7 +24455,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ROUTE_ENTRY_ATTR_META_DATA"]
             }
@@ -24473,7 +24473,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ROUTE_ENTRY_ATTR_IP_ADDR_FAMILY"]
             }
@@ -24491,7 +24491,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ROUTE_ENTRY_ATTR_COUNTER_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -24508,7 +24508,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ROUTE_ENTRY_ATTR_COUNTER_ID"]
             }
@@ -24526,7 +24526,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ROUTE_ENTRY_ATTR_PREFIX_AGG_ID", '0']
             }
@@ -24543,7 +24543,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ROUTE_ENTRY_ATTR_PREFIX_AGG_ID"]
             }
@@ -24561,7 +24561,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ROUTER_INTERFACE_ATTR_SRC_MAC_ADDRESS", 'SAI_VIRTUAL_ROUTER_ATTR_SRC_MAC_ADDRESS']
             }
@@ -24578,7 +24578,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ROUTER_INTERFACE_ATTR_SRC_MAC_ADDRESS"]
             }
@@ -24596,7 +24596,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ROUTER_INTERFACE_ATTR_ADMIN_V4_STATE", 'true']
             }
@@ -24613,7 +24613,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ROUTER_INTERFACE_ATTR_ADMIN_V4_STATE"]
             }
@@ -24631,7 +24631,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ROUTER_INTERFACE_ATTR_ADMIN_V6_STATE", 'true']
             }
@@ -24648,7 +24648,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ROUTER_INTERFACE_ATTR_ADMIN_V6_STATE"]
             }
@@ -24666,7 +24666,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ROUTER_INTERFACE_ATTR_MTU", '1514']
             }
@@ -24683,7 +24683,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ROUTER_INTERFACE_ATTR_MTU"]
             }
@@ -24701,7 +24701,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ROUTER_INTERFACE_ATTR_INGRESS_ACL", 'SAI_NULL_OBJECT_ID']
             }
@@ -24718,7 +24718,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ROUTER_INTERFACE_ATTR_INGRESS_ACL"]
             }
@@ -24736,7 +24736,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ROUTER_INTERFACE_ATTR_EGRESS_ACL", 'SAI_NULL_OBJECT_ID']
             }
@@ -24753,7 +24753,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ROUTER_INTERFACE_ATTR_EGRESS_ACL"]
             }
@@ -24771,7 +24771,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ROUTER_INTERFACE_ATTR_NEIGHBOR_MISS_PACKET_ACTION", 'SAI_PACKET_ACTION_TRAP']
             }
@@ -24788,7 +24788,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ROUTER_INTERFACE_ATTR_NEIGHBOR_MISS_PACKET_ACTION"]
             }
@@ -24806,7 +24806,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ROUTER_INTERFACE_ATTR_V4_MCAST_ENABLE", 'false']
             }
@@ -24823,7 +24823,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ROUTER_INTERFACE_ATTR_V4_MCAST_ENABLE"]
             }
@@ -24841,7 +24841,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ROUTER_INTERFACE_ATTR_V6_MCAST_ENABLE", 'false']
             }
@@ -24858,7 +24858,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ROUTER_INTERFACE_ATTR_V6_MCAST_ENABLE"]
             }
@@ -24876,7 +24876,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ROUTER_INTERFACE_ATTR_LOOPBACK_PACKET_ACTION", 'SAI_PACKET_ACTION_FORWARD']
             }
@@ -24893,7 +24893,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ROUTER_INTERFACE_ATTR_LOOPBACK_PACKET_ACTION"]
             }
@@ -24911,7 +24911,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ROUTER_INTERFACE_ATTR_NAT_ZONE_ID", '0']
             }
@@ -24928,7 +24928,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ROUTER_INTERFACE_ATTR_NAT_ZONE_ID"]
             }
@@ -24946,7 +24946,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ROUTER_INTERFACE_ATTR_DISABLE_DECREMENT_TTL", 'false']
             }
@@ -24963,7 +24963,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ROUTER_INTERFACE_ATTR_DISABLE_DECREMENT_TTL"]
             }
@@ -24981,7 +24981,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_ROUTER_INTERFACE_ATTR_ADMIN_MPLS_STATE", 'false']
             }
@@ -24998,7 +24998,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_ROUTER_INTERFACE_ATTR_ADMIN_MPLS_STATE"]
             }
@@ -25016,7 +25016,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_RPF_GROUP_ATTR_RPF_INTERFACE_COUNT"]
             }
@@ -25034,7 +25034,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_RPF_GROUP_ATTR_RPF_MEMBER_LIST"]
             }
@@ -25052,7 +25052,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SAMPLEPACKET_ATTR_SAMPLE_RATE", 'TODO']
             }
@@ -25069,7 +25069,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SAMPLEPACKET_ATTR_SAMPLE_RATE"]
             }
@@ -25087,7 +25087,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SCHEDULER_ATTR_SCHEDULING_TYPE", 'SAI_SCHEDULING_TYPE_WRR']
             }
@@ -25104,7 +25104,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SCHEDULER_ATTR_SCHEDULING_TYPE"]
             }
@@ -25122,7 +25122,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SCHEDULER_ATTR_SCHEDULING_WEIGHT", '1']
             }
@@ -25139,7 +25139,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SCHEDULER_ATTR_SCHEDULING_WEIGHT"]
             }
@@ -25157,7 +25157,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SCHEDULER_ATTR_METER_TYPE", 'SAI_METER_TYPE_BYTES']
             }
@@ -25174,7 +25174,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SCHEDULER_ATTR_METER_TYPE"]
             }
@@ -25192,7 +25192,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SCHEDULER_ATTR_MIN_BANDWIDTH_RATE", '0']
             }
@@ -25209,7 +25209,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SCHEDULER_ATTR_MIN_BANDWIDTH_RATE"]
             }
@@ -25227,7 +25227,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SCHEDULER_ATTR_MIN_BANDWIDTH_BURST_RATE", '0']
             }
@@ -25244,7 +25244,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SCHEDULER_ATTR_MIN_BANDWIDTH_BURST_RATE"]
             }
@@ -25262,7 +25262,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SCHEDULER_ATTR_MAX_BANDWIDTH_RATE", '0']
             }
@@ -25279,7 +25279,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SCHEDULER_ATTR_MAX_BANDWIDTH_RATE"]
             }
@@ -25297,7 +25297,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SCHEDULER_ATTR_MAX_BANDWIDTH_BURST_RATE", '0']
             }
@@ -25314,7 +25314,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SCHEDULER_ATTR_MAX_BANDWIDTH_BURST_RATE"]
             }
@@ -25332,7 +25332,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SCHEDULER_GROUP_ATTR_CHILD_COUNT"]
             }
@@ -25350,7 +25350,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SCHEDULER_GROUP_ATTR_CHILD_LIST"]
             }
@@ -25368,7 +25368,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SCHEDULER_GROUP_ATTR_SCHEDULER_PROFILE_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -25385,7 +25385,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SCHEDULER_GROUP_ATTR_SCHEDULER_PROFILE_ID"]
             }
@@ -25403,7 +25403,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SCHEDULER_GROUP_ATTR_PARENT_NODE", 'TODO']
             }
@@ -25420,7 +25420,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SCHEDULER_GROUP_ATTR_PARENT_NODE"]
             }
@@ -25438,7 +25438,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SRV6_SIDLIST_ATTR_TLV_LIST", 'empty']
             }
@@ -25455,7 +25455,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SRV6_SIDLIST_ATTR_TLV_LIST"]
             }
@@ -25473,7 +25473,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SRV6_SIDLIST_ATTR_SEGMENT_LIST", 'empty']
             }
@@ -25490,7 +25490,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SRV6_SIDLIST_ATTR_SEGMENT_LIST"]
             }
@@ -25508,7 +25508,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SRV6_SIDLIST_ATTR_NEXT_HOP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -25525,7 +25525,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SRV6_SIDLIST_ATTR_NEXT_HOP_ID"]
             }
@@ -25543,7 +25543,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_STP_ATTR_VLAN_LIST"]
             }
@@ -25561,7 +25561,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_STP_ATTR_BRIDGE_ID"]
             }
@@ -25579,7 +25579,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_STP_ATTR_PORT_LIST"]
             }
@@ -25597,7 +25597,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_STP_PORT_ATTR_STATE", 'TODO']
             }
@@ -25614,7 +25614,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_STP_PORT_ATTR_STATE"]
             }
@@ -25632,7 +25632,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_NUMBER_OF_ACTIVE_PORTS"]
             }
@@ -25650,7 +25650,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_MAX_NUMBER_OF_SUPPORTED_PORTS"]
             }
@@ -25668,7 +25668,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_PORT_LIST"]
             }
@@ -25686,7 +25686,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_PORT_MAX_MTU"]
             }
@@ -25704,7 +25704,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_CPU_PORT"]
             }
@@ -25722,7 +25722,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_MAX_VIRTUAL_ROUTERS"]
             }
@@ -25740,7 +25740,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_FDB_TABLE_SIZE"]
             }
@@ -25758,7 +25758,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_L3_NEIGHBOR_TABLE_SIZE"]
             }
@@ -25776,7 +25776,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_L3_ROUTE_TABLE_SIZE"]
             }
@@ -25794,7 +25794,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_LAG_MEMBERS"]
             }
@@ -25812,7 +25812,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_NUMBER_OF_LAGS"]
             }
@@ -25830,7 +25830,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ECMP_MEMBERS"]
             }
@@ -25848,7 +25848,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_NUMBER_OF_ECMP_GROUPS"]
             }
@@ -25866,7 +25866,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_NUMBER_OF_UNICAST_QUEUES"]
             }
@@ -25884,7 +25884,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_NUMBER_OF_MULTICAST_QUEUES"]
             }
@@ -25902,7 +25902,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_NUMBER_OF_QUEUES"]
             }
@@ -25920,7 +25920,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_NUMBER_OF_CPU_QUEUES"]
             }
@@ -25938,7 +25938,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ON_LINK_ROUTE_SUPPORTED"]
             }
@@ -25956,7 +25956,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_OPER_STATUS"]
             }
@@ -25974,7 +25974,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_MAX_NUMBER_OF_TEMP_SENSORS"]
             }
@@ -25992,7 +25992,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_TEMP_LIST"]
             }
@@ -26010,7 +26010,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_MAX_TEMP"]
             }
@@ -26028,7 +26028,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_AVERAGE_TEMP"]
             }
@@ -26046,7 +26046,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ACL_TABLE_MINIMUM_PRIORITY"]
             }
@@ -26064,7 +26064,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ACL_TABLE_MAXIMUM_PRIORITY"]
             }
@@ -26082,7 +26082,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ACL_ENTRY_MINIMUM_PRIORITY"]
             }
@@ -26100,7 +26100,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ACL_ENTRY_MAXIMUM_PRIORITY"]
             }
@@ -26118,7 +26118,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ACL_TABLE_GROUP_MINIMUM_PRIORITY"]
             }
@@ -26136,7 +26136,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ACL_TABLE_GROUP_MAXIMUM_PRIORITY"]
             }
@@ -26154,7 +26154,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_FDB_DST_USER_META_DATA_RANGE"]
             }
@@ -26172,7 +26172,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ROUTE_DST_USER_META_DATA_RANGE"]
             }
@@ -26190,7 +26190,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_NEIGHBOR_DST_USER_META_DATA_RANGE"]
             }
@@ -26208,7 +26208,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_PORT_USER_META_DATA_RANGE"]
             }
@@ -26226,7 +26226,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_VLAN_USER_META_DATA_RANGE"]
             }
@@ -26244,7 +26244,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ACL_USER_META_DATA_RANGE"]
             }
@@ -26262,7 +26262,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ACL_USER_TRAP_ID_RANGE"]
             }
@@ -26280,7 +26280,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_DEFAULT_VLAN_ID"]
             }
@@ -26298,7 +26298,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_DEFAULT_STP_INST_ID"]
             }
@@ -26316,7 +26316,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_MAX_STP_INSTANCE"]
             }
@@ -26334,7 +26334,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_DEFAULT_VIRTUAL_ROUTER_ID"]
             }
@@ -26352,7 +26352,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_DEFAULT_OVERRIDE_VIRTUAL_ROUTER_ID"]
             }
@@ -26370,7 +26370,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_DEFAULT_1Q_BRIDGE_ID"]
             }
@@ -26388,7 +26388,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_INGRESS_ACL", 'SAI_NULL_OBJECT_ID']
             }
@@ -26405,7 +26405,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_INGRESS_ACL"]
             }
@@ -26423,7 +26423,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_EGRESS_ACL", 'SAI_NULL_OBJECT_ID']
             }
@@ -26440,7 +26440,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_EGRESS_ACL"]
             }
@@ -26458,7 +26458,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_MAX_NUMBER_OF_TRAFFIC_CLASSES"]
             }
@@ -26476,7 +26476,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_MAX_NUMBER_OF_SCHEDULER_GROUP_HIERARCHY_LEVELS"]
             }
@@ -26494,7 +26494,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_MAX_NUMBER_OF_SCHEDULER_GROUPS_PER_HIERARCHY_LEVEL"]
             }
@@ -26512,7 +26512,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_MAX_NUMBER_OF_CHILDS_PER_SCHEDULER_GROUP"]
             }
@@ -26530,7 +26530,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_TOTAL_BUFFER_SIZE"]
             }
@@ -26548,7 +26548,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_INGRESS_BUFFER_POOL_NUM"]
             }
@@ -26566,7 +26566,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_EGRESS_BUFFER_POOL_NUM"]
             }
@@ -26584,7 +26584,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_AVAILABLE_IPV4_ROUTE_ENTRY"]
             }
@@ -26602,7 +26602,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_AVAILABLE_IPV6_ROUTE_ENTRY"]
             }
@@ -26620,7 +26620,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_AVAILABLE_IPV4_NEXTHOP_ENTRY"]
             }
@@ -26638,7 +26638,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_AVAILABLE_IPV6_NEXTHOP_ENTRY"]
             }
@@ -26656,7 +26656,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_AVAILABLE_IPV4_NEIGHBOR_ENTRY"]
             }
@@ -26674,7 +26674,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_AVAILABLE_IPV6_NEIGHBOR_ENTRY"]
             }
@@ -26692,7 +26692,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_AVAILABLE_NEXT_HOP_GROUP_ENTRY"]
             }
@@ -26710,7 +26710,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_AVAILABLE_NEXT_HOP_GROUP_MEMBER_ENTRY"]
             }
@@ -26728,7 +26728,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_AVAILABLE_FDB_ENTRY"]
             }
@@ -26746,7 +26746,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_AVAILABLE_L2MC_ENTRY"]
             }
@@ -26764,7 +26764,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_AVAILABLE_IPMC_ENTRY"]
             }
@@ -26782,7 +26782,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_AVAILABLE_SNAT_ENTRY"]
             }
@@ -26800,7 +26800,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_AVAILABLE_DNAT_ENTRY"]
             }
@@ -26818,7 +26818,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_AVAILABLE_DOUBLE_NAT_ENTRY"]
             }
@@ -26836,7 +26836,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_AVAILABLE_ACL_TABLE"]
             }
@@ -26854,7 +26854,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_AVAILABLE_ACL_TABLE_GROUP"]
             }
@@ -26872,7 +26872,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_AVAILABLE_MY_SID_ENTRY"]
             }
@@ -26890,7 +26890,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_DEFAULT_TRAP_GROUP"]
             }
@@ -26908,7 +26908,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ECMP_HASH"]
             }
@@ -26926,7 +26926,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_LAG_HASH"]
             }
@@ -26944,7 +26944,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_RESTART_WARM", 'false']
             }
@@ -26961,7 +26961,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_RESTART_WARM"]
             }
@@ -26979,7 +26979,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_WARM_RECOVER", 'false']
             }
@@ -26996,7 +26996,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_WARM_RECOVER"]
             }
@@ -27014,7 +27014,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_RESTART_TYPE"]
             }
@@ -27032,7 +27032,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_MIN_PLANNED_RESTART_INTERVAL"]
             }
@@ -27050,7 +27050,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_NV_STORAGE_SIZE"]
             }
@@ -27068,7 +27068,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_MAX_ACL_ACTION_COUNT"]
             }
@@ -27086,7 +27086,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_MAX_ACL_RANGE_COUNT"]
             }
@@ -27104,7 +27104,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ACL_CAPABILITY"]
             }
@@ -27122,7 +27122,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_MCAST_SNOOPING_CAPABILITY"]
             }
@@ -27140,7 +27140,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_SWITCHING_MODE", 'SAI_SWITCH_SWITCHING_MODE_STORE_AND_FORWARD']
             }
@@ -27157,7 +27157,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_SWITCHING_MODE"]
             }
@@ -27175,7 +27175,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_BCAST_CPU_FLOOD_ENABLE", 'false']
             }
@@ -27192,7 +27192,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_BCAST_CPU_FLOOD_ENABLE"]
             }
@@ -27210,7 +27210,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_MCAST_CPU_FLOOD_ENABLE", 'false']
             }
@@ -27227,7 +27227,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_MCAST_CPU_FLOOD_ENABLE"]
             }
@@ -27245,7 +27245,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_SRC_MAC_ADDRESS", 'vendor']
             }
@@ -27262,7 +27262,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_SRC_MAC_ADDRESS"]
             }
@@ -27280,7 +27280,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_MAX_LEARNED_ADDRESSES", '0']
             }
@@ -27297,7 +27297,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_MAX_LEARNED_ADDRESSES"]
             }
@@ -27315,7 +27315,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_FDB_AGING_TIME", '0']
             }
@@ -27332,7 +27332,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_FDB_AGING_TIME"]
             }
@@ -27350,7 +27350,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_FDB_UNICAST_MISS_PACKET_ACTION", 'SAI_PACKET_ACTION_FORWARD']
             }
@@ -27367,7 +27367,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_FDB_UNICAST_MISS_PACKET_ACTION"]
             }
@@ -27385,7 +27385,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_FDB_BROADCAST_MISS_PACKET_ACTION", 'SAI_PACKET_ACTION_FORWARD']
             }
@@ -27402,7 +27402,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_FDB_BROADCAST_MISS_PACKET_ACTION"]
             }
@@ -27420,7 +27420,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_FDB_MULTICAST_MISS_PACKET_ACTION", 'SAI_PACKET_ACTION_FORWARD']
             }
@@ -27437,7 +27437,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_FDB_MULTICAST_MISS_PACKET_ACTION"]
             }
@@ -27455,7 +27455,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_ECMP_DEFAULT_HASH_ALGORITHM", 'SAI_HASH_ALGORITHM_CRC']
             }
@@ -27472,7 +27472,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ECMP_DEFAULT_HASH_ALGORITHM"]
             }
@@ -27490,7 +27490,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_ECMP_DEFAULT_HASH_SEED", '0']
             }
@@ -27507,7 +27507,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ECMP_DEFAULT_HASH_SEED"]
             }
@@ -27525,7 +27525,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_ECMP_DEFAULT_HASH_OFFSET", '0']
             }
@@ -27542,7 +27542,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ECMP_DEFAULT_HASH_OFFSET"]
             }
@@ -27560,7 +27560,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_ECMP_DEFAULT_SYMMETRIC_HASH", 'false']
             }
@@ -27577,7 +27577,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ECMP_DEFAULT_SYMMETRIC_HASH"]
             }
@@ -27595,7 +27595,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_ECMP_HASH_IPV4", 'SAI_NULL_OBJECT_ID']
             }
@@ -27612,7 +27612,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ECMP_HASH_IPV4"]
             }
@@ -27630,7 +27630,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_ECMP_HASH_IPV4_IN_IPV4", 'SAI_NULL_OBJECT_ID']
             }
@@ -27647,7 +27647,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ECMP_HASH_IPV4_IN_IPV4"]
             }
@@ -27665,7 +27665,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_ECMP_HASH_IPV6", 'SAI_NULL_OBJECT_ID']
             }
@@ -27682,7 +27682,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ECMP_HASH_IPV6"]
             }
@@ -27700,7 +27700,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_LAG_DEFAULT_HASH_ALGORITHM", 'SAI_HASH_ALGORITHM_CRC']
             }
@@ -27717,7 +27717,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_LAG_DEFAULT_HASH_ALGORITHM"]
             }
@@ -27735,7 +27735,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_LAG_DEFAULT_HASH_SEED", '0']
             }
@@ -27752,7 +27752,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_LAG_DEFAULT_HASH_SEED"]
             }
@@ -27770,7 +27770,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_LAG_DEFAULT_HASH_OFFSET", '0']
             }
@@ -27787,7 +27787,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_LAG_DEFAULT_HASH_OFFSET"]
             }
@@ -27805,7 +27805,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_LAG_DEFAULT_SYMMETRIC_HASH", 'false']
             }
@@ -27822,7 +27822,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_LAG_DEFAULT_SYMMETRIC_HASH"]
             }
@@ -27840,7 +27840,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_LAG_HASH_IPV4", 'SAI_NULL_OBJECT_ID']
             }
@@ -27857,7 +27857,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_LAG_HASH_IPV4"]
             }
@@ -27875,7 +27875,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_LAG_HASH_IPV4_IN_IPV4", 'SAI_NULL_OBJECT_ID']
             }
@@ -27892,7 +27892,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_LAG_HASH_IPV4_IN_IPV4"]
             }
@@ -27910,7 +27910,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_LAG_HASH_IPV6", 'SAI_NULL_OBJECT_ID']
             }
@@ -27927,7 +27927,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_LAG_HASH_IPV6"]
             }
@@ -27945,7 +27945,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_COUNTER_REFRESH_INTERVAL", '1']
             }
@@ -27962,7 +27962,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_COUNTER_REFRESH_INTERVAL"]
             }
@@ -27980,7 +27980,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_DEFAULT_TC", '0']
             }
@@ -27997,7 +27997,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_DEFAULT_TC"]
             }
@@ -28015,7 +28015,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_DOT1P_TO_TC_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -28032,7 +28032,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_DOT1P_TO_TC_MAP"]
             }
@@ -28050,7 +28050,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_DOT1P_TO_COLOR_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -28067,7 +28067,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_DOT1P_TO_COLOR_MAP"]
             }
@@ -28085,7 +28085,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_DSCP_TO_TC_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -28102,7 +28102,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_DSCP_TO_TC_MAP"]
             }
@@ -28120,7 +28120,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_DSCP_TO_COLOR_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -28137,7 +28137,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_DSCP_TO_COLOR_MAP"]
             }
@@ -28155,7 +28155,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_TC_TO_QUEUE_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -28172,7 +28172,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_TC_TO_QUEUE_MAP"]
             }
@@ -28190,7 +28190,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_TC_AND_COLOR_TO_DOT1P_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -28207,7 +28207,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_TC_AND_COLOR_TO_DOT1P_MAP"]
             }
@@ -28225,7 +28225,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_TC_AND_COLOR_TO_DSCP_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -28242,7 +28242,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_TC_AND_COLOR_TO_DSCP_MAP"]
             }
@@ -28260,7 +28260,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_SWITCH_SHELL_ENABLE", 'false']
             }
@@ -28277,7 +28277,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_SWITCH_SHELL_ENABLE"]
             }
@@ -28295,7 +28295,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_SWITCH_STATE_CHANGE_NOTIFY", 'NULL']
             }
@@ -28312,7 +28312,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_SWITCH_STATE_CHANGE_NOTIFY"]
             }
@@ -28330,7 +28330,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_SWITCH_SHUTDOWN_REQUEST_NOTIFY", 'NULL']
             }
@@ -28347,7 +28347,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_SWITCH_SHUTDOWN_REQUEST_NOTIFY"]
             }
@@ -28365,7 +28365,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_FDB_EVENT_NOTIFY", 'NULL']
             }
@@ -28382,7 +28382,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_FDB_EVENT_NOTIFY"]
             }
@@ -28400,7 +28400,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_PORT_STATE_CHANGE_NOTIFY", 'NULL']
             }
@@ -28417,7 +28417,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_PORT_STATE_CHANGE_NOTIFY"]
             }
@@ -28435,7 +28435,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_PACKET_EVENT_NOTIFY", 'NULL']
             }
@@ -28452,7 +28452,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_PACKET_EVENT_NOTIFY"]
             }
@@ -28470,7 +28470,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_FAST_API_ENABLE", 'false']
             }
@@ -28487,7 +28487,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_FAST_API_ENABLE"]
             }
@@ -28505,7 +28505,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_MIRROR_TC", '255']
             }
@@ -28522,7 +28522,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_MIRROR_TC"]
             }
@@ -28540,7 +28540,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ACL_STAGE_INGRESS"]
             }
@@ -28558,7 +28558,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ACL_STAGE_EGRESS"]
             }
@@ -28576,7 +28576,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_SRV6_MAX_SID_DEPTH"]
             }
@@ -28594,7 +28594,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_SRV6_TLV_TYPE"]
             }
@@ -28612,7 +28612,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_NUM_LOSSLESS_QUEUES"]
             }
@@ -28630,7 +28630,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_QUEUE_PFC_DEADLOCK_NOTIFY", 'NULL']
             }
@@ -28647,7 +28647,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_QUEUE_PFC_DEADLOCK_NOTIFY"]
             }
@@ -28665,7 +28665,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_PFC_DLR_PACKET_ACTION", 'SAI_PACKET_ACTION_DROP']
             }
@@ -28682,7 +28682,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_PFC_DLR_PACKET_ACTION"]
             }
@@ -28700,7 +28700,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_PFC_TC_DLD_INTERVAL_RANGE"]
             }
@@ -28718,7 +28718,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_PFC_TC_DLD_INTERVAL", 'empty']
             }
@@ -28735,7 +28735,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_PFC_TC_DLD_INTERVAL"]
             }
@@ -28753,7 +28753,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_PFC_TC_DLR_INTERVAL_RANGE"]
             }
@@ -28771,7 +28771,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_PFC_TC_DLR_INTERVAL", 'empty']
             }
@@ -28788,7 +28788,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_PFC_TC_DLR_INTERVAL"]
             }
@@ -28806,7 +28806,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_SUPPORTED_PROTECTED_OBJECT_TYPE"]
             }
@@ -28824,7 +28824,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_TPID_OUTER_VLAN", '0x88A8']
             }
@@ -28841,7 +28841,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_TPID_OUTER_VLAN"]
             }
@@ -28859,7 +28859,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_TPID_INNER_VLAN", '0x8100']
             }
@@ -28876,7 +28876,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_TPID_INNER_VLAN"]
             }
@@ -28894,7 +28894,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_CRC_CHECK_ENABLE", 'true']
             }
@@ -28911,7 +28911,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_CRC_CHECK_ENABLE"]
             }
@@ -28929,7 +28929,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_CRC_RECALCULATION_ENABLE", 'true']
             }
@@ -28946,7 +28946,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_CRC_RECALCULATION_ENABLE"]
             }
@@ -28964,7 +28964,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_BFD_SESSION_STATE_CHANGE_NOTIFY", 'NULL']
             }
@@ -28981,7 +28981,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_BFD_SESSION_STATE_CHANGE_NOTIFY"]
             }
@@ -28999,7 +28999,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_NUMBER_OF_BFD_SESSION"]
             }
@@ -29017,7 +29017,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_MAX_BFD_SESSION"]
             }
@@ -29035,7 +29035,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_SUPPORTED_IPV4_BFD_SESSION_OFFLOAD_TYPE"]
             }
@@ -29053,7 +29053,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_SUPPORTED_IPV6_BFD_SESSION_OFFLOAD_TYPE"]
             }
@@ -29071,7 +29071,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_MIN_BFD_RX"]
             }
@@ -29089,7 +29089,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_MIN_BFD_TX"]
             }
@@ -29107,7 +29107,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_ECN_ECT_THRESHOLD_ENABLE", 'false']
             }
@@ -29124,7 +29124,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ECN_ECT_THRESHOLD_ENABLE"]
             }
@@ -29142,7 +29142,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_VXLAN_DEFAULT_ROUTER_MAC", 'vendor']
             }
@@ -29159,7 +29159,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_VXLAN_DEFAULT_ROUTER_MAC"]
             }
@@ -29177,7 +29177,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_VXLAN_DEFAULT_PORT", '4789']
             }
@@ -29194,7 +29194,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_VXLAN_DEFAULT_PORT"]
             }
@@ -29212,7 +29212,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_MAX_MIRROR_SESSION"]
             }
@@ -29230,7 +29230,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_MAX_SAMPLED_MIRROR_SESSION"]
             }
@@ -29248,7 +29248,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_SUPPORTED_EXTENDED_STATS_MODE"]
             }
@@ -29266,7 +29266,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_UNINIT_DATA_PLANE_ON_REMOVAL", 'true']
             }
@@ -29283,7 +29283,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_UNINIT_DATA_PLANE_ON_REMOVAL"]
             }
@@ -29301,7 +29301,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_TAM_OBJECT_ID", 'empty']
             }
@@ -29318,7 +29318,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_TAM_OBJECT_ID"]
             }
@@ -29336,7 +29336,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_TAM_EVENT_NOTIFY", 'NULL']
             }
@@ -29353,7 +29353,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_TAM_EVENT_NOTIFY"]
             }
@@ -29371,7 +29371,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_SUPPORTED_OBJECT_TYPE_LIST"]
             }
@@ -29389,7 +29389,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_PRE_SHUTDOWN", 'false']
             }
@@ -29406,7 +29406,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_PRE_SHUTDOWN"]
             }
@@ -29424,7 +29424,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_NAT_ZONE_COUNTER_OBJECT_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -29441,7 +29441,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_NAT_ZONE_COUNTER_OBJECT_ID"]
             }
@@ -29459,7 +29459,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_NAT_ENABLE", 'false']
             }
@@ -29476,7 +29476,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_NAT_ENABLE"]
             }
@@ -29494,7 +29494,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_REGISTER_READ", 'TODO']
             }
@@ -29511,7 +29511,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_REGISTER_READ"]
             }
@@ -29529,7 +29529,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_REGISTER_WRITE", 'TODO']
             }
@@ -29546,7 +29546,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_REGISTER_WRITE"]
             }
@@ -29564,7 +29564,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_FIRMWARE_DOWNLOAD_EXECUTE", 'false']
             }
@@ -29581,7 +29581,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_FIRMWARE_DOWNLOAD_EXECUTE"]
             }
@@ -29599,7 +29599,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_FIRMWARE_BROADCAST_STOP", 'false']
             }
@@ -29616,7 +29616,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_FIRMWARE_BROADCAST_STOP"]
             }
@@ -29634,7 +29634,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_FIRMWARE_VERIFY_AND_INIT_SWITCH", 'false']
             }
@@ -29651,7 +29651,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_FIRMWARE_VERIFY_AND_INIT_SWITCH"]
             }
@@ -29669,7 +29669,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_FIRMWARE_STATUS"]
             }
@@ -29687,7 +29687,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_FIRMWARE_MAJOR_VERSION"]
             }
@@ -29705,7 +29705,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_FIRMWARE_MINOR_VERSION"]
             }
@@ -29723,7 +29723,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_PORT_CONNECTOR_LIST"]
             }
@@ -29741,7 +29741,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_PROPOGATE_PORT_STATE_FROM_LINE_TO_SYSTEM_PORT_SUPPORT"]
             }
@@ -29759,7 +29759,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_MACSEC_OBJECT_LIST", 'empty']
             }
@@ -29776,7 +29776,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_MACSEC_OBJECT_LIST"]
             }
@@ -29794,7 +29794,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_MPLS_EXP_TO_TC_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -29811,7 +29811,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_MPLS_EXP_TO_TC_MAP"]
             }
@@ -29829,7 +29829,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_MPLS_EXP_TO_COLOR_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -29846,7 +29846,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_MPLS_EXP_TO_COLOR_MAP"]
             }
@@ -29864,7 +29864,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_TC_AND_COLOR_TO_MPLS_EXP_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -29881,7 +29881,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_TC_AND_COLOR_TO_MPLS_EXP_MAP"]
             }
@@ -29899,7 +29899,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_NUMBER_OF_SYSTEM_PORTS"]
             }
@@ -29917,7 +29917,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_SYSTEM_PORT_LIST"]
             }
@@ -29935,7 +29935,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_NUMBER_OF_FABRIC_PORTS"]
             }
@@ -29953,7 +29953,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_FABRIC_PORT_LIST"]
             }
@@ -29971,7 +29971,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_PACKET_DMA_MEMORY_POOL_SIZE"]
             }
@@ -29989,7 +29989,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_FAILOVER_CONFIG_MODE", 'SAI_SWITCH_FAILOVER_CONFIG_MODE_NO_HITLESS']
             }
@@ -30006,7 +30006,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_FAILOVER_CONFIG_MODE"]
             }
@@ -30024,7 +30024,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_SUPPORTED_FAILOVER_MODE"]
             }
@@ -30042,7 +30042,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_TUNNEL_OBJECTS_LIST", 'empty']
             }
@@ -30059,7 +30059,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_TUNNEL_OBJECTS_LIST"]
             }
@@ -30077,7 +30077,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_PACKET_AVAILABLE_DMA_MEMORY_POOL_SIZE"]
             }
@@ -30095,7 +30095,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_PRE_INGRESS_ACL", 'SAI_NULL_OBJECT_ID']
             }
@@ -30112,7 +30112,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_PRE_INGRESS_ACL"]
             }
@@ -30130,7 +30130,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_AVAILABLE_SNAPT_ENTRY"]
             }
@@ -30148,7 +30148,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_AVAILABLE_DNAPT_ENTRY"]
             }
@@ -30166,7 +30166,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_AVAILABLE_DOUBLE_NAPT_ENTRY"]
             }
@@ -30184,7 +30184,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_MY_MAC_TABLE_MINIMUM_PRIORITY"]
             }
@@ -30202,7 +30202,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_MY_MAC_TABLE_MAXIMUM_PRIORITY"]
             }
@@ -30220,7 +30220,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_MY_MAC_LIST"]
             }
@@ -30238,7 +30238,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_INSTALLED_MY_MAC_ENTRIES"]
             }
@@ -30256,7 +30256,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_AVAILABLE_MY_MAC_ENTRIES"]
             }
@@ -30274,7 +30274,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_MAX_NUMBER_OF_FORWARDING_CLASSES"]
             }
@@ -30292,7 +30292,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_DSCP_TO_FORWARDING_CLASS_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -30309,7 +30309,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_DSCP_TO_FORWARDING_CLASS_MAP"]
             }
@@ -30327,7 +30327,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_MPLS_EXP_TO_FORWARDING_CLASS_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -30344,7 +30344,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_QOS_MPLS_EXP_TO_FORWARDING_CLASS_MAP"]
             }
@@ -30362,7 +30362,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_IPSEC_OBJECT_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -30379,7 +30379,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_IPSEC_OBJECT_ID"]
             }
@@ -30397,7 +30397,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_IPSEC_SA_TAG_TPID", '0xFFFE']
             }
@@ -30414,7 +30414,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_IPSEC_SA_TAG_TPID"]
             }
@@ -30432,7 +30432,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_IPSEC_SA_STATUS_CHANGE_NOTIFY", 'NULL']
             }
@@ -30449,7 +30449,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_IPSEC_SA_STATUS_CHANGE_NOTIFY"]
             }
@@ -30467,7 +30467,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_NAT_EVENT_NOTIFY", 'NULL']
             }
@@ -30484,7 +30484,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_NAT_EVENT_NOTIFY"]
             }
@@ -30502,7 +30502,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_MAX_ECMP_MEMBER_COUNT"]
             }
@@ -30520,7 +30520,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_ECMP_MEMBER_COUNT", '64']
             }
@@ -30537,7 +30537,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ECMP_MEMBER_COUNT"]
             }
@@ -30555,7 +30555,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_ARS_PROFILE", 'SAI_NULL_OBJECT_ID']
             }
@@ -30572,7 +30572,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ARS_PROFILE"]
             }
@@ -30590,7 +30590,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ACL_STAGE_POST_INGRESS"]
             }
@@ -30608,7 +30608,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_CREDIT_WD", 'true']
             }
@@ -30625,7 +30625,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_CREDIT_WD"]
             }
@@ -30643,7 +30643,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_CREDIT_WD_TIMER", '500']
             }
@@ -30660,7 +30660,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_CREDIT_WD_TIMER"]
             }
@@ -30678,7 +30678,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_SWITCH_ISOLATE", 'false']
             }
@@ -30695,7 +30695,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_SWITCH_ISOLATE"]
             }
@@ -30713,7 +30713,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_HOSTIF_OPER_STATUS_UPDATE_MODE", 'SAI_SWITCH_HOSTIF_OPER_STATUS_UPDATE_MODE_APPLICATION']
             }
@@ -30730,7 +30730,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_HOSTIF_OPER_STATUS_UPDATE_MODE"]
             }
@@ -30748,7 +30748,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_SWITCH_ASIC_SDK_HEALTH_EVENT_NOTIFY", 'NULL']
             }
@@ -30765,7 +30765,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_SWITCH_ASIC_SDK_HEALTH_EVENT_NOTIFY"]
             }
@@ -30783,7 +30783,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_REG_FATAL_SWITCH_ASIC_SDK_HEALTH_CATEGORY", 'empty']
             }
@@ -30800,7 +30800,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_REG_FATAL_SWITCH_ASIC_SDK_HEALTH_CATEGORY"]
             }
@@ -30818,7 +30818,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_REG_WARNING_SWITCH_ASIC_SDK_HEALTH_CATEGORY", 'empty']
             }
@@ -30835,7 +30835,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_REG_WARNING_SWITCH_ASIC_SDK_HEALTH_CATEGORY"]
             }
@@ -30853,7 +30853,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_ATTR_REG_NOTICE_SWITCH_ASIC_SDK_HEALTH_CATEGORY", 'empty']
             }
@@ -30870,7 +30870,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_REG_NOTICE_SWITCH_ASIC_SDK_HEALTH_CATEGORY"]
             }
@@ -30888,7 +30888,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_ATTR_ACL_CHAIN_LIST"]
             }
@@ -30906,7 +30906,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_TUNNEL_ATTR_LOOPBACK_PACKET_ACTION", 'SAI_PACKET_ACTION_FORWARD']
             }
@@ -30923,7 +30923,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_TUNNEL_ATTR_LOOPBACK_PACKET_ACTION"]
             }
@@ -30941,7 +30941,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_TUNNEL_ATTR_TUNNEL_VXLAN_UDP_SPORT_MODE", 'SAI_TUNNEL_VXLAN_UDP_SPORT_MODE_EPHEMERAL']
             }
@@ -30958,7 +30958,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_TUNNEL_ATTR_TUNNEL_VXLAN_UDP_SPORT_MODE"]
             }
@@ -30976,7 +30976,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_TUNNEL_ATTR_VXLAN_UDP_SPORT", '0']
             }
@@ -30993,7 +30993,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_TUNNEL_ATTR_VXLAN_UDP_SPORT"]
             }
@@ -31011,7 +31011,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_TUNNEL_ATTR_VXLAN_UDP_SPORT_MASK", '0']
             }
@@ -31028,7 +31028,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_TUNNEL_ATTR_VXLAN_UDP_SPORT_MASK"]
             }
@@ -31046,7 +31046,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_TUNNEL_ATTR_ENCAP_QOS_TC_AND_COLOR_TO_DSCP_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -31063,7 +31063,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_TUNNEL_ATTR_ENCAP_QOS_TC_AND_COLOR_TO_DSCP_MAP"]
             }
@@ -31081,7 +31081,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_TUNNEL_ATTR_ENCAP_QOS_TC_TO_QUEUE_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -31098,7 +31098,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_TUNNEL_ATTR_ENCAP_QOS_TC_TO_QUEUE_MAP"]
             }
@@ -31116,7 +31116,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_TUNNEL_ATTR_DECAP_QOS_DSCP_TO_TC_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -31133,7 +31133,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_TUNNEL_ATTR_DECAP_QOS_DSCP_TO_TC_MAP"]
             }
@@ -31151,7 +31151,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SWITCH_TUNNEL_ATTR_DECAP_QOS_TC_TO_PRIORITY_GROUP_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -31168,7 +31168,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SWITCH_TUNNEL_ATTR_DECAP_QOS_TC_TO_PRIORITY_GROUP_MAP"]
             }
@@ -31186,7 +31186,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SYSTEM_PORT_ATTR_TYPE"]
             }
@@ -31204,7 +31204,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SYSTEM_PORT_ATTR_QOS_NUMBER_OF_VOQS"]
             }
@@ -31222,7 +31222,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SYSTEM_PORT_ATTR_QOS_VOQ_LIST"]
             }
@@ -31240,7 +31240,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SYSTEM_PORT_ATTR_PORT"]
             }
@@ -31258,7 +31258,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SYSTEM_PORT_ATTR_ADMIN_STATE", 'false']
             }
@@ -31275,7 +31275,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SYSTEM_PORT_ATTR_ADMIN_STATE"]
             }
@@ -31293,7 +31293,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_SYSTEM_PORT_ATTR_QOS_TC_TO_QUEUE_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -31310,7 +31310,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_SYSTEM_PORT_ATTR_QOS_TC_TO_QUEUE_MAP"]
             }
@@ -31328,7 +31328,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_ATTR_TELEMETRY_OBJECTS_LIST", 'empty']
             }
@@ -31345,7 +31345,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_ATTR_TELEMETRY_OBJECTS_LIST"]
             }
@@ -31363,7 +31363,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_ATTR_EVENT_OBJECTS_LIST", 'empty']
             }
@@ -31380,7 +31380,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_ATTR_EVENT_OBJECTS_LIST"]
             }
@@ -31398,7 +31398,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_ATTR_INT_OBJECTS_LIST", 'empty']
             }
@@ -31415,7 +31415,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_ATTR_INT_OBJECTS_LIST"]
             }
@@ -31433,7 +31433,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_COLLECTOR_ATTR_SRC_IP", 'TODO']
             }
@@ -31450,7 +31450,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_COLLECTOR_ATTR_SRC_IP"]
             }
@@ -31468,7 +31468,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_COLLECTOR_ATTR_DST_IP", 'TODO']
             }
@@ -31485,7 +31485,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_COLLECTOR_ATTR_DST_IP"]
             }
@@ -31503,7 +31503,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_COLLECTOR_ATTR_LOCALHOST", 'true']
             }
@@ -31520,7 +31520,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_COLLECTOR_ATTR_LOCALHOST"]
             }
@@ -31538,7 +31538,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_COLLECTOR_ATTR_VIRTUAL_ROUTER_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -31555,7 +31555,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_COLLECTOR_ATTR_VIRTUAL_ROUTER_ID"]
             }
@@ -31573,7 +31573,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_COLLECTOR_ATTR_TRUNCATE_SIZE", '0']
             }
@@ -31590,7 +31590,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_COLLECTOR_ATTR_TRUNCATE_SIZE"]
             }
@@ -31608,7 +31608,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_COLLECTOR_ATTR_TRANSPORT", 'TODO']
             }
@@ -31625,7 +31625,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_COLLECTOR_ATTR_TRANSPORT"]
             }
@@ -31643,7 +31643,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_COLLECTOR_ATTR_DSCP_VALUE", 'TODO']
             }
@@ -31660,7 +31660,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_COLLECTOR_ATTR_DSCP_VALUE"]
             }
@@ -31678,7 +31678,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_EVENT_ATTR_THRESHOLD", 'SAI_NULL_OBJECT_ID']
             }
@@ -31695,7 +31695,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_EVENT_ATTR_THRESHOLD"]
             }
@@ -31713,7 +31713,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_EVENT_ATTR_DSCP_VALUE", '0']
             }
@@ -31730,7 +31730,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_EVENT_ATTR_DSCP_VALUE"]
             }
@@ -31748,7 +31748,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_EVENT_ACTION_ATTR_REPORT_TYPE", 'TODO']
             }
@@ -31765,7 +31765,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_EVENT_ACTION_ATTR_REPORT_TYPE"]
             }
@@ -31783,7 +31783,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_EVENT_ACTION_ATTR_QOS_ACTION_TYPE", '0']
             }
@@ -31800,7 +31800,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_EVENT_ACTION_ATTR_QOS_ACTION_TYPE"]
             }
@@ -31818,7 +31818,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_EVENT_THRESHOLD_ATTR_HIGH_WATERMARK", '90']
             }
@@ -31835,7 +31835,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_EVENT_THRESHOLD_ATTR_HIGH_WATERMARK"]
             }
@@ -31853,7 +31853,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_EVENT_THRESHOLD_ATTR_LOW_WATERMARK", '10']
             }
@@ -31870,7 +31870,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_EVENT_THRESHOLD_ATTR_LOW_WATERMARK"]
             }
@@ -31888,7 +31888,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_EVENT_THRESHOLD_ATTR_LATENCY", '10']
             }
@@ -31905,7 +31905,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_EVENT_THRESHOLD_ATTR_LATENCY"]
             }
@@ -31923,7 +31923,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_EVENT_THRESHOLD_ATTR_RATE", '0']
             }
@@ -31940,7 +31940,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_EVENT_THRESHOLD_ATTR_RATE"]
             }
@@ -31958,7 +31958,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_EVENT_THRESHOLD_ATTR_ABS_VALUE", '0']
             }
@@ -31975,7 +31975,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_EVENT_THRESHOLD_ATTR_ABS_VALUE"]
             }
@@ -31993,7 +31993,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_EVENT_THRESHOLD_ATTR_UNIT", 'SAI_TAM_EVENT_THRESHOLD_UNIT_MSEC']
             }
@@ -32010,7 +32010,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_EVENT_THRESHOLD_ATTR_UNIT"]
             }
@@ -32028,7 +32028,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_INT_ATTR_IOAM_TRACE_TYPE", '0']
             }
@@ -32045,7 +32045,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_INT_ATTR_IOAM_TRACE_TYPE"]
             }
@@ -32063,7 +32063,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_INT_ATTR_TRACE_VECTOR", '0']
             }
@@ -32080,7 +32080,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_INT_ATTR_TRACE_VECTOR"]
             }
@@ -32098,7 +32098,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_INT_ATTR_ACTION_VECTOR", '0']
             }
@@ -32115,7 +32115,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_INT_ATTR_ACTION_VECTOR"]
             }
@@ -32133,7 +32133,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_INT_ATTR_P4_INT_INSTRUCTION_BITMAP", '0']
             }
@@ -32150,7 +32150,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_INT_ATTR_P4_INT_INSTRUCTION_BITMAP"]
             }
@@ -32168,7 +32168,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_INT_ATTR_METADATA_FRAGMENT_ENABLE", 'false']
             }
@@ -32185,7 +32185,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_INT_ATTR_METADATA_FRAGMENT_ENABLE"]
             }
@@ -32203,7 +32203,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_INT_ATTR_METADATA_CHECKSUM_ENABLE", 'false']
             }
@@ -32220,7 +32220,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_INT_ATTR_METADATA_CHECKSUM_ENABLE"]
             }
@@ -32238,7 +32238,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_INT_ATTR_REPORT_ALL_PACKETS", 'false']
             }
@@ -32255,7 +32255,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_INT_ATTR_REPORT_ALL_PACKETS"]
             }
@@ -32273,7 +32273,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_INT_ATTR_FLOW_LIVENESS_PERIOD", '0']
             }
@@ -32290,7 +32290,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_INT_ATTR_FLOW_LIVENESS_PERIOD"]
             }
@@ -32308,7 +32308,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_INT_ATTR_LATENCY_SENSITIVITY", '20']
             }
@@ -32325,7 +32325,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_INT_ATTR_LATENCY_SENSITIVITY"]
             }
@@ -32343,7 +32343,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_INT_ATTR_ACL_GROUP", 'SAI_NULL_OBJECT_ID']
             }
@@ -32360,7 +32360,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_INT_ATTR_ACL_GROUP"]
             }
@@ -32378,7 +32378,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_INT_ATTR_MAX_HOP_COUNT", '0']
             }
@@ -32395,7 +32395,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_INT_ATTR_MAX_HOP_COUNT"]
             }
@@ -32413,7 +32413,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_INT_ATTR_MAX_LENGTH", '0']
             }
@@ -32430,7 +32430,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_INT_ATTR_MAX_LENGTH"]
             }
@@ -32448,7 +32448,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_INT_ATTR_NAME_SPACE_ID", '0']
             }
@@ -32465,7 +32465,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_INT_ATTR_NAME_SPACE_ID"]
             }
@@ -32483,7 +32483,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_INT_ATTR_NAME_SPACE_ID_GLOBAL", 'false']
             }
@@ -32500,7 +32500,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_INT_ATTR_NAME_SPACE_ID_GLOBAL"]
             }
@@ -32518,7 +32518,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_INT_ATTR_INGRESS_SAMPLEPACKET_ENABLE", 'SAI_NULL_OBJECT_ID']
             }
@@ -32535,7 +32535,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_INT_ATTR_INGRESS_SAMPLEPACKET_ENABLE"]
             }
@@ -32553,7 +32553,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_INT_ATTR_COLLECTOR_LIST", 'empty']
             }
@@ -32570,7 +32570,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_INT_ATTR_COLLECTOR_LIST"]
             }
@@ -32588,7 +32588,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_INT_ATTR_MATH_FUNC", 'SAI_NULL_OBJECT_ID']
             }
@@ -32605,7 +32605,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_INT_ATTR_MATH_FUNC"]
             }
@@ -32623,7 +32623,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_MATH_FUNC_ATTR_TAM_TEL_MATH_FUNC_TYPE", 'SAI_TAM_TEL_MATH_FUNC_TYPE_NONE']
             }
@@ -32640,7 +32640,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_MATH_FUNC_ATTR_TAM_TEL_MATH_FUNC_TYPE"]
             }
@@ -32658,7 +32658,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_REPORT_ATTR_TYPE", 'TODO']
             }
@@ -32675,7 +32675,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_REPORT_ATTR_TYPE"]
             }
@@ -32693,7 +32693,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_REPORT_ATTR_QUOTA", '0']
             }
@@ -32710,7 +32710,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_REPORT_ATTR_QUOTA"]
             }
@@ -32728,7 +32728,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_REPORT_ATTR_REPORT_INTERVAL", '1000']
             }
@@ -32745,7 +32745,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_REPORT_ATTR_REPORT_INTERVAL"]
             }
@@ -32763,7 +32763,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_REPORT_ATTR_ENTERPRISE_NUMBER", '0']
             }
@@ -32780,7 +32780,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_REPORT_ATTR_ENTERPRISE_NUMBER"]
             }
@@ -32798,7 +32798,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_REPORT_ATTR_TEMPLATE_REPORT_INTERVAL", '15']
             }
@@ -32815,7 +32815,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_REPORT_ATTR_TEMPLATE_REPORT_INTERVAL"]
             }
@@ -32833,7 +32833,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_INT_SWITCH_IDENTIFIER", '0']
             }
@@ -32850,7 +32850,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_INT_SWITCH_IDENTIFIER"]
             }
@@ -32868,7 +32868,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_SWITCH_ENABLE_PORT_STATS", 'false']
             }
@@ -32885,7 +32885,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_SWITCH_ENABLE_PORT_STATS"]
             }
@@ -32903,7 +32903,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_SWITCH_ENABLE_PORT_STATS_INGRESS", 'false']
             }
@@ -32920,7 +32920,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_SWITCH_ENABLE_PORT_STATS_INGRESS"]
             }
@@ -32938,7 +32938,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_SWITCH_ENABLE_PORT_STATS_EGRESS", 'false']
             }
@@ -32955,7 +32955,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_SWITCH_ENABLE_PORT_STATS_EGRESS"]
             }
@@ -32973,7 +32973,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_SWITCH_ENABLE_VIRTUAL_QUEUE_STATS", 'false']
             }
@@ -32990,7 +32990,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_SWITCH_ENABLE_VIRTUAL_QUEUE_STATS"]
             }
@@ -33008,7 +33008,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_SWITCH_ENABLE_OUTPUT_QUEUE_STATS", 'false']
             }
@@ -33025,7 +33025,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_SWITCH_ENABLE_OUTPUT_QUEUE_STATS"]
             }
@@ -33043,7 +33043,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_SWITCH_ENABLE_MMU_STATS", 'false']
             }
@@ -33060,7 +33060,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_SWITCH_ENABLE_MMU_STATS"]
             }
@@ -33078,7 +33078,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_SWITCH_ENABLE_FABRIC_STATS", 'false']
             }
@@ -33095,7 +33095,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_SWITCH_ENABLE_FABRIC_STATS"]
             }
@@ -33113,7 +33113,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_SWITCH_ENABLE_FILTER_STATS", 'false']
             }
@@ -33130,7 +33130,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_SWITCH_ENABLE_FILTER_STATS"]
             }
@@ -33148,7 +33148,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_SWITCH_ENABLE_RESOURCE_UTILIZATION_STATS", 'false']
             }
@@ -33165,7 +33165,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_SWITCH_ENABLE_RESOURCE_UTILIZATION_STATS"]
             }
@@ -33183,7 +33183,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_FABRIC_Q", 'false']
             }
@@ -33200,7 +33200,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_FABRIC_Q"]
             }
@@ -33218,7 +33218,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_NE_ENABLE", 'false']
             }
@@ -33235,7 +33235,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_NE_ENABLE"]
             }
@@ -33253,7 +33253,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_DSCP_VALUE", '0']
             }
@@ -33270,7 +33270,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_DSCP_VALUE"]
             }
@@ -33288,7 +33288,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_MATH_FUNC", 'SAI_NULL_OBJECT_ID']
             }
@@ -33305,7 +33305,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_TEL_TYPE_ATTR_MATH_FUNC"]
             }
@@ -33323,7 +33323,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_TELEMETRY_ATTR_TAM_TYPE_LIST", 'empty']
             }
@@ -33340,7 +33340,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_TELEMETRY_ATTR_TAM_TYPE_LIST"]
             }
@@ -33358,7 +33358,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_TELEMETRY_ATTR_TAM_REPORTING_UNIT", 'SAI_TAM_REPORTING_UNIT_SEC']
             }
@@ -33375,7 +33375,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_TELEMETRY_ATTR_TAM_REPORTING_UNIT"]
             }
@@ -33393,7 +33393,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_TELEMETRY_ATTR_REPORTING_INTERVAL", '1']
             }
@@ -33410,7 +33410,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_TELEMETRY_ATTR_REPORTING_INTERVAL"]
             }
@@ -33428,7 +33428,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_TRANSPORT_ATTR_SRC_PORT", '31337']
             }
@@ -33445,7 +33445,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_TRANSPORT_ATTR_SRC_PORT"]
             }
@@ -33463,7 +33463,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_TRANSPORT_ATTR_DST_PORT", '31337']
             }
@@ -33480,7 +33480,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_TRANSPORT_ATTR_DST_PORT"]
             }
@@ -33498,7 +33498,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_TRANSPORT_ATTR_TRANSPORT_AUTH_TYPE", 'SAI_TAM_TRANSPORT_AUTH_TYPE_NONE']
             }
@@ -33515,7 +33515,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_TRANSPORT_ATTR_TRANSPORT_AUTH_TYPE"]
             }
@@ -33533,7 +33533,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TAM_TRANSPORT_ATTR_MTU", '1500']
             }
@@ -33550,7 +33550,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TAM_TRANSPORT_ATTR_MTU"]
             }
@@ -33568,7 +33568,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TUNNEL_ATTR_ENCAP_TTL_MODE", 'SAI_TUNNEL_TTL_MODE_UNIFORM_MODEL']
             }
@@ -33585,7 +33585,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TUNNEL_ATTR_ENCAP_TTL_MODE"]
             }
@@ -33603,7 +33603,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TUNNEL_ATTR_ENCAP_TTL_VAL", '255']
             }
@@ -33620,7 +33620,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TUNNEL_ATTR_ENCAP_TTL_VAL"]
             }
@@ -33638,7 +33638,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TUNNEL_ATTR_ENCAP_DSCP_MODE", 'SAI_TUNNEL_DSCP_MODE_UNIFORM_MODEL']
             }
@@ -33655,7 +33655,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TUNNEL_ATTR_ENCAP_DSCP_MODE"]
             }
@@ -33673,7 +33673,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TUNNEL_ATTR_ENCAP_DSCP_VAL", '0']
             }
@@ -33690,7 +33690,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TUNNEL_ATTR_ENCAP_DSCP_VAL"]
             }
@@ -33708,7 +33708,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TUNNEL_ATTR_ENCAP_GRE_KEY", '0']
             }
@@ -33725,7 +33725,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TUNNEL_ATTR_ENCAP_GRE_KEY"]
             }
@@ -33743,7 +33743,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TUNNEL_ATTR_DECAP_TTL_MODE", 'SAI_TUNNEL_TTL_MODE_UNIFORM_MODEL']
             }
@@ -33760,7 +33760,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TUNNEL_ATTR_DECAP_TTL_MODE"]
             }
@@ -33778,7 +33778,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TUNNEL_ATTR_DECAP_DSCP_MODE", 'SAI_TUNNEL_DSCP_MODE_UNIFORM_MODEL']
             }
@@ -33795,7 +33795,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TUNNEL_ATTR_DECAP_DSCP_MODE"]
             }
@@ -33813,7 +33813,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TUNNEL_ATTR_TERM_TABLE_ENTRY_LIST"]
             }
@@ -33831,7 +33831,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TUNNEL_ATTR_LOOPBACK_PACKET_ACTION", 'SAI_PACKET_ACTION_FORWARD']
             }
@@ -33848,7 +33848,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TUNNEL_ATTR_LOOPBACK_PACKET_ACTION"]
             }
@@ -33866,7 +33866,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TUNNEL_ATTR_VXLAN_UDP_SPORT_MODE", 'SAI_TUNNEL_VXLAN_UDP_SPORT_MODE_EPHEMERAL']
             }
@@ -33883,7 +33883,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TUNNEL_ATTR_VXLAN_UDP_SPORT_MODE"]
             }
@@ -33901,7 +33901,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TUNNEL_ATTR_VXLAN_UDP_SPORT", '0']
             }
@@ -33918,7 +33918,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TUNNEL_ATTR_VXLAN_UDP_SPORT"]
             }
@@ -33936,7 +33936,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TUNNEL_ATTR_VXLAN_UDP_SPORT_MASK", '0']
             }
@@ -33953,7 +33953,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TUNNEL_ATTR_VXLAN_UDP_SPORT_MASK"]
             }
@@ -33971,7 +33971,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TUNNEL_ATTR_SA_INDEX", '0']
             }
@@ -33988,7 +33988,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TUNNEL_ATTR_SA_INDEX"]
             }
@@ -34006,7 +34006,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TUNNEL_ATTR_IPSEC_SA_PORT_LIST", 'empty']
             }
@@ -34023,7 +34023,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TUNNEL_ATTR_IPSEC_SA_PORT_LIST"]
             }
@@ -34041,7 +34041,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TUNNEL_ATTR_ENCAP_QOS_TC_AND_COLOR_TO_DSCP_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -34058,7 +34058,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TUNNEL_ATTR_ENCAP_QOS_TC_AND_COLOR_TO_DSCP_MAP"]
             }
@@ -34076,7 +34076,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TUNNEL_ATTR_ENCAP_QOS_TC_TO_QUEUE_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -34093,7 +34093,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TUNNEL_ATTR_ENCAP_QOS_TC_TO_QUEUE_MAP"]
             }
@@ -34111,7 +34111,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TUNNEL_ATTR_DECAP_QOS_DSCP_TO_TC_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -34128,7 +34128,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TUNNEL_ATTR_DECAP_QOS_DSCP_TO_TC_MAP"]
             }
@@ -34146,7 +34146,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TUNNEL_ATTR_DECAP_QOS_TC_TO_PRIORITY_GROUP_MAP", 'SAI_NULL_OBJECT_ID']
             }
@@ -34163,7 +34163,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TUNNEL_ATTR_DECAP_QOS_TC_TO_PRIORITY_GROUP_MAP"]
             }
@@ -34181,7 +34181,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TUNNEL_ATTR_VXLAN_UDP_SPORT_SECURITY", 'false']
             }
@@ -34198,7 +34198,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TUNNEL_ATTR_VXLAN_UDP_SPORT_SECURITY"]
             }
@@ -34216,7 +34216,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TUNNEL_MAP_ATTR_ENTRY_LIST"]
             }
@@ -34234,7 +34234,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TUNNEL_TERM_TABLE_ENTRY_ATTR_IP_ADDR_FAMILY"]
             }
@@ -34252,7 +34252,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_TUNNEL_TERM_TABLE_ENTRY_ATTR_IPSEC_VERIFIED", 'true']
             }
@@ -34269,7 +34269,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_TUNNEL_TERM_TABLE_ENTRY_ATTR_IPSEC_VERIFIED"]
             }
@@ -34287,7 +34287,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_UDF_ATTR_BASE", 'SAI_UDF_BASE_L2']
             }
@@ -34304,7 +34304,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_UDF_ATTR_BASE"]
             }
@@ -34322,7 +34322,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_UDF_ATTR_HASH_MASK", 'const']
             }
@@ -34339,7 +34339,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_UDF_ATTR_HASH_MASK"]
             }
@@ -34357,7 +34357,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_UDF_GROUP_ATTR_UDF_LIST"]
             }
@@ -34375,7 +34375,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VIP_ENTRY_ATTR_ACTION", 'SAI_VIP_ENTRY_ACTION_ACCEPT']
             }
@@ -34392,7 +34392,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VIP_ENTRY_ATTR_ACTION"]
             }
@@ -34410,7 +34410,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VIP_ENTRY_ATTR_IP_ADDR_FAMILY"]
             }
@@ -34428,7 +34428,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VIRTUAL_ROUTER_ATTR_ADMIN_V4_STATE", 'true']
             }
@@ -34445,7 +34445,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VIRTUAL_ROUTER_ATTR_ADMIN_V4_STATE"]
             }
@@ -34463,7 +34463,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VIRTUAL_ROUTER_ATTR_ADMIN_V6_STATE", 'true']
             }
@@ -34480,7 +34480,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VIRTUAL_ROUTER_ATTR_ADMIN_V6_STATE"]
             }
@@ -34498,7 +34498,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VIRTUAL_ROUTER_ATTR_SRC_MAC_ADDRESS", 'SAI_SWITCH_ATTR_SRC_MAC_ADDRESS']
             }
@@ -34515,7 +34515,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VIRTUAL_ROUTER_ATTR_SRC_MAC_ADDRESS"]
             }
@@ -34533,7 +34533,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VIRTUAL_ROUTER_ATTR_VIOLATION_TTL1_PACKET_ACTION", 'SAI_PACKET_ACTION_TRAP']
             }
@@ -34550,7 +34550,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VIRTUAL_ROUTER_ATTR_VIOLATION_TTL1_PACKET_ACTION"]
             }
@@ -34568,7 +34568,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VIRTUAL_ROUTER_ATTR_VIOLATION_IP_OPTIONS_PACKET_ACTION", 'SAI_PACKET_ACTION_TRAP']
             }
@@ -34585,7 +34585,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VIRTUAL_ROUTER_ATTR_VIOLATION_IP_OPTIONS_PACKET_ACTION"]
             }
@@ -34603,7 +34603,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VIRTUAL_ROUTER_ATTR_UNKNOWN_L3_MULTICAST_PACKET_ACTION", 'SAI_PACKET_ACTION_DROP']
             }
@@ -34620,7 +34620,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VIRTUAL_ROUTER_ATTR_UNKNOWN_L3_MULTICAST_PACKET_ACTION"]
             }
@@ -34638,7 +34638,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VIRTUAL_ROUTER_ATTR_LABEL", '""']
             }
@@ -34655,7 +34655,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VIRTUAL_ROUTER_ATTR_LABEL"]
             }
@@ -34673,7 +34673,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VLAN_ATTR_MEMBER_LIST"]
             }
@@ -34691,7 +34691,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VLAN_ATTR_MAX_LEARNED_ADDRESSES", '0']
             }
@@ -34708,7 +34708,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VLAN_ATTR_MAX_LEARNED_ADDRESSES"]
             }
@@ -34726,7 +34726,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VLAN_ATTR_STP_INSTANCE", 'SAI_SWITCH_ATTR_DEFAULT_STP_INST_ID']
             }
@@ -34743,7 +34743,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VLAN_ATTR_STP_INSTANCE"]
             }
@@ -34761,7 +34761,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VLAN_ATTR_LEARN_DISABLE", 'false']
             }
@@ -34778,7 +34778,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VLAN_ATTR_LEARN_DISABLE"]
             }
@@ -34796,7 +34796,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VLAN_ATTR_IPV4_MCAST_LOOKUP_KEY_TYPE", 'SAI_VLAN_MCAST_LOOKUP_KEY_TYPE_MAC_DA']
             }
@@ -34813,7 +34813,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VLAN_ATTR_IPV4_MCAST_LOOKUP_KEY_TYPE"]
             }
@@ -34831,7 +34831,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VLAN_ATTR_IPV6_MCAST_LOOKUP_KEY_TYPE", 'SAI_VLAN_MCAST_LOOKUP_KEY_TYPE_MAC_DA']
             }
@@ -34848,7 +34848,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VLAN_ATTR_IPV6_MCAST_LOOKUP_KEY_TYPE"]
             }
@@ -34866,7 +34866,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VLAN_ATTR_UNKNOWN_NON_IP_MCAST_OUTPUT_GROUP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -34883,7 +34883,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VLAN_ATTR_UNKNOWN_NON_IP_MCAST_OUTPUT_GROUP_ID"]
             }
@@ -34901,7 +34901,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VLAN_ATTR_UNKNOWN_IPV4_MCAST_OUTPUT_GROUP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -34918,7 +34918,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VLAN_ATTR_UNKNOWN_IPV4_MCAST_OUTPUT_GROUP_ID"]
             }
@@ -34936,7 +34936,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VLAN_ATTR_UNKNOWN_IPV6_MCAST_OUTPUT_GROUP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -34953,7 +34953,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VLAN_ATTR_UNKNOWN_IPV6_MCAST_OUTPUT_GROUP_ID"]
             }
@@ -34971,7 +34971,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VLAN_ATTR_UNKNOWN_LINKLOCAL_MCAST_OUTPUT_GROUP_ID", 'SAI_NULL_OBJECT_ID']
             }
@@ -34988,7 +34988,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VLAN_ATTR_UNKNOWN_LINKLOCAL_MCAST_OUTPUT_GROUP_ID"]
             }
@@ -35006,7 +35006,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VLAN_ATTR_INGRESS_ACL", 'SAI_NULL_OBJECT_ID']
             }
@@ -35023,7 +35023,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VLAN_ATTR_INGRESS_ACL"]
             }
@@ -35041,7 +35041,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VLAN_ATTR_EGRESS_ACL", 'SAI_NULL_OBJECT_ID']
             }
@@ -35058,7 +35058,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VLAN_ATTR_EGRESS_ACL"]
             }
@@ -35076,7 +35076,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VLAN_ATTR_META_DATA", '0']
             }
@@ -35093,7 +35093,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VLAN_ATTR_META_DATA"]
             }
@@ -35111,7 +35111,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VLAN_ATTR_UNKNOWN_UNICAST_FLOOD_CONTROL_TYPE", 'SAI_VLAN_FLOOD_CONTROL_TYPE_ALL']
             }
@@ -35128,7 +35128,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VLAN_ATTR_UNKNOWN_UNICAST_FLOOD_CONTROL_TYPE"]
             }
@@ -35146,7 +35146,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VLAN_ATTR_UNKNOWN_UNICAST_FLOOD_GROUP", 'SAI_NULL_OBJECT_ID']
             }
@@ -35163,7 +35163,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VLAN_ATTR_UNKNOWN_UNICAST_FLOOD_GROUP"]
             }
@@ -35181,7 +35181,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VLAN_ATTR_UNKNOWN_MULTICAST_FLOOD_CONTROL_TYPE", 'SAI_VLAN_FLOOD_CONTROL_TYPE_ALL']
             }
@@ -35198,7 +35198,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VLAN_ATTR_UNKNOWN_MULTICAST_FLOOD_CONTROL_TYPE"]
             }
@@ -35216,7 +35216,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VLAN_ATTR_UNKNOWN_MULTICAST_FLOOD_GROUP", 'SAI_NULL_OBJECT_ID']
             }
@@ -35233,7 +35233,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VLAN_ATTR_UNKNOWN_MULTICAST_FLOOD_GROUP"]
             }
@@ -35251,7 +35251,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VLAN_ATTR_BROADCAST_FLOOD_CONTROL_TYPE", 'SAI_VLAN_FLOOD_CONTROL_TYPE_ALL']
             }
@@ -35268,7 +35268,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VLAN_ATTR_BROADCAST_FLOOD_CONTROL_TYPE"]
             }
@@ -35286,7 +35286,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VLAN_ATTR_BROADCAST_FLOOD_GROUP", 'SAI_NULL_OBJECT_ID']
             }
@@ -35303,7 +35303,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VLAN_ATTR_BROADCAST_FLOOD_GROUP"]
             }
@@ -35321,7 +35321,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VLAN_ATTR_CUSTOM_IGMP_SNOOPING_ENABLE", 'false']
             }
@@ -35338,7 +35338,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VLAN_ATTR_CUSTOM_IGMP_SNOOPING_ENABLE"]
             }
@@ -35356,7 +35356,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VLAN_ATTR_TAM_OBJECT", 'empty']
             }
@@ -35373,7 +35373,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VLAN_ATTR_TAM_OBJECT"]
             }
@@ -35391,7 +35391,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VLAN_MEMBER_ATTR_VLAN_TAGGING_MODE", 'SAI_VLAN_TAGGING_MODE_UNTAGGED']
             }
@@ -35408,7 +35408,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VLAN_MEMBER_ATTR_VLAN_TAGGING_MODE"]
             }
@@ -35426,7 +35426,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_VNET_ATTR_VNI", '0']
             }
@@ -35443,7 +35443,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_VNET_ATTR_VNI"]
             }
@@ -35461,7 +35461,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_GREEN_ENABLE", 'false']
             }
@@ -35478,7 +35478,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_GREEN_ENABLE"]
             }
@@ -35496,7 +35496,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_GREEN_MIN_THRESHOLD", '0']
             }
@@ -35513,7 +35513,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_GREEN_MIN_THRESHOLD"]
             }
@@ -35531,7 +35531,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_GREEN_MAX_THRESHOLD", '0']
             }
@@ -35548,7 +35548,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_GREEN_MAX_THRESHOLD"]
             }
@@ -35566,7 +35566,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_GREEN_DROP_PROBABILITY", '100']
             }
@@ -35583,7 +35583,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_GREEN_DROP_PROBABILITY"]
             }
@@ -35601,7 +35601,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_YELLOW_ENABLE", 'false']
             }
@@ -35618,7 +35618,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_YELLOW_ENABLE"]
             }
@@ -35636,7 +35636,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_YELLOW_MIN_THRESHOLD", '0']
             }
@@ -35653,7 +35653,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_YELLOW_MIN_THRESHOLD"]
             }
@@ -35671,7 +35671,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_YELLOW_MAX_THRESHOLD", '0']
             }
@@ -35688,7 +35688,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_YELLOW_MAX_THRESHOLD"]
             }
@@ -35706,7 +35706,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_YELLOW_DROP_PROBABILITY", '100']
             }
@@ -35723,7 +35723,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_YELLOW_DROP_PROBABILITY"]
             }
@@ -35741,7 +35741,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_RED_ENABLE", 'false']
             }
@@ -35758,7 +35758,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_RED_ENABLE"]
             }
@@ -35776,7 +35776,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_RED_MIN_THRESHOLD", '0']
             }
@@ -35793,7 +35793,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_RED_MIN_THRESHOLD"]
             }
@@ -35811,7 +35811,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_RED_MAX_THRESHOLD", '0']
             }
@@ -35828,7 +35828,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_RED_MAX_THRESHOLD"]
             }
@@ -35846,7 +35846,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_RED_DROP_PROBABILITY", '100']
             }
@@ -35863,7 +35863,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_RED_DROP_PROBABILITY"]
             }
@@ -35881,7 +35881,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_WEIGHT", '0']
             }
@@ -35898,7 +35898,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_WEIGHT"]
             }
@@ -35916,7 +35916,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_ECN_MARK_MODE", 'SAI_ECN_MARK_MODE_NONE']
             }
@@ -35933,7 +35933,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_ECN_MARK_MODE"]
             }
@@ -35951,7 +35951,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_ECN_GREEN_MIN_THRESHOLD", '0']
             }
@@ -35968,7 +35968,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_ECN_GREEN_MIN_THRESHOLD"]
             }
@@ -35986,7 +35986,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_ECN_GREEN_MAX_THRESHOLD", '0']
             }
@@ -36003,7 +36003,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_ECN_GREEN_MAX_THRESHOLD"]
             }
@@ -36021,7 +36021,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_ECN_GREEN_MARK_PROBABILITY", '100']
             }
@@ -36038,7 +36038,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_ECN_GREEN_MARK_PROBABILITY"]
             }
@@ -36056,7 +36056,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_ECN_YELLOW_MIN_THRESHOLD", '0']
             }
@@ -36073,7 +36073,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_ECN_YELLOW_MIN_THRESHOLD"]
             }
@@ -36091,7 +36091,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_ECN_YELLOW_MAX_THRESHOLD", '0']
             }
@@ -36108,7 +36108,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_ECN_YELLOW_MAX_THRESHOLD"]
             }
@@ -36126,7 +36126,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_ECN_YELLOW_MARK_PROBABILITY", '100']
             }
@@ -36143,7 +36143,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_ECN_YELLOW_MARK_PROBABILITY"]
             }
@@ -36161,7 +36161,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_ECN_RED_MIN_THRESHOLD", '0']
             }
@@ -36178,7 +36178,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_ECN_RED_MIN_THRESHOLD"]
             }
@@ -36196,7 +36196,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_ECN_RED_MAX_THRESHOLD", '0']
             }
@@ -36213,7 +36213,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_ECN_RED_MAX_THRESHOLD"]
             }
@@ -36231,7 +36231,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_ECN_RED_MARK_PROBABILITY", '100']
             }
@@ -36248,7 +36248,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_ECN_RED_MARK_PROBABILITY"]
             }
@@ -36266,7 +36266,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_ECN_COLOR_UNAWARE_MIN_THRESHOLD", '0']
             }
@@ -36283,7 +36283,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_ECN_COLOR_UNAWARE_MIN_THRESHOLD"]
             }
@@ -36301,7 +36301,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_ECN_COLOR_UNAWARE_MAX_THRESHOLD", '0']
             }
@@ -36318,7 +36318,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_ECN_COLOR_UNAWARE_MAX_THRESHOLD"]
             }
@@ -36336,7 +36336,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_ECN_COLOR_UNAWARE_MARK_PROBABILITY", '100']
             }
@@ -36353,7 +36353,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_ECN_COLOR_UNAWARE_MARK_PROBABILITY"]
             }
@@ -36371,7 +36371,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_GREEN_MIN_THRESHOLD_64", '0']
             }
@@ -36388,7 +36388,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_GREEN_MIN_THRESHOLD_64"]
             }
@@ -36406,7 +36406,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_GREEN_MAX_THRESHOLD_64", '0']
             }
@@ -36423,7 +36423,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_GREEN_MAX_THRESHOLD_64"]
             }
@@ -36441,7 +36441,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_YELLOW_MIN_THRESHOLD_64", '0']
             }
@@ -36458,7 +36458,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_YELLOW_MIN_THRESHOLD_64"]
             }
@@ -36476,7 +36476,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_YELLOW_MAX_THRESHOLD_64", '0']
             }
@@ -36493,7 +36493,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_YELLOW_MAX_THRESHOLD_64"]
             }
@@ -36511,7 +36511,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_RED_MIN_THRESHOLD_64", '0']
             }
@@ -36528,7 +36528,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_RED_MIN_THRESHOLD_64"]
             }
@@ -36546,7 +36546,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_RED_MAX_THRESHOLD_64", '0']
             }
@@ -36563,7 +36563,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_RED_MAX_THRESHOLD_64"]
             }
@@ -36581,7 +36581,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_ECN_GREEN_MIN_THRESHOLD_64", '0']
             }
@@ -36598,7 +36598,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_ECN_GREEN_MIN_THRESHOLD_64"]
             }
@@ -36616,7 +36616,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_ECN_GREEN_MAX_THRESHOLD_64", '0']
             }
@@ -36633,7 +36633,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_ECN_GREEN_MAX_THRESHOLD_64"]
             }
@@ -36651,7 +36651,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_ECN_YELLOW_MIN_THRESHOLD_64", '0']
             }
@@ -36668,7 +36668,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_ECN_YELLOW_MIN_THRESHOLD_64"]
             }
@@ -36686,7 +36686,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_ECN_YELLOW_MAX_THRESHOLD_64", '0']
             }
@@ -36703,7 +36703,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_ECN_YELLOW_MAX_THRESHOLD_64"]
             }
@@ -36721,7 +36721,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_ECN_RED_MIN_THRESHOLD_64", '0']
             }
@@ -36738,7 +36738,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_ECN_RED_MIN_THRESHOLD_64"]
             }
@@ -36756,7 +36756,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_ECN_RED_MAX_THRESHOLD_64", '0']
             }
@@ -36773,7 +36773,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_ECN_RED_MAX_THRESHOLD_64"]
             }
@@ -36791,7 +36791,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_ECN_COLOR_UNAWARE_MIN_THRESHOLD_64", '0']
             }
@@ -36808,7 +36808,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_ECN_COLOR_UNAWARE_MIN_THRESHOLD_64"]
             }
@@ -36826,7 +36826,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "set",
                 "attributes": ["SAI_WRED_ATTR_ECN_COLOR_UNAWARE_MAX_THRESHOLD_64", '0']
             }
@@ -36843,7 +36843,7 @@ class TestSaiDebugCounter:
 
         commands = [
             {
-                "name": "debug_counter_1",
+                "name": "generic_programmable_1",
                 "op": "get",
                 "attributes": ["SAI_WRED_ATTR_ECN_COLOR_UNAWARE_MAX_THRESHOLD_64"]
             }
@@ -36856,7 +36856,7 @@ class TestSaiDebugCounter:
         assert r_value == '0', 'Get error, expected 0 but got %s' %  r_value
 
 
-    def test_debug_counter_remove(self, npu):
+    def test_generic_programmable_remove(self, npu):
 
         commands = [{'name': 'xxx_1', 'op': 'remove'}]
 
