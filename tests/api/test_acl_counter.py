@@ -33,6 +33,24 @@ class TestSaiAclCounter:
 
 
 
+    @pytest.mark.dependency(depends=["test_sai_acl_counter_attr_packets_set"])
+    def test_sai_acl_counter_attr_packets_get(self, npu):
+
+        commands = [
+            {
+                "name": "acl_counter_1",
+                "op": "get",
+                "attributes": ["SAI_ACL_COUNTER_ATTR_PACKETS"]
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        pprint(results)
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' %  r_value
+
+
     @pytest.mark.dependency(name="test_sai_acl_counter_attr_bytes_set")
     def test_sai_acl_counter_attr_bytes_set(self, npu):
 
@@ -49,6 +67,24 @@ class TestSaiAclCounter:
 
 
 
+    @pytest.mark.dependency(depends=["test_sai_acl_counter_attr_bytes_set"])
+    def test_sai_acl_counter_attr_bytes_get(self, npu):
+
+        commands = [
+            {
+                "name": "acl_counter_1",
+                "op": "get",
+                "attributes": ["SAI_ACL_COUNTER_ATTR_BYTES"]
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        pprint(results)
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '0', 'Get error, expected 0 but got %s' %  r_value
+
+
     @pytest.mark.dependency(name="test_sai_acl_counter_attr_label_set")
     def test_sai_acl_counter_attr_label_set(self, npu):
 
@@ -63,6 +99,24 @@ class TestSaiAclCounter:
         print("======= SAI commands RETURN values get =======")
         pprint(results)
 
+
+
+    @pytest.mark.dependency(depends=["test_sai_acl_counter_attr_label_set"])
+    def test_sai_acl_counter_attr_label_get(self, npu):
+
+        commands = [
+            {
+                "name": "acl_counter_1",
+                "op": "get",
+                "attributes": ["SAI_ACL_COUNTER_ATTR_LABEL"]
+            }
+        ]
+        results = [*npu.process_commands(commands)]
+        print("======= SAI commands RETURN values get =======")
+        pprint(results)
+        r_value = results[0][0].value()
+        print(r_value)
+        assert r_value == '""', 'Get error, expected "" but got %s' %  r_value
 
 
     def test_acl_counter_remove(self, npu):
