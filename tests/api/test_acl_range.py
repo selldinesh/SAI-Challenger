@@ -24,12 +24,7 @@ class TestSaiAclRange:
         pprint(results)
 
     def test_acl_range_remove(self, npu):
-        commands = [
-            {
-                'name': 'acl_range_1',
-                'op': 'remove',
-            }
-        ]
+        commands = [{'name': 'acl_range_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')
