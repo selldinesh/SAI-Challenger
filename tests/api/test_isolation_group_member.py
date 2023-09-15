@@ -16,17 +16,6 @@ class TestSaiIsolationGroupMember:
                 ],
             },
             {
-                'name': 'port_1',
-                'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_PORT',
-                'attributes': [
-                    'SAI_PORT_ATTR_HW_LANE_LIST',
-                    '2:10,11',
-                    'SAI_PORT_ATTR_SPEED',
-                    '10',
-                ],
-            },
-            {
                 'name': 'isolation_group_member_1',
                 'op': 'create',
                 'type': 'SAI_OBJECT_TYPE_ISOLATION_GROUP_MEMBER',
