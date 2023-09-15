@@ -1,15 +1,15 @@
 from pprint import pprint
 
 
-class TestSaiLag:
+class TestSaiFdbFlush:
     # object with no attributes
 
-    def test_lag_create(self, npu):
+    def test_fdb_flush_create(self, npu):
         commands = [
             {
-                'name': 'lag_1',
+                'name': 'fdb_flush_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_LAG',
+                'type': 'SAI_OBJECT_TYPE_FDB_FLUSH',
                 'attributes': [],
             }
         ]
@@ -18,13 +18,8 @@ class TestSaiLag:
         print('======= SAI commands RETURN values create =======')
         pprint(results)
 
-    def test_lag_remove(self, npu):
-        commands = [
-            {
-                'name': 'lag_1',
-                'op': 'remove',
-            }
-        ]
+    def test_fdb_flush_remove(self, npu):
+        commands = [{'name': 'fdb_flush_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

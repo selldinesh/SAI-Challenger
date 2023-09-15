@@ -1,15 +1,15 @@
 from pprint import pprint
 
 
-class TestSaiVirtualRouter:
+class TestSaiExtensionsRangeStart:
     # object with no attributes
 
-    def test_virtual_router_create(self, npu):
+    def test_extensions_range_start_create(self, npu):
         commands = [
             {
-                'name': 'virtual_router_1',
+                'name': 'extensions_range_start_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_VIRTUAL_ROUTER',
+                'type': 'SAI_OBJECT_TYPE_EXTENSIONS_RANGE_START',
                 'attributes': [],
             }
         ]
@@ -18,13 +18,8 @@ class TestSaiVirtualRouter:
         print('======= SAI commands RETURN values create =======')
         pprint(results)
 
-    def test_virtual_router_remove(self, npu):
-        commands = [
-            {
-                'name': 'virtual_router_1',
-                'op': 'remove',
-            }
-        ]
+    def test_extensions_range_start_remove(self, npu):
+        commands = [{'name': 'extensions_range_start_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')
