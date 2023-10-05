@@ -11,16 +11,19 @@ def skip_all(testbed_instance):
 
 
 @pytest.mark.npu
-class TestSaiSamplepacket:
+class TestSaiDtelEvent:
     # object with no parents
 
-    def test_samplepacket_create(self, npu):
+    def test_dtel_event_create(self, npu):
         commands = [
             {
-                'name': 'samplepacket_1',
+                'name': 'dtel_event_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_SAMPLEPACKET',
-                'attributes': ['SAI_SAMPLEPACKET_ATTR_SAMPLE_RATE', '10'],
+                'type': 'SAI_OBJECT_TYPE_DTEL_EVENT',
+                'attributes': [
+                    'SAI_DTEL_EVENT_ATTR_TYPE',
+                    'SAI_DTEL_EVENT_TYPE_FLOW_STATE',
+                ],
             }
         ]
 
@@ -28,13 +31,8 @@ class TestSaiSamplepacket:
         print('======= SAI commands RETURN values create =======')
         pprint(results)
 
-    def test_samplepacket_remove(self, npu):
-        commands = [
-            {
-                'name': 'samplepacket_1',
-                'op': 'remove',
-            }
-        ]
+    def test_dtel_event_remove(self, npu):
+        commands = [{'name': 'dtel_event_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')

@@ -11,16 +11,16 @@ def skip_all(testbed_instance):
 
 
 @pytest.mark.npu
-class TestSaiSamplepacket:
-    # object with no parents
+class TestSaiDtelReportSession:
+    # object with no attributes
 
-    def test_samplepacket_create(self, npu):
+    def test_dtel_report_session_create(self, npu):
         commands = [
             {
-                'name': 'samplepacket_1',
+                'name': 'dtel_report_session_1',
                 'op': 'create',
-                'type': 'SAI_OBJECT_TYPE_SAMPLEPACKET',
-                'attributes': ['SAI_SAMPLEPACKET_ATTR_SAMPLE_RATE', '10'],
+                'type': 'SAI_OBJECT_TYPE_DTEL_REPORT_SESSION',
+                'attributes': [],
             }
         ]
 
@@ -28,13 +28,8 @@ class TestSaiSamplepacket:
         print('======= SAI commands RETURN values create =======')
         pprint(results)
 
-    def test_samplepacket_remove(self, npu):
-        commands = [
-            {
-                'name': 'samplepacket_1',
-                'op': 'remove',
-            }
-        ]
+    def test_dtel_report_session_remove(self, npu):
+        commands = [{'name': 'dtel_report_session_1', 'op': 'remove'}]
 
         results = [*npu.process_commands(commands)]
         print('======= SAI commands RETURN values remove =======')
